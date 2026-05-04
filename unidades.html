@@ -93,28 +93,66 @@
 
     .units-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Dois a Dois Lado a Lado */
-      gap: 3rem;
-      padding: 6rem 2rem;
-      max-width: 1000px;
+      grid-template-columns: repeat(5, 1fr); /* 5 lado a lado no Desktop */
+      gap: 1.5rem;
+      padding: 4rem 2rem;
+      max-width: 1400px; /* Mais largo para 5 colunas */
       margin: 0 auto;
     }
-    @media (max-width: 1024px) { .units-grid { grid-template-columns: repeat(2, 1fr); } }
+    
+    /* Ajuste do Card para 5 colunas (Mais compacto) */
+    .units-grid .cong-card { 
+      padding: 2rem 1rem; 
+      border-radius: 12px;
+    }
+    .units-grid .pastor-photo { width: 70px; height: 70px; margin-bottom: 1rem; }
+    .units-grid .pastor-name { font-size: 0.65rem; }
+    .units-grid h3 { font-size: 1rem; }
+    .units-grid p { font-size: 0.8rem; }
+    .units-grid .cong-hours { font-size: 0.7rem; padding: 0.4rem 0.8rem; }
+
+    .pagination-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 0 6rem;
+    }
+    .btn-page {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-page:disabled { opacity: 0.3; cursor: not-allowed; }
+    .btn-page:hover:not(:disabled) { background: var(--accent); transform: translateY(-2px); }
+
+    @media (max-width: 1200px) { .units-grid { grid-template-columns: repeat(3, 1fr); } }
+
     @media (max-width: 768px) {
       .units-hero { padding: 9rem 1.5rem 5rem; }
       .units-hero h1 { font-size: 2.5rem !important; }
-      .units-stats-bar { 
-        flex-direction: row; 
-        gap: 1rem; 
-        padding: 1rem; 
-        width: 100%; 
-        border-radius: 16px; 
-      }
+      .units-stats-bar { flex-direction: row; gap: 1rem; padding: 1rem; width: 100%; border-radius: 16px; }
       .u-stat strong { font-size: 1.1rem; }
       .u-stat span { font-size: 0.55rem; }
-      .units-grid { padding: 3rem 1.5rem; gap: 1.5rem; grid-template-columns: 1fr; }
       
-      .btn-back span { display: none; } /* Deixa apenas a seta no mobile para economizar espaço */
+      /* Mobile 2 a 2 lado a lado */
+      .units-grid { 
+        padding: 3rem 1rem; 
+        gap: 1rem; 
+        grid-template-columns: repeat(2, 1fr); 
+      }
+      .units-grid .pastor-photo { width: 60px; height: 60px; }
+      .units-grid h3 { font-size: 0.85rem; }
+      
+      .btn-back span { display: none; }
       .btn-back { padding: 0.6rem; }
     }
   </style>
@@ -142,11 +180,11 @@
       </div>
       
       <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Todas as Nossas<br>Unidades</h1>
-      <p style="font-size: 1.1rem; opacity: 0.7; max-width: 600px; margin: 0 auto; line-height: 1.6;">O Ministério de Pirapora está presente em cada bairro, levando a palavra de Deus e servindo à comunidade com amor e dedicação.</p>
+      <p style="font-size: 1.1rem; opacity: 0.7; max-width: 600px; margin: 0 auto; line-height: 1.6;">O Ministério de Pirapora está presente em cada bairro, servindo à comunidade com amor.</p>
       
       <div class="units-stats-bar">
         <div class="u-stat">
-          <strong>30+</strong>
+          <strong id="totalCount">30+</strong>
           <span>Congregações</span>
         </div>
         <div class="u-stat" style="width: 1px; height: 30px; background: rgba(255,255,255,0.1); align-self: center;"></div>
@@ -171,6 +209,12 @@
     <div class="units-grid" id="allUnitsGrid">
       <!-- Renderizado via JS -->
     </div>
+    
+    <div class="pagination-wrap">
+      <button id="prevPage" class="btn-page"><i data-lucide="chevron-left"></i> Anterior</button>
+      <span id="pageInfo" style="font-weight: 800; color: var(--primary); font-size: 0.9rem;">Página 1 de 3</span>
+      <button id="nextPage" class="btn-page">Próximo <i data-lucide="chevron-right"></i></button>
+    </div>
   </section>
 
   <footer style="padding: 4rem 2rem; background: var(--primary); color: white; text-align: center;">
@@ -178,38 +222,82 @@
     <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Assembleia de Deus — Ministério de Pirapora.</p>
   </footer>
 
-  <!-- Importar dados do main.js (Garante que as congregações sejam as mesmas) -->
+  <!-- Importar dados do main.js -->
   <script src="./src/main.js"></script>
   <script>
-    // Função específica para renderizar na página de unidades
-    function renderAllUnits(filter = '') {
+    let currentPage = 1;
+    const itemsPerPage = 10;
+    let filteredData = [...congregacoes];
+
+    function renderAllUnits() {
       const grid = document.getElementById('allUnitsGrid');
+      const pageInfo = document.getElementById('pageInfo');
+      const prevBtn = document.getElementById('prevPage');
+      const nextBtn = document.getElementById('nextPage');
+      
       if (!grid) return;
 
-      const filtered = congregacoes.filter(c => 
-        c.nome.toLowerCase().includes(filter.toLowerCase()) || 
-        c.bairro.toLowerCase().includes(filter.toLowerCase()) ||
-        c.pastor.toLowerCase().includes(filter.toLowerCase())
-      );
+      // Cálculo de Paginação
+      const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+      if (currentPage > totalPages) currentPage = totalPages || 1;
+      
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const pageItems = filteredData.slice(start, end);
 
-      grid.innerHTML = filtered.map(c => `
+      // Renderizar Cards
+      grid.innerHTML = pageItems.map(c => `
         <div class="cong-card reveal visible">
           <img src="${c.foto}" alt="${c.pastor}" class="pastor-photo">
           <span class="pastor-name">${c.pastor}</span>
           <h3>${c.nome}</h3>
-          <p>${c.endereco} — ${c.bairro}</p>
+          <p>${c.endereco}</p>
           <div class="cong-hours">${c.cultos}</div>
         </div>
       `).join('');
       
-      if (filtered.length === 0) {
-        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 4rem; opacity: 0.5;">Nenhuma unidade encontrada com esse termo.</p>`;
+      // Feedback Vazio
+      if (filteredData.length === 0) {
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 4rem; opacity: 0.5;">Nenhuma unidade encontrada.</p>`;
       }
+
+      // Atualizar Controles
+      pageInfo.innerText = `Página ${currentPage} de ${totalPages || 1}`;
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+      
+      // Atualizar contador no hero
+      document.getElementById('totalCount').innerText = `${congregacoes.length}`;
     }
 
-    // Listener para o campo de busca
+    // Busca com Reset de Página
     document.getElementById('unitSearch').addEventListener('input', (e) => {
-      renderAllUnits(e.target.value);
+      const term = e.target.value.toLowerCase();
+      filteredData = congregacoes.filter(c => 
+        c.nome.toLowerCase().includes(term) || 
+        c.bairro.toLowerCase().includes(term) ||
+        c.pastor.toLowerCase().includes(term)
+      );
+      currentPage = 1;
+      renderAllUnits();
+    });
+
+    // Eventos de Navegação
+    document.getElementById('prevPage').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderAllUnits();
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', () => {
+      const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderAllUnits();
+        window.scrollTo({ top: 400, behavior: 'smooth' });
+      }
     });
 
     // Inicializar
