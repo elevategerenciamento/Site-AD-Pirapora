@@ -223,19 +223,29 @@ section { padding: 8rem 0; }
   background: var(--primary);
   padding: 3.5rem 2.5rem;
   text-align: center;
-  border-radius: 20px; /* Bordas bem arredondadas como na imagem */
-  box-shadow: 0 15px 45px rgba(5, 15, 43, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(5, 15, 43, 0.2); /* Sombra muito mais leve */
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: float 5s ease-in-out infinite; /* Flutuação reativada */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--white);
 }
 
+/* Delay para um movimento mais natural */
+.dep-card:nth-child(even) { animation-delay: 2.5s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); } /* Movimento bem pequeno */
+  100% { transform: translateY(0px); }
+}
+
 .dep-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(5, 15, 43, 0.6);
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 15px 40px rgba(5, 15, 43, 0.3);
   border-color: var(--accent);
 }
 
