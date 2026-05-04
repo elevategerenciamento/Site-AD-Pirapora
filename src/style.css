@@ -209,7 +209,7 @@ section { padding: 8rem 0; }
 .cong-card h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); }
 .cong-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 
-/* ── DEPARTAMENTOS (Estilo Quick Bar) ── */
+/* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
 .dep-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -220,33 +220,34 @@ section { padding: 8rem 0; }
 }
 
 .dep-card {
-  background: var(--white);
-  padding: 3rem 2rem;
+  background: var(--primary);
+  padding: 3.5rem 2.5rem;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Efeito de profundidade suave */
-  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: 20px; /* Bordas bem arredondadas como na imagem */
+  box-shadow: 0 15px 45px rgba(5, 15, 43, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--white);
 }
 
 .dep-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(5, 15, 43, 0.6);
   border-color: var(--accent);
 }
 
 .dep-icon {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--accent);
   margin-bottom: 1.5rem;
 }
 
 .dep-card h3 {
-  font-size: 1.3rem;
-  color: var(--primary);
+  font-size: 1.4rem;
+  color: var(--white);
   margin-bottom: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -255,7 +256,7 @@ section { padding: 8rem 0; }
 
 .dep-card p {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
 }
 
