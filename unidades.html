@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossas Unidades — AD Pirapora</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./src/style.css">
+  <style>
+    .units-hero {
+      padding: 10rem 2rem 6rem;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+    }
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 6rem 2rem;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) { .units-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .units-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <nav>
+      <a href="/" class="logo-wrap">
+        <img src="/logo-full.png" alt="Logo AD Pirapora" class="logo-img">
+      </a>
+      <a href="index.html" class="btn-line" style="border-color: var(--primary); color: var(--primary); padding: 0.5rem 1rem; font-size: 0.7rem;">Voltar ao Início</a>
+    </nav>
+  </header>
+
+  <section class="units-hero">
+    <div class="container">
+      <span class="eyebrow" style="color: var(--accent);">Ministério de Pirapora</span>
+      <h1 style="font-size: 3.5rem; font-weight: 900;">Todas as Nossas Unidades</h1>
+      <p style="opacity: 0.8; max-width: 600px; margin: 1.5rem auto 0;">Encontre a Assembleia de Deus mais próxima de você e venha celebrar conosco.</p>
+    </div>
+  </section>
+
+  <section class="bg-light">
+    <div class="units-grid" id="allUnitsGrid">
+      <!-- Exemplo de como ficará a lista (Pode ser preenchido via JS ou Manual) -->
+      <!-- Unidade 1 -->
+      <div class="cong-card">
+        <h3>Sede Própria</h3>
+        <p>Rua Ouro Preto, 277, Sto Antônio</p>
+        <div class="cong-hours">Dom 19h • Qua 19:30h</div>
+      </div>
+      <!-- Unidade 2 -->
+      <div class="cong-card">
+        <h3>Bairro Industrial</h3>
+        <p>Rua Exemplo, 123, Pirapora-MG</p>
+        <div class="cong-hours">Dom 19h • Sex 19:30h</div>
+      </div>
+      <!-- Unidade 3 -->
+      <div class="cong-card">
+        <h3>Santa Terezinha</h3>
+        <p>Av. Principal, 456, Pirapora-MG</p>
+        <div class="cong-hours">Dom 19h • Ter 19:30h</div>
+      </div>
+      <!-- Unidade 4 (Placeholder) -->
+      <div class="cong-card">
+        <h3>Bairro Cidade Alta</h3>
+        <p>Endereço em breve...</p>
+        <div class="cong-hours">Horários em breve...</div>
+      </div>
+      <!-- Unidade 5 (Placeholder) -->
+      <div class="cong-card">
+        <h3>Bairro Sagrada Família</h3>
+        <p>Endereço em breve...</p>
+        <div class="cong-hours">Horários em breve...</div>
+      </div>
+      <!-- Repetir até 30... -->
+    </div>
+  </section>
+
+  <footer style="padding: 4rem 2rem; background: var(--primary); color: white; text-align: center;">
+    <img src="/logo-white.png" alt="Logo" style="height: 40px; margin-bottom: 1.5rem;">
+    <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Assembleia de Deus — Ministério de Pirapora.</p>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
