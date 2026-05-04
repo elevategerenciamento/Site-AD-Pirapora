@@ -16,21 +16,53 @@
   <link rel="stylesheet" href="./src/style.css">
   <style>
     .units-hero {
-      padding: 10rem 2rem 6rem;
-      background: var(--primary);
+      padding: 12rem 2rem 8rem;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 107, 0, 0.1), transparent 40%),
+                  linear-gradient(rgba(5, 15, 43, 0.95), rgba(5, 15, 43, 0.95)),
+                  url('https://www.transparenttextures.com/patterns/cubes.png'),
+                  var(--primary);
       color: white;
       text-align: center;
+      position: relative;
     }
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      opacity: 0.6;
+    }
+    .breadcrumb a { color: white; text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    
+    .units-stats-bar {
+      display: inline-flex;
+      gap: 3rem;
+      margin-top: 3rem;
+      padding: 1.5rem 4rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+      backdrop-filter: blur(10px);
+    }
+    .u-stat { display: flex; flex-direction: column; align-items: center; }
+    .u-stat strong { font-size: 1.5rem; color: var(--accent); font-weight: 900; }
+    .u-stat span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
+
     .units-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 2.5rem;
       padding: 6rem 2rem;
       max-width: var(--container);
       margin: 0 auto;
     }
     @media (max-width: 1024px) { .units-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .units-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .units-grid { grid-template-columns: 1fr; padding: 4rem 1.5rem; } }
   </style>
 </head>
 <body>
@@ -49,9 +81,26 @@
 
   <section class="units-hero">
     <div class="container">
-      <span class="eyebrow" style="color: var(--accent);">Ministério de Pirapora</span>
-      <h1 style="font-size: 3.5rem; font-weight: 900;">Todas as Nossas Unidades</h1>
-      <p style="opacity: 0.8; max-width: 600px; margin: 1.5rem auto 0;">Encontre a Assembleia de Deus mais próxima de você e venha celebrar conosco.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span>/</span>
+        <span style="color: var(--accent);">Nossas Unidades</span>
+      </div>
+      
+      <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Todas as Nossas<br>Unidades</h1>
+      <p style="font-size: 1.1rem; opacity: 0.7; max-width: 600px; margin: 0 auto; line-height: 1.6;">O Ministério de Pirapora está presente em cada bairro, levando a palavra de Deus e servindo à comunidade com amor e dedicação.</p>
+      
+      <div class="units-stats-bar">
+        <div class="u-stat">
+          <strong>30+</strong>
+          <span>Congregações</span>
+        </div>
+        <div class="u-stat" style="width: 1px; height: 30px; background: rgba(255,255,255,0.1); align-self: center;"></div>
+        <div class="u-stat">
+          <strong>100%</strong>
+          <span>Cobertura Regional</span>
+        </div>
+      </div>
     </div>
   </section>
 
