@@ -42,14 +42,16 @@ function renderCongs() {
   
   grid.innerHTML = congregacoes.map(c => `
     <div class="cong-card reveal">
-      <img src="${c.foto}" alt="${c.pastor}" class="pastor-photo">
-      <span class="pastor-name">${c.pastor}</span>
-      <h3>${c.nome}</h3>
-      <p>${c.endereco} — ${c.bairro}</p>
-      <div class="cong-hours">${c.cultos}</div>
-      <a href="${c.maps}" target="_blank" class="btn-maps">
-        <i data-lucide="map-pin"></i>
-        Como Chegar
+      <div class="cong-card-body">
+        <img src="${c.foto}" alt="${c.pastor}" class="pastor-photo">
+        <span class="pastor-name">${c.pastor}</span>
+        <h3>${c.nome}</h3>
+        <p>${c.endereco} — ${c.bairro}</p>
+        <div class="cong-hours">${c.cultos}</div>
+      </div>
+      <a href="${c.maps}" target="_blank" class="cong-card-footer">
+        <span>Ver no Mapa</span>
+        <i data-lucide="external-link"></i>
       </a>
     </div>
   `).join('');

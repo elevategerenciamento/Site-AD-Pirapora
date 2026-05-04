@@ -202,89 +202,116 @@ section { padding: 8rem 0; }
 .cong-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  padding: 3rem 2rem;
-  border-radius: 16px;
+  border-radius: 20px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cong-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 80px rgba(5, 15, 43, 0.12);
+  border-color: var(--primary);
+}
+
+.cong-card-body {
+  padding: 3.5rem 2rem 2.5rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.cong-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  border-color: var(--accent);
-}
-
 .pastor-photo {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
-  border: 3px solid var(--gray-50);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 3px solid var(--white);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.cong-card:hover .pastor-photo {
+  transform: scale(1.1);
 }
 
 .pastor-name {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--accent);
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
 }
 
 .cong-card h3 { 
-  font-size: 1.4rem; 
+  font-size: 1.5rem; 
   margin-bottom: 0.5rem; 
   color: var(--primary); 
-  font-weight: 800;
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .cong-card p { 
   font-size: 0.9rem; 
   color: var(--text-muted); 
   margin-bottom: 1.5rem; 
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-.btn-maps {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.4rem;
-  background: transparent;
-  color: var(--primary);
-  text-decoration: none;
-  font-size: 0.7rem;
+.cong-hours {
+  font-size: 0.8rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--primary);
+  margin-top: auto; /* Empurra para o final do body */
 }
 
-.btn-maps i {
-  width: 14px;
-  height: 14px;
+.cong-card-footer {
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+  padding: 1.4rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.cong-card-footer span {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.cong-card-footer i {
+  width: 16px;
+  height: 16px;
   color: var(--accent);
-  transition: color 0.4s;
+  transition: transform 0.3s ease;
 }
 
-.btn-maps:hover {
+.cong-card:hover .cong-card-footer {
   background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(5, 15, 43, 0.1);
 }
 
-.btn-maps:hover i {
+.cong-card:hover .cong-card-footer span,
+.cong-card:hover .cong-card-footer i {
   color: var(--white);
+}
+
+.cong-card:hover .cong-card-footer i {
+  transform: translateX(3px);
 }
 
 /* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
