@@ -32,6 +32,28 @@ const congregacoes = [
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Santa+Rita+145+Pirapora+MG",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30"
+  },
+  {
+    id: 4,
+    nome: "Congregação Aparecida",
+    bairro: "N. S. Aparecida",
+    pastor: "Pb. José Silva",
+    foto: "https://ui-avatars.com/api/?name=Jose+Silva&background=050f2b&color=fff&size=128",
+    endereco: "Av. Tiradentes, 880",
+    maps: "https://www.google.com/maps/search/?api=1&query=Avenida+Tiradentes+880+Pirapora+MG",
+    cidade: "Pirapora - MG",
+    cultos: "Dom 19h · Ter 19h30"
+  },
+  {
+    id: 5,
+    nome: "Congregação São José",
+    bairro: "São José",
+    pastor: "Ev. Marcos Oliveira",
+    foto: "https://ui-avatars.com/api/?name=Marcos+Oliveira&background=050f2b&color=fff&size=128",
+    endereco: "R. Minas Gerais, 102",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Minas+Gerais+102+Pirapora+MG",
+    cidade: "Pirapora - MG",
+    cultos: "Dom 19h · Qui 19h30"
   }
 ];
 

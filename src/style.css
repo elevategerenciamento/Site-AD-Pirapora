@@ -192,11 +192,24 @@ section { padding: 8rem 0; }
 /* ── CONGREGAÇÕES (Grid Limpo) ── */
 .cong-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr); /* Desktop: 5 colunas */
+  gap: 1.2rem;
   padding: 0 2rem;
-  max-width: var(--container);
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+/* Ajustes finos para cards em 5 colunas (Desktop) */
+@media (min-width: 1025px) {
+  .cong-grid .cong-card { padding: 2.5rem 1rem; border-radius: 12px; }
+  .cong-grid .pastor-photo { width: 75px; height: 75px; }
+  .cong-grid h3 { font-size: 1.05rem; }
+  .cong-grid p { font-size: 0.75rem; }
+  .cong-grid .btn-loc { padding: 0.6rem 1rem; font-size: 0.65rem; }
+}
+
+@media (max-width: 1200px) {
+  .cong-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .cong-card {
