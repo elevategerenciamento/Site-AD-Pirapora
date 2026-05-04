@@ -5,6 +5,7 @@ const congregacoes = [
     nome: "Igreja Sede",
     bairro: "Santo Antônio",
     pastor: "Pr. Ronivan Luiz",
+    foto: "https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128",
     endereco: "R. Ouro Preto, 277",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30 · Sex 19h30",
@@ -15,6 +16,7 @@ const congregacoes = [
     nome: "Sub-sede Buritizeiro",
     bairro: "Centro — Buritizeiro",
     pastor: "Pr. Ronivan Luiz",
+    foto: "https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128",
     endereco: "R. Joaquim Trindade Cotta, 513",
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Ter 19h30 · Qui 19h30"
@@ -24,6 +26,7 @@ const congregacoes = [
     nome: "Congregação Sagrada Família",
     bairro: "Sagrada Família",
     pastor: "Pb. Geraldo Magela",
+    foto: "https://ui-avatars.com/api/?name=Geraldo+Magela&background=050f2b&color=fff&size=128",
     endereco: "Rua Santa Rita, 145",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30"
@@ -35,16 +38,13 @@ function renderCongs() {
   const grid = document.getElementById('congGrid');
   if (!grid) return;
   
-  grid.innerHTML = congregacoes.map((c, i) => `
+  grid.innerHTML = congregacoes.map(c => `
     <div class="cong-card reveal">
-      <span class="eyebrow" style="font-size: 0.6rem; margin-bottom: 0.5rem">${c.destaque ? 'Unidade Sede' : 'Unidade Bairro'}</span>
+      <img src="${c.foto}" alt="${c.pastor}" class="pastor-photo">
+      <span class="pastor-name">${c.pastor}</span>
       <h3>${c.nome}</h3>
-      <p style="color: #0f172a; font-weight: 700; margin-bottom: 0.2rem">${c.pastor}</p>
       <p>${c.endereco} — ${c.bairro}</p>
-      <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
-        <strong style="display: block; font-size: 0.75rem; text-transform: uppercase; color: #c2943a; margin-bottom: 0.5rem">Horários de Culto</strong>
-        <span style="font-size: 0.9rem; color: #475569;">${c.cultos}</span>
-      </div>
+      <div class="cong-hours">${c.cultos}</div>
     </div>
   `).join('');
 
