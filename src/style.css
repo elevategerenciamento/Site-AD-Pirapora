@@ -54,7 +54,9 @@ nav {
 
 .logo-img { height: 50px; }
 
-.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.nav-mobile-header, .nav-mobile-footer, .hamburger { display: none; }
+
+.nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
 .nav-links a { 
   text-decoration: none; 
   color: var(--text-main); 
@@ -581,7 +583,7 @@ footer {
   
   /* Header do Menu Mobile */
   .nav-mobile-header {
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
@@ -620,6 +622,7 @@ footer {
 
   /* Footer do Menu Mobile */
   .nav-mobile-footer {
+    display: block !important;
     margin-top: auto;
     padding: 2.5rem 2rem;
     background: var(--gray-50);
