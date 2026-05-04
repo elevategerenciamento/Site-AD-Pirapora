@@ -253,27 +253,38 @@ section { padding: 8rem 0; }
 .btn-maps {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--gray-100);
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
   color: var(--primary);
   text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--gray-200);
   border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-maps i {
   width: 14px;
   height: 14px;
+  color: var(--accent);
+  transition: color 0.4s;
 }
 
 .btn-maps:hover {
-  background: var(--accent);
+  background: var(--primary);
   color: var(--white);
-  transform: translateY(-2px);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(5, 15, 43, 0.1);
+}
+
+.btn-maps:hover i {
+  color: var(--white);
 }
 
 /* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
