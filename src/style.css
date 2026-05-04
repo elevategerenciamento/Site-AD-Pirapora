@@ -189,27 +189,45 @@ section { padding: 8rem 0; }
 .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 1rem; display: block; }
 .section-title { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
 
-/* ── CONGREGAÇÕES (Grid Limpo) ── */
+/* ── CONGREGAÇÕES (Grid Impoente) ── */
+#congregacoes {
+  background: radial-gradient(circle at top right, #0a1a4a, #050f2b); /* Gradiente Profissional */
+  position: relative;
+  overflow: hidden;
+}
+
+#congregacoes .section-title { color: var(--white); }
+#congregacoes .eyebrow { color: var(--accent); }
+
 .cong-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Desktop: 5 colunas */
-  gap: 1.2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
   padding: 0 2rem;
-  max-width: 1400px;
+  max-width: 1500px; /* Mais amplo para não parecer pequeno */
   margin: 0 auto;
 }
 
-/* Ajustes finos para cards em 5 colunas (Desktop) */
+/* Ajustes Premium para Desktop */
 @media (min-width: 1025px) {
-  .cong-grid .cong-card { padding: 2.5rem 1rem; border-radius: 12px; }
-  .cong-grid .pastor-photo { width: 75px; height: 75px; }
-  .cong-grid h3 { font-size: 1.05rem; }
-  .cong-grid p { font-size: 0.75rem; }
-  .cong-grid .btn-loc { padding: 0.6rem 1rem; font-size: 0.65rem; }
+  .cong-grid .cong-card { 
+    padding: 3rem 1.5rem; 
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,1);
+  }
+  .cong-grid .pastor-photo { width: 85px; height: 85px; }
+  .cong-grid h3 { font-size: 1.2rem; }
 }
 
 @media (max-width: 1200px) {
   .cong-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  #congregacoes { background: var(--gray-50); } /* Mobile Perfeito Mantido */
+  #congregacoes .section-title { color: var(--primary); }
+  .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; }
 }
 
 .cong-card {
