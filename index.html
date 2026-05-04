@@ -221,16 +221,31 @@
     </div>
   </section>
 
-  <!-- CONTRIBUA (Sólido) -->
-  <section id="contribua" style="padding: 6rem 2rem; border-top: 1px solid var(--gray-200);">
-    <div class="container" style="text-align: center;">
-      <div class="reveal">
-        <h2 class="section-title">Dízimos e Ofertas</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem;">"Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria."</p>
-        <div style="background: var(--gray-50); padding: 3rem; border-radius: 8px; display: inline-block; border: 1px solid var(--gray-200);">
-           <span class="eyebrow" style="margin-bottom: 0.5rem; font-size: 0.6rem;">Chave PIX (E-mail)</span>
-           <div id="pixKey" style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 1.5rem;">adpirapora@gmail.com</div>
-           <button id="pixBtn" onclick="copyPix()" class="btn-solid" style="border: none; cursor: pointer;">Copiar Chave Pix</button>
+  <!-- CONTRIBUA (Premium & Elegante) -->
+  <section id="contribua" class="pix-section">
+    <div class="container">
+      <div class="pix-content reveal">
+        <span class="eyebrow">Faça sua contribuição</span>
+        <h2 class="section-title text-white">Dízimos e Ofertas</h2>
+        <p class="pix-desc">"Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria."<br><span style="opacity: 0.6; font-size: 0.9rem; margin-top: 0.5rem; display: block;">— 2 Coríntios 9:7</span></p>
+        
+        <div class="pix-card-wrap">
+          <div class="pix-card">
+            <div class="pix-card-header">
+              <i data-lucide="smartphone"></i>
+              <span>Transferência via PIX</span>
+            </div>
+            <div class="pix-card-body">
+              <span class="pix-label">Chave E-mail</span>
+              <div id="pixKey" class="pix-key-text">adpirapora@gmail.com</div>
+            </div>
+            <button id="pixBtn" onclick="copyPix()" class="btn-pix-copy">
+              <i data-lucide="copy"></i>
+              <span>Copiar Chave Pix</span>
+            </button>
+          </div>
+          <!-- Efeito de brilho atrás do card -->
+          <div class="pix-glow"></div>
         </div>
       </div>
     </div>

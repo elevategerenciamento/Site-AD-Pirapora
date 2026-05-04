@@ -571,6 +571,132 @@ footer {
   color: rgba(255, 255, 255, 0.4);
 }
 
+/* ── CONTRIBUA / PIX (Premium) ── */
+.pix-section {
+  padding: 10rem 2rem;
+  background: var(--primary);
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.1), transparent 70%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-white { color: var(--white) !important; }
+
+.pix-desc {
+  max-width: 600px;
+  margin: 0 auto 4rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.pix-card-wrap {
+  position: relative;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.pix-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.pix-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 107, 0, 0.3);
+}
+
+.pix-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 1;
+  border-radius: 50%;
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.1; transform: translate(-50%, -50%) scale(0.9); }
+  100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.pix-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.pix-card-header i { width: 20px; height: 20px; }
+
+.pix-card-body {
+  margin-bottom: 3rem;
+}
+
+.pix-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+
+.pix-key-text {
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  word-break: break-all;
+}
+
+.btn-pix-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 1.25rem;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
+}
+
+.btn-pix-copy:hover {
+  background: #ff8533;
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.4);
+}
+
 /* ── RADIO SECTION ── */
 .radio-card {
   background: var(--white);
