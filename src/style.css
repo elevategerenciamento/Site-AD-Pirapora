@@ -202,27 +202,19 @@ section { padding: 8rem 0; }
 .cong-card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: 20px;
+  border-radius: 16px;
+  padding: 3rem 2rem;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  align-items: center;
   height: 100%;
 }
 
 .cong-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 40px 80px rgba(5, 15, 43, 0.12);
-  border-color: var(--primary);
-}
-
-.cong-card-body {
-  padding: 3.5rem 2rem 2.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(5, 15, 43, 0.08);
 }
 
 .pastor-photo {
@@ -231,13 +223,7 @@ section { padding: 8rem 0; }
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
-  border: 3px solid var(--white);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease;
-}
-
-.cong-card:hover .pastor-photo {
-  transform: scale(1.1);
+  border: 3px solid var(--gray-50);
 }
 
 .pastor-name {
@@ -245,73 +231,60 @@ section { padding: 8rem 0; }
   color: var(--accent);
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
 }
 
 .cong-card h3 { 
-  font-size: 1.5rem; 
+  font-size: 1.4rem; 
   margin-bottom: 0.5rem; 
   color: var(--primary); 
-  font-weight: 900;
-  line-height: 1.2;
+  font-weight: 800;
 }
 
 .cong-card p { 
   font-size: 0.9rem; 
   color: var(--text-muted); 
   margin-bottom: 1.5rem; 
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .cong-hours {
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 700;
   background: var(--gray-50);
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   color: var(--primary);
-  margin-top: auto; /* Empurra para o final do body */
+  margin-bottom: 2rem;
 }
 
-.cong-card-footer {
-  background: var(--gray-50);
-  border-top: 1px solid var(--gray-100);
-  padding: 1.4rem;
-  text-decoration: none;
-  display: flex;
+.btn-loc {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.8rem;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   transition: all 0.3s ease;
 }
 
-.cong-card-footer span {
-  font-size: 0.75rem;
-  font-weight: 900;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-.cong-card-footer i {
+.btn-loc i {
   width: 16px;
   height: 16px;
-  color: var(--accent);
-  transition: transform 0.3s ease;
+  order: 2; /* Joga o ícone para a direita */
 }
 
-.cong-card:hover .cong-card-footer {
-  background: var(--primary);
-}
-
-.cong-card:hover .cong-card-footer span,
-.cong-card:hover .cong-card-footer i {
-  color: var(--white);
-}
-
-.cong-card:hover .cong-card-footer i {
-  transform: translateX(3px);
+.btn-loc:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
 }
 
 /* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
