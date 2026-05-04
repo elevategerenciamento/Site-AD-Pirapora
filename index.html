@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>Assembleia de Deus Pirapora — Ministério de Pirapora | Pr. Ronivan Luiz</title>
+  <meta name="description" content="Site oficial da Assembleia de Deus — Ministério de Pirapora. Amar a Deus, cuidar das pessoas e ampliar o reino. Sob a presidência do Pr. Ronivan Luiz.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts: Outfit (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+  <!-- HEADER (Sólido) -->
+  <header id="header">
+    <nav>
+      <a href="/" class="logo-wrap">
+        <img src="/logo-full.png" alt="Logo AD Pirapora" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#congregacoes">Unidades</a></li>
+        <li><a href="#departamentos">Ministérios</a></li>
+        <li><a href="#cultos">TV Online</a></li>
+        <li><a href="#oracao">Oração</a></li>
+        <li><a href="#contribua" class="btn-contribua">Fazer uma Oferta</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO (Impacto e Profissionalismo) -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="hero-badge reveal">Visão 2026 • Projeto Crescer</span>
+      <h1 class="reveal">AMAR A DEUS, CUIDAR DAS PESSOAS E <span>AMPLIAR O REINO</span></h1>
+      <p class="reveal">Uma igreja comprometida com a sã doutrina, o amor cristão e o serviço à comunidade em Pirapora.</p>
+      <div class="hero-btns reveal">
+        <a href="#congregacoes" class="btn-solid">Conheça Nossas Igrejas</a>
+        <a href="#cultos" class="btn-line">Assista aos Cultos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK BAR (O Novo Painel de Ações) -->
+  <div class="quick-bar-wrap">
+    <div class="quick-bar-inner reveal">
+      <a href="#cultos" class="q-item">
+        <i data-lucide="play" class="q-icon"></i>
+        <strong>TV AD Online</strong>
+        <span>Mensagens e Cultos</span>
+      </a>
+      <a href="#oracao" class="q-item">
+        <i data-lucide="heart" class="q-icon"></i>
+        <strong>Pedido de Oração</strong>
+        <span>Intercessão 24h</span>
+      </a>
+      <a href="#congregacoes" class="q-item">
+        <i data-lucide="map-pin" class="q-icon"></i>
+        <strong>Encontre uma Unidade</strong>
+        <span>Localizações e Horários</span>
+      </a>
+      <a href="#contribua" class="q-item">
+        <i data-lucide="credit-card" class="q-icon"></i>
+        <strong>Dízimos e Ofertas</strong>
+        <span>Contribuição Online</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONGREGAÇÕES -->
+  <section id="congregacoes" class="bg-light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Onde Estamos</span>
+        <h2 class="section-title">Nossas Congregações</h2>
+      </div>
+      <div class="cong-grid" id="congGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTAMENTOS -->
+  <section id="departamentos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ministérios</span>
+        <h2 class="section-title">Nossos Departamentos</h2>
+      </div>
+      <div class="dep-grid">
+        <div class="dep-card reveal">
+          <h3>Infantil</h3>
+          <p>Cuidado e ensino bíblico para crianças.</p>
+        </div>
+        <div class="dep-card reveal">
+          <h3>Jovens</h3>
+          <p>UMADPI — Juventude apaixonada por Deus.</p>
+        </div>
+        <div class="dep-card reveal">
+          <h3>Mulheres</h3>
+          <p>Círculo de Oração e comunhão feminina.</p>
+        </div>
+      <div class="dep-card reveal">
+          <h3>Missões</h3>
+          <p>Evangelismo local e apoio a missionários no campo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TV AD PIRAPORA (Sólido) -->
+  <section id="cultos" class="section-dark">
+    <div class="container tv-container">
+      <div class="tv-text reveal">
+        <span class="eyebrow">Ao Vivo</span>
+        <h2 class="section-title">TV AD Pirapora</h2>
+        <p>Acompanhe nossas celebrações em tempo real e acesse as mensagens passadas através do nosso canal oficial no YouTube.</p>
+        <a href="https://www.youtube.com/@tvadpirapora" target="_blank" class="btn-solid btn-yt">
+          <i data-lucide="youtube"></i> Inscrever-se no Canal
+        </a>
+      </div>
+      <div class="tv-player-wrap reveal">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/XwY9am4lsMc"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORAÇÃO (Sólido) -->
+  <section id="oracao" class="bg-light">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-head reveal">
+        <span class="eyebrow">Intercessão</span>
+        <h2 class="section-title">Pedido de Oração</h2>
+        <p>Preencha os campos abaixo e nossa equipe estará orando por você.</p>
+      </div>
+      <form class="clean-form reveal" id="oracaoForm" onsubmit="submitOracao(event)" style="background: white; padding: 3rem; border: 1px solid var(--gray-200); border-radius: 8px;">
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
+          <input type="tel" placeholder="WhatsApp" style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
+        </div>
+        <textarea placeholder="Seu motivo de oração..." required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px; height: 150px; margin-bottom: 1rem;"></textarea>
+        <button type="submit" class="btn-solid" style="width: 100%; border: none; cursor: pointer;">Enviar Pedido</button>
+      </form>
+      <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: white; border: 1px solid var(--accent); border-radius: 8px; margin-top: 1rem;">
+         <h3 style="color: var(--accent);">Pedido Enviado!</h3>
+         <p>Deus te abençoe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRIBUA (Sólido) -->
+  <section id="contribua" style="padding: 6rem 2rem; border-top: 1px solid var(--gray-200);">
+    <div class="container" style="text-align: center;">
+      <div class="reveal">
+        <h2 class="section-title">Dízimos e Ofertas</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">"Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria."</p>
+        <div style="background: var(--gray-50); padding: 3rem; border-radius: 8px; display: inline-block; border: 1px solid var(--gray-200);">
+           <span class="eyebrow" style="margin-bottom: 0.5rem; font-size: 0.6rem;">Chave PIX (E-mail)</span>
+           <div id="pixKey" style="font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 1.5rem;">adpirapora@gmail.com</div>
+           <button id="pixBtn" onclick="copyPix()" class="btn-solid" style="border: none; cursor: pointer;">Copiar Chave Pix</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÁDIO VALE FM (Sólido e Integrado) -->
+  <section id="radio" class="bg-light">
+    <div class="container">
+      <div class="radio-card reveal">
+        <div class="radio-info">
+          <span class="eyebrow">Sintonize</span>
+          <h2 class="section-title">Rádio Vale FM 104.9</h2>
+          <p>Acompanhe nossa programação ao vivo direto do seu navegador.</p>
+        </div>
+        <div class="radio-player-box">
+          <audio id="radioAudio" src="http://stm2.brasilcast.xyz:6698/stream"></audio>
+          <button id="radioPlayBtn" onclick="toggleRadio()" class="btn-radio">
+            <i data-lucide="play" id="radioIcon"></i>
+            <span id="radioText">Ouvir Agora</span>
+          </button>
+          <div id="radioStatus" class="radio-status">
+            <span class="status-dot"></span>
+            <span id="statusLabel">Rádio Offline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <!-- Coluna 1: Marca -->
+      <div class="footer-col">
+        <img src="/logo-white.png" alt="Logo AD" class="footer-logo-small">
+        <p class="footer-about">Assembleia de Deus — Ministério de Pirapora. Uma igreja dedicada a amar a Deus e cuidar das pessoas.</p>
+        <div class="footer-socials">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="facebook"></i></a>
+          <a href="#"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Navegação -->
+      <div class="footer-col">
+        <h4 class="footer-title">Links Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#congregacoes">Nossas Igrejas</a></li>
+          <li><a href="#departamentos">Ministérios</a></li>
+          <li><a href="#cultos">TV Online</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Cultos -->
+      <div class="footer-col">
+        <h4 class="footer-title">Principais Cultos</h4>
+        <ul class="footer-schedule">
+          <li><strong>Domingo:</strong> 19:00h</li>
+          <li><strong>Quarta:</strong> 19:30h</li>
+          <li><strong>Sexta:</strong> 19:30h</li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Contato -->
+      <div class="footer-col">
+        <h4 class="footer-title">Fale Conosco</h4>
+        <div class="footer-contact-item">
+          <i data-lucide="map-pin"></i>
+          <span>Rua Ouro Preto, 277, Sto Antônio, Pirapora-MG</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="phone"></i>
+          <span>(38) 9 9900-0099</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="mail"></i>
+          <span>contato@adpirapora.com.br</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>© 2026 Assembleia de Deus — Ministério de Pirapora. Todos os direitos reservados.</p>
+        <p>Pr. Ronivan Luiz — Presidente</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+  <script>
+    // Inicializar Ícones Lucide
+    lucide.createIcons();
+  </script>
+</body>
+</html>
