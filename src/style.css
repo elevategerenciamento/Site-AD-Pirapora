@@ -574,11 +574,15 @@ footer {
 
   /* Grids de Conteúdo */
   .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 1.5rem; }
-  .dep-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 1rem; }
-  
-  .dep-card { padding: 1.5rem; text-align: left; display: flex; align-items: center; gap: 1rem; }
-  .dep-card h3 { margin-bottom: 0; font-size: 1.1rem; }
-  .dep-card p { display: none; } /* Esconde descrição no mobile para limpar visual */
+  .dep-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 0 1rem; 
+    gap: 1rem; 
+  }
+  .dep-card { padding: 2rem 1rem; border-radius: 12px; }
+  .dep-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .dep-card h3 { font-size: 0.9rem; }
+  .dep-card p { display: none; } /* Esconde a descrição no mobile para manter o 2x2 limpo */
 
   /* TV Section Mobile */
   .tv-container { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; padding: 0 1.5rem; }
