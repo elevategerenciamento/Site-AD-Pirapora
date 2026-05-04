@@ -189,55 +189,45 @@ section { padding: 8rem 0; }
 .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 1rem; display: block; }
 .section-title { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
 
-/* ── CONGREGAÇÕES (Estética Institucional) ── */
+/* ── CONGREGAÇÕES (Profundidade e Luxo) ── */
 #congregacoes {
-  background: var(--white); /* Volta para o limpo e sereno */
-  padding: 8rem 0;
+  background: radial-gradient(circle at top, #ffffff, #f1f4f9); /* Fundo Pérola Suave */
+  padding: 10rem 0;
 }
-
-#congregacoes .section-title { color: var(--primary); }
-#congregacoes .eyebrow { color: var(--accent); }
 
 .cong-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   padding: 0 2rem;
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
-/* Polimento Institucional para Desktop */
+/* Efeito de Profundidade (Desktop) */
 @media (min-width: 1025px) {
   .cong-card { 
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 2rem 1rem;
-    box-shadow: none; /* Remove a cara de "box de vendas" */
-    border-bottom: 1px solid var(--gray-100);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    padding: 3.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(5, 15, 43, 0.03); /* Profundidade Sutil */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
+  
   .cong-card:hover {
-    transform: none;
-    background: var(--gray-50);
+    transform: translateY(-15px) scale(1.02);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 40px 80px rgba(5, 15, 43, 0.08); /* Profundidade Aumentada no Hover */
+    border-color: var(--accent);
   }
-  .pastor-photo { 
-    width: 80px; 
-    height: 80px; 
-    filter: grayscale(20%); /* Toque mais sóbrio */
-  }
-  .btn-loc {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--gray-200);
-    padding: 0.6rem 1.2rem;
-    font-size: 0.7rem;
-  }
-  .btn-loc:hover {
-    background: var(--primary);
-    color: var(--white);
-    box-shadow: none;
+
+  .pastor-photo {
+    width: 90px;
+    height: 90px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   }
 }
 
@@ -246,9 +236,9 @@ section { padding: 8rem 0; }
 }
 
 @media (max-width: 768px) {
-  #congregacoes { background: var(--gray-50); padding: 5rem 0; } 
+  #congregacoes { background: var(--gray-50); padding: 5rem 0; }
   .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; }
-  /* Mantém o botão azul no mobile pois o usuário disse que está perfeito lá */
+  /* Mobile intocado conforme pedido */
 }
 
 .cong-card {
