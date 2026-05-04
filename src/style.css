@@ -81,13 +81,14 @@ nav {
   left: 0;
   width: 100%;
   height: var(--ticker-h);
-  background: var(--accent); /* Cor chamativa */
-  color: var(--white);
+  background: var(--primary); /* Azul escuro elegante em vez do laranja forte */
+  color: rgba(255, 255, 255, 0.85); /* Branco suave */
   display: flex;
   align-items: center;
   overflow: hidden;
   z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .ticker {
