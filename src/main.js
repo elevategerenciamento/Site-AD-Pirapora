@@ -53,9 +53,10 @@ const congregacoes = [
     endereco: "R. Minas Gerais, 102",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Minas+Gerais+102+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qui 19h30"
   }
 ];
+
+window.congregacoes = congregacoes;
 
 // Renderizar cards de congregações
 function renderCongs() {

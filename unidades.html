@@ -235,11 +235,11 @@
   </footer>
 
   <!-- Importar dados do main.js -->
-  <script src="./src/main.js"></script>
-  <script>
+  <script type="module" src="./src/main.js"></script>
+  <script type="module">
     let currentPage = 1;
     const itemsPerPage = 10;
-    let filteredData = [...congregacoes];
+    let filteredData = [...window.congregacoes];
 
     function renderAllUnits() {
       const grid = document.getElementById('allUnitsGrid');
@@ -285,13 +285,13 @@
       nextBtn.disabled = currentPage === totalPages || totalPages === 0;
       
       // Atualizar contador no hero
-      document.getElementById('totalCount').innerText = `${congregacoes.length}`;
+      document.getElementById('totalCount').innerText = `${window.congregacoes.length}`;
     }
 
     // Busca com Reset de Página
     document.getElementById('unitSearch').addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      filteredData = congregacoes.filter(c => 
+      filteredData = window.congregacoes.filter(c => 
         c.nome.toLowerCase().includes(term) || 
         c.bairro.toLowerCase().includes(term) ||
         c.pastor.toLowerCase().includes(term)
