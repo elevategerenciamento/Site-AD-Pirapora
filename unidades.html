@@ -53,12 +53,50 @@
     .u-stat strong { font-size: 1.5rem; color: var(--accent); font-weight: 900; }
     .u-stat span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
 
+    .search-section {
+      padding: 3rem 2rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      position: sticky;
+      top: var(--header-h);
+      z-index: 900;
+    }
+    .search-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-wrap i {
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 20px;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--gray-200);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      background: var(--gray-50);
+    }
+    .search-wrap input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
     .units-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+      grid-template-columns: repeat(2, 1fr); /* Dois a Dois Lado a Lado */
+      gap: 3rem;
       padding: 6rem 2rem;
-      max-width: var(--container);
+      max-width: 1000px;
       margin: 0 auto;
     }
     @media (max-width: 1024px) { .units-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -120,40 +158,18 @@
     </div>
   </section>
 
+  <section class="search-section">
+    <div class="container">
+      <div class="search-wrap">
+        <i data-lucide="search"></i>
+        <input type="text" id="unitSearch" placeholder="Pesquisar por bairro ou nome do pastor...">
+      </div>
+    </div>
+  </section>
+
   <section class="bg-light">
     <div class="units-grid" id="allUnitsGrid">
-      <!-- Unidade 1 -->
-      <div class="cong-card">
-        <img src="https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128" alt="Pr. Ronivan Luiz" class="pastor-photo">
-        <span class="pastor-name">Pr. Ronivan Luiz</span>
-        <h3>Igreja Sede</h3>
-        <p>Rua Ouro Preto, 277, Sto Antônio</p>
-        <div class="cong-hours">Dom 19h • Qua 19:30h</div>
-      </div>
-      <!-- Unidade 2 -->
-      <div class="cong-card">
-        <img src="https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128" alt="Pr. Ronivan Luiz" class="pastor-photo">
-        <span class="pastor-name">Pr. Ronivan Luiz</span>
-        <h3>Buritizeiro</h3>
-        <p>R. Joaquim Trindade Cotta, 513</p>
-        <div class="cong-hours">Dom 19h • Ter 19:30h</div>
-      </div>
-      <!-- Unidade 3 -->
-      <div class="cong-card">
-        <img src="https://ui-avatars.com/api/?name=Geraldo+Magela&background=050f2b&color=fff&size=128" alt="Pb. Geraldo Magela" class="pastor-photo">
-        <span class="pastor-name">Pb. Geraldo Magela</span>
-        <h3>Sagrada Família</h3>
-        <p>Rua Santa Rita, 145</p>
-        <div class="cong-hours">Dom 19h • Qua 19:30h</div>
-      </div>
-      <!-- Unidade 4 -->
-      <div class="cong-card">
-        <img src="https://ui-avatars.com/api/?name=Pastor+Nome&background=050f2b&color=fff&size=128" alt="Pastor" class="pastor-photo">
-        <span class="pastor-name">Pr. Nome do Pastor</span>
-        <h3>Bairro Exemplo</h3>
-        <p>Endereço da Unidade, 123</p>
-        <div class="cong-hours">Horários em breve...</div>
-      </div>
+      <!-- Renderizado via JS -->
     </div>
   </section>
 
@@ -162,6 +178,45 @@
     <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Assembleia de Deus — Ministério de Pirapora.</p>
   </footer>
 
-  <script>lucide.createIcons();</script>
+  <!-- Importar dados do main.js (Garante que as congregações sejam as mesmas) -->
+  <script src="./src/main.js"></script>
+  <script>
+    // Função específica para renderizar na página de unidades
+    function renderAllUnits(filter = '') {
+      const grid = document.getElementById('allUnitsGrid');
+      if (!grid) return;
+
+      const filtered = congregacoes.filter(c => 
+        c.nome.toLowerCase().includes(filter.toLowerCase()) || 
+        c.bairro.toLowerCase().includes(filter.toLowerCase()) ||
+        c.pastor.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      grid.innerHTML = filtered.map(c => `
+        <div class="cong-card reveal visible">
+          <img src="${c.foto}" alt="${c.pastor}" class="pastor-photo">
+          <span class="pastor-name">${c.pastor}</span>
+          <h3>${c.nome}</h3>
+          <p>${c.endereco} — ${c.bairro}</p>
+          <div class="cong-hours">${c.cultos}</div>
+        </div>
+      `).join('');
+      
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; padding: 4rem; opacity: 0.5;">Nenhuma unidade encontrada com esse termo.</p>`;
+      }
+    }
+
+    // Listener para o campo de busca
+    document.getElementById('unitSearch').addEventListener('input', (e) => {
+      renderAllUnits(e.target.value);
+    });
+
+    // Inicializar
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAllUnits();
+      lucide.createIcons();
+    });
+  </script>
 </body>
 </html>
