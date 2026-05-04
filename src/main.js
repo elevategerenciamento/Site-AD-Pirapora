@@ -146,23 +146,32 @@ window.toggleRadio = function() {
   const label = document.getElementById('statusLabel');
 
   if (audio.paused) {
-    audio.play();
-    icon.setAttribute('data-lucide', 'pause');
-    text.textContent = 'Parar Rádio';
-    dot.classList.add('playing');
-    label.textContent = 'Ao Vivo';
-    label.style.color = '#22c55e';
+    // Tentar tocar
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        icon.setAttribute('data-lucide', 'square');
+        text.textContent = 'Parar Rádio';
+        dot.classList.add('playing');
+        label.textContent = 'Ao Vivo';
+        label.style.color = '#22c55e';
+        if (window.lucide) window.lucide.createIcons();
+      }).catch(error => {
+        console.error("Erro ao tocar rádio:", error);
+        alert("Não foi possível conectar à rádio agora. Tente novamente em instantes.");
+      });
+    }
   } else {
+    // Parar
     audio.pause();
+    audio.currentTime = 0; // Reset buffer
     icon.setAttribute('data-lucide', 'play');
     text.textContent = 'Ouvir Agora';
     dot.classList.remove('playing');
     label.textContent = 'Rádio Offline';
     label.style.color = '';
-  }
-  
-  if (window.lucide) {
-    window.lucide.createIcons();
+    if (window.lucide) window.lucide.createIcons();
   }
 };
 
