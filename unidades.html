@@ -54,85 +54,84 @@
     .u-stat span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
 
     .search-section {
-      padding: 3rem 2rem;
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-100);
-      position: sticky;
-      top: var(--header-h);
-      z-index: 900;
+      padding: 2rem 2rem 0; /* Menos padding e sem borda inferior */
+      background: var(--gray-50);
     }
     .search-wrap {
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
       position: relative;
     }
     .search-wrap i {
       position: absolute;
-      left: 1.5rem;
+      left: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--text-muted);
-      width: 20px;
+      color: var(--accent);
+      width: 18px;
+      opacity: 0.8;
     }
     .search-wrap input {
       width: 100%;
-      padding: 1.2rem 1.5rem 1.2rem 3.5rem;
-      border-radius: 50px;
-      border: 1.5px solid var(--gray-200);
-      font-size: 1rem;
+      padding: 1rem 1.5rem 1rem 3rem;
+      border: none;
+      border-bottom: 2px solid var(--gray-200);
+      background: transparent;
+      font-size: 0.95rem;
       font-family: inherit;
       transition: all 0.3s ease;
-      background: var(--gray-50);
+      border-radius: 0;
     }
     .search-wrap input:focus {
       outline: none;
       border-color: var(--accent);
-      background: var(--white);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
     .units-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 lado a lado no Desktop */
+      grid-template-columns: repeat(5, 1fr);
       gap: 1.5rem;
-      padding: 4rem 2rem;
-      max-width: 1400px; /* Mais largo para 5 colunas */
+      padding: 3rem 2rem;
+      max-width: 1400px;
       margin: 0 auto;
     }
-    
-    /* Ajuste do Card para 5 colunas (Mais compacto) */
-    .units-grid .cong-card { 
-      padding: 2rem 1rem; 
-      border-radius: 12px;
-    }
+
+    /* Estilos de Compactação para 5 Colunas */
+    .units-grid .cong-card { padding: 2rem 1rem; border-radius: 12px; }
     .units-grid .pastor-photo { width: 70px; height: 70px; margin-bottom: 1rem; }
     .units-grid .pastor-name { font-size: 0.65rem; }
-    .units-grid h3 { font-size: 1rem; }
-    .units-grid p { font-size: 0.8rem; }
-    .units-grid .cong-hours { font-size: 0.7rem; padding: 0.4rem 0.8rem; }
-
+    .units-grid h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .units-grid p { font-size: 0.75rem; margin-bottom: 1rem; }
+    .units-grid .cong-hours { font-size: 0.65rem; padding: 0.4rem 0.8rem; }
+    
     .pagination-wrap {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      padding: 2rem 0 6rem;
+      gap: 3rem;
+      padding: 0 0 5rem;
     }
     .btn-page {
-      background: var(--primary);
-      color: white;
+      background: none;
+      color: var(--primary);
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 700;
+      padding: 0.5rem;
       cursor: pointer;
       transition: all 0.3s;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      opacity: 0.6;
     }
-    .btn-page:disabled { opacity: 0.3; cursor: not-allowed; }
-    .btn-page:hover:not(:disabled) { background: var(--accent); transform: translateY(-2px); }
+    .btn-page:disabled { opacity: 0.1; cursor: not-allowed; }
+    .btn-page:hover:not(:disabled) { opacity: 1; color: var(--accent); transform: scale(1.1); }
+    
+    #pageInfo {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--primary);
+      opacity: 0.5;
+    }
 
     @media (max-width: 1200px) { .units-grid { grid-template-columns: repeat(3, 1fr); } }
 
@@ -262,7 +261,7 @@
       }
 
       // Atualizar Controles
-      pageInfo.innerText = `Página ${currentPage} de ${totalPages || 1}`;
+      pageInfo.innerText = `${currentPage} / ${totalPages || 1}`;
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage === totalPages || totalPages === 0;
       
