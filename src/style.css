@@ -377,7 +377,17 @@ footer {
   border: 1px solid var(--gray-200);
 }
 
-.radio-info { flex: 1; }
+.radio-info { flex: 1; display: flex; flex-direction: column; }
+
+.radio-logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 3px solid var(--white);
+}
 
 .radio-player-box {
   display: flex;
@@ -442,6 +452,7 @@ footer {
 
 @media (max-width: 768px) {
   .radio-card { flex-direction: column; padding: 3rem 1.5rem; text-align: center; gap: 2.5rem; }
+  .radio-info { align-items: center; }
   .btn-radio { width: 100%; justify-content: center; }
 }
 
