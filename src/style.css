@@ -506,30 +506,115 @@ footer {
 .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── TV SECTION ── */
-.section-dark { background: var(--primary); color: var(--white); }
+/* ── TV AD PIRAPORA (Estética de Estúdio) ── */
+.section-studio {
+  padding: 8rem 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 107, 0, 0.08), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.05), transparent 40%),
+              var(--primary);
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+}
 
 .tv-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.2fr;
   align-items: center;
+  gap: 6rem;
 }
 
-.tv-text p { margin-bottom: 2rem; opacity: 0.8; }
-.btn-yt { background: #ff0000 !important; }
-.btn-yt:hover { background: #cc0000 !important; }
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ff4d4d;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+}
 
-.tv-player-wrap {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(255, 77, 77, 0.4);
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+.tv-text h2 { font-size: clamp(2.5rem, 5vw, 3.8rem); margin-bottom: 1.5rem; line-height: 1.1; font-weight: 900; }
+.tv-desc { font-size: 1.1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem; line-height: 1.6; max-width: 500px; }
+
+.tv-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tv-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tv-stats i { color: var(--accent); width: 16px; }
+
+.btn-yt-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--accent);
+  color: var(--white);
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-yt-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 107, 0, 0.4);
+  background: #ff8533;
+}
+
+.video-glow-frame {
+  position: relative;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
 }
 
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
 }
 
 .video-container iframe {
@@ -538,7 +623,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
 /* ── RESPONSIVIDADE (UX/UI MOBILE) ── */
@@ -594,11 +679,12 @@ footer {
   .dep-card h3 { font-size: 0.9rem; }
   .dep-card p { display: none; } /* Esconde a descrição no mobile para manter o 2x2 limpo */
 
-  /* TV Section Mobile */
-  .tv-container { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; padding: 0 1.5rem; }
-  .btn-yt { width: 100%; justify-content: center; margin-bottom: 1.5rem; }
-  .tv-text h2 { font-size: 2.2rem; }
-  .tv-text p { font-size: 1rem; line-height: 1.6; }
+  /* TV Section Mobile (Impacto) */
+  .tv-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; padding: 0 1.5rem; }
+  .tv-text { display: flex; flex-direction: column; align-items: center; }
+  .btn-yt-glow { width: 100%; justify-content: center; }
+  .tv-stats { justify-content: center; margin-bottom: 2rem; }
+  .tv-desc { margin-left: auto; margin-right: auto; }
   
   /* Formulários */
   .clean-form { padding: 2rem 1.5rem !important; }
