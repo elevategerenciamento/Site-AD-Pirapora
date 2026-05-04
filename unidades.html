@@ -254,8 +254,14 @@
           <h3>${c.nome}</h3>
           <p>${c.endereco}</p>
           <div class="cong-hours">${c.cultos}</div>
+          <a href="${c.maps}" target="_blank" class="btn-maps">
+            <i data-lucide="map-pin"></i>
+            Como Chegar
+          </a>
         </div>
       `).join('');
+      
+      lucide.createIcons();
       
       // Feedback Vazio
       if (filteredData.length === 0) {

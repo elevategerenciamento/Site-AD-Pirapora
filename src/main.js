@@ -1,4 +1,3 @@
-// ── DADOS DAS CONGREGAÇÕES ──
 const congregacoes = [
   {
     id: 1,
@@ -7,6 +6,7 @@ const congregacoes = [
     pastor: "Pr. Ronivan Luiz",
     foto: "https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128",
     endereco: "R. Ouro Preto, 277",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Ouro+Preto+277+Santo+Antonio+Pirapora+MG",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30 · Sex 19h30",
     destaque: true
@@ -18,6 +18,7 @@ const congregacoes = [
     pastor: "Pr. Ronivan Luiz",
     foto: "https://ui-avatars.com/api/?name=Ronivan+Luiz&background=050f2b&color=fff&size=128",
     endereco: "R. Joaquim Trindade Cotta, 513",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Trindade+Cotta+513+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Ter 19h30 · Qui 19h30"
   },
@@ -28,6 +29,7 @@ const congregacoes = [
     pastor: "Pb. Geraldo Magela",
     foto: "https://ui-avatars.com/api/?name=Geraldo+Magela&background=050f2b&color=fff&size=128",
     endereco: "Rua Santa Rita, 145",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Santa+Rita+145+Pirapora+MG",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30"
   }
@@ -45,10 +47,15 @@ function renderCongs() {
       <h3>${c.nome}</h3>
       <p>${c.endereco} — ${c.bairro}</p>
       <div class="cong-hours">${c.cultos}</div>
+      <a href="${c.maps}" target="_blank" class="btn-maps">
+        <i data-lucide="map-pin"></i>
+        Como Chegar
+      </a>
     </div>
   `).join('');
 
   observeReveal();
+  lucide.createIcons();
 }
 
 // Header scroll effect

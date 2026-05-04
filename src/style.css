@@ -250,13 +250,30 @@ section { padding: 8rem 0; }
   line-height: 1.4;
 }
 
-.cong-hours {
-  font-size: 0.8rem;
-  font-weight: 700;
-  background: var(--gray-50);
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
+.btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--gray-100);
   color: var(--primary);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-maps i {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-maps:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 /* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
