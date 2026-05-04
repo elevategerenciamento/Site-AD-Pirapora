@@ -836,12 +836,35 @@ footer {
   .hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; }
   .hamburger span { width: 30px; height: 3px; background: var(--primary); border-radius: 3px; transition: 0.3s; }
 }
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.7rem 1.2rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
 
-@media (max-width: 480px) {
-  .hero h1 { font-size: 1.8rem; }
-  .section-title { font-size: 1.8rem; }
-  /* Mantendo 2x2 conforme solicitado para melhor UX */
-  .quick-bar-inner { grid-template-columns: repeat(2, 1fr); }
-  .q-item { padding: 1.5rem 0.5rem; }
-  .q-item strong { font-size: 0.75rem; }
+.btn-back i {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-back:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateX(-5px);
+}
+
+.btn-back:hover i {
+  transform: translateX(-3px);
 }
