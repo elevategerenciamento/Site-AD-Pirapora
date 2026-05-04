@@ -584,23 +584,27 @@ footer {
   /* Header do Menu Mobile */
   .nav-mobile-header {
     display: flex !important;
-    justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    background: var(--gray-50);
+    padding: 1.5rem 2rem;
+    background: transparent; /* Remove o fundo cinza */
     border-bottom: 1px solid var(--gray-100);
+    gap: 1.5rem;
   }
 
-  .nav-mobile-header img { height: 35px; }
+  .nav-mobile-header img { height: 30px; }
 
   .close-menu {
     background: none;
     border: none;
-    font-size: 2.5rem;
     color: var(--primary);
     cursor: pointer;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
   }
+
+  .close-menu i { width: 24px; height: 24px; }
 
   /* Links do Menu */
   .nav-links li { width: 100%; border-bottom: 1px solid var(--gray-50); }
@@ -618,7 +622,8 @@ footer {
   
   .nav-links li a:hover { background: var(--gray-50); color: var(--accent); }
 
-  .btn-contribua { background: var(--accent) !important; color: white !important; margin: 1rem 2rem; border-radius: 8px; width: auto !important; justify-content: center; }
+  /* Remove o fundo laranja no mobile conforme pedido */
+  .btn-contribua { background: transparent !important; color: var(--primary) !important; margin: 0 !important; border-radius: 0 !important; width: 100% !important; justify-content: flex-start !important; }
 
   /* Footer do Menu Mobile */
   .nav-mobile-footer {
