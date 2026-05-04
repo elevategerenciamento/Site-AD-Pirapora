@@ -41,17 +41,21 @@
     
     .units-stats-bar {
       display: inline-flex;
-      gap: 3rem;
+      gap: 2rem;
       margin-top: 3rem;
-      padding: 1.5rem 4rem;
+      padding: 1.2rem 3rem;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 100px;
       backdrop-filter: blur(10px);
     }
-    .u-stat { display: flex; flex-direction: column; align-items: center; }
-    .u-stat strong { font-size: 1.5rem; color: var(--accent); font-weight: 900; }
-    .u-stat span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; }
+    .u-stat-sep {
+      width: 1px;
+      height: 25px;
+      background: rgba(255,255,255,0.1);
+      align-self: center;
+    }
+    .u-stat { display: flex; flex-direction: column; align-items: center; min-width: 100px; }
 
     .search-section {
       padding: 2rem 2rem 0; /* Menos padding e sem borda inferior */
@@ -188,10 +192,15 @@
           <strong id="totalCount">30+</strong>
           <span>Congregações</span>
         </div>
-        <div class="u-stat" style="width: 1px; height: 30px; background: rgba(255,255,255,0.1); align-self: center;"></div>
+        <div class="u-stat-sep"></div>
         <div class="u-stat">
           <strong>100%</strong>
           <span>Cobertura Regional</span>
+        </div>
+        <div class="u-stat-sep"></div>
+        <div class="u-stat">
+          <strong>+40 Anos</strong>
+          <span>de História</span>
         </div>
       </div>
     </div>
