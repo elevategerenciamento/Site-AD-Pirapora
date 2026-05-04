@@ -62,7 +62,23 @@
       margin: 0 auto;
     }
     @media (max-width: 1024px) { .units-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .units-grid { grid-template-columns: 1fr; padding: 4rem 1.5rem; } }
+    @media (max-width: 768px) {
+      .units-hero { padding: 9rem 1.5rem 5rem; }
+      .units-hero h1 { font-size: 2.5rem !important; }
+      .units-stats-bar { 
+        flex-direction: row; 
+        gap: 1rem; 
+        padding: 1rem; 
+        width: 100%; 
+        border-radius: 16px; 
+      }
+      .u-stat strong { font-size: 1.1rem; }
+      .u-stat span { font-size: 0.55rem; }
+      .units-grid { padding: 3rem 1.5rem; gap: 1.5rem; grid-template-columns: 1fr; }
+      
+      .btn-back span { display: none; } /* Deixa apenas a seta no mobile para economizar espaço */
+      .btn-back { padding: 0.6rem; }
+    }
   </style>
 </head>
 <body>
