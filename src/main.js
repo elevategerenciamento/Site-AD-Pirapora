@@ -16,8 +16,8 @@ const congregacoes = [
     id: 2,
     nome: "Congregação Nova Pirapora",
     bairro: "Nova Pirapora",
-    endereco: "Bairro Nova Pirapora — Pirapora-MG",
-    maps: "https://www.google.com/maps/search/?api=1&query=Bairro+Nova+Pirapora+Pirapora+MG",
+    endereco: "R. João Dias da Costa, 98 — Nova Pirapora, Pirapora-MG, 39270-000",
+    maps: "https://maps.app.goo.gl/z7sK4DzJn4PmJtcv9",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
