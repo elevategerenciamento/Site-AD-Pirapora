@@ -410,9 +410,9 @@ section { padding: 8rem 0; }
   border-color: var(--accent);
 }
 
-.dep-icon {
-  font-size: 2.8rem;
-  color: var(--accent);
+.dep-logo-icon {
+  height: 50px;
+  width: auto;
   margin-bottom: 1.5rem;
 }
 
@@ -1046,9 +1046,9 @@ footer {
     gap: 1rem; 
   }
   .dep-card { padding: 2rem 1rem; border-radius: 12px; }
-  .dep-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .dep-logo-icon { height: 35px; margin-bottom: 1rem; }
   .dep-card h3 { font-size: 0.9rem; }
-  .dep-card p { display: none; } /* Esconde a descrição no mobile para manter o 2x2 limpo */
+  .dep-card p { display: block; font-size: 0.75rem; line-height: 1.3; margin-top: 0.4rem; color: rgba(255,255,255,0.7); } /* Mostra a descrição no mobile com tamanho ajustado */
 
   /* TV Section Mobile (Impacto) */
   .tv-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; padding: 0 1.5rem; }
