@@ -361,7 +361,8 @@ section { padding: 8rem 0; }
 .btn-loc {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: center;
+  gap: 0.5rem;
   background: var(--primary);
   color: var(--white);
   text-decoration: none;
@@ -372,12 +373,13 @@ section { padding: 8rem 0; }
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .btn-loc i {
-  width: 16px;
-  height: 16px;
-  order: 2; /* Joga o ícone para a direita */
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .btn-loc:hover {

@@ -6,7 +6,7 @@ const congregacoes = [
     endereco: "Rua Ouro Preto, 277, Bairro Santo Antônio — Pirapora",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Ouro+Preto+277+Santo+Antonio+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30 · Sex 19h30",
+    cultos: "Dom 18h30 · Ter 19h · Qui 19h",
     destaque: true,
     lideres: [
       { cargo: "Pastor", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" }
