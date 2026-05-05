@@ -20,6 +20,10 @@
 
 /* ── BASE ── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 body { 
   font-family: 'Inter', sans-serif; 
   background: var(--white); 
@@ -29,6 +33,17 @@ body {
 }
 
 h1, h2, h3, .font-heading { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+}
 
 /* ── HEADER (Sólido) ── */
 header {
@@ -80,6 +95,7 @@ nav {
   top: var(--header-h);
   left: 0;
   width: 100%;
+  max-width: 100vw;
   height: var(--ticker-h);
   background: var(--primary); /* Azul escuro elegante em vez do laranja forte */
   color: rgba(255, 255, 255, 0.85); /* Branco suave */
@@ -431,6 +447,11 @@ section { padding: 8rem 0; }
   line-height: 1.6;
 }
 
+/* ── FORMULÁRIO ── */
+.form-row {
+  grid-template-columns: 1fr 1fr;
+}
+
 /* ── ORAÇÃO E INSTAGRAM ── */
 .oracao-split {
   display: grid;
@@ -486,6 +507,7 @@ section { padding: 8rem 0; }
   perspective: 1000px;
   padding: 2rem 0;
   width: 100%;
+  overflow: hidden;
 }
 
 .insta-glow {
@@ -1072,6 +1094,7 @@ footer {
   color: var(--white);
   overflow: hidden;
   position: relative;
+  max-width: 100vw;
 }
 
 /* Elementos de Preenchimento (Laterais) */
@@ -1239,6 +1262,10 @@ footer {
   
   .quick-bar-inner { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  
+  /* Esconde pseudo-elementos que ultrapassam no tablet/mobile */
+  .section-studio::before,
+  .section-studio::after { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -1291,15 +1318,36 @@ footer {
   .dep-card p { display: block; font-size: 0.75rem; line-height: 1.3; margin-top: 0.4rem; color: rgba(255,255,255,0.7); } /* Mostra a descrição no mobile com tamanho ajustado */
 
   /* TV Section Mobile (Impacto) */
+  .section-studio { padding: 5rem 0; }
   .tv-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; padding: 0 1.5rem; }
   .tv-text { display: flex; flex-direction: column; align-items: center; }
-  .btn-yt-glow { width: 100%; justify-content: center; }
-  .tv-stats { justify-content: center; margin-bottom: 2rem; }
-  .tv-desc { margin-left: auto; margin-right: auto; }
+  .tv-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+  .btn-yt-glow { width: 100%; justify-content: center; font-size: 0.7rem; padding: 1rem 1.5rem; }
+  .tv-stats { justify-content: center; margin-bottom: 2rem; gap: 2rem; }
+  .tv-desc { margin-left: auto; margin-right: auto; font-size: 1rem; }
   
   /* Formulários */
   .clean-form { padding: 2rem 1.5rem !important; }
-  .form-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* PIX Section Mobile */
+  .pix-section { padding: 5rem 1.5rem; }
+  .pix-card { padding: 2.5rem 1.5rem; }
+
+  /* Phone mockup contenção */
+  .phone-scene { overflow: hidden; padding: 1rem 0; }
+  .phone-mockup { width: 240px; height: 490px; }
+  .float-element { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+  .like-badge { right: 5%; }
+  .comment-badge { left: 5%; }
+  .live-badge-insta { left: 10%; }
+  .insta-glow { width: 250px; height: 250px; }
+
+  /* Oração section */
+  .oracao-split { gap: 2rem; }
+  .insta-title { font-size: 1.6rem; }
+  .insta-desc { font-size: 0.95rem; }
+  .btn-insta { font-size: 0.75rem; padding: 0.8rem 1.5rem; }
 
   /* Footer */
   .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.5rem 3rem; }
