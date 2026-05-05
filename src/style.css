@@ -1336,7 +1336,14 @@ footer {
 
   /* Phone mockup contenção */
   .phone-scene { overflow: hidden; padding: 1rem 0; }
-  .phone-mockup { width: 240px; height: 490px; }
+  .phone-mockup { 
+    width: 240px; 
+    height: 490px; 
+    transform: rotateY(-8deg) rotateX(3deg) scale(1.02);
+    box-shadow: 
+      -15px 20px 40px rgba(0,0,0,0.2),
+      -5px 5px 10px rgba(0,0,0,0.08);
+  }
   .float-element { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
   .like-badge { right: 5%; }
   .comment-badge { left: 5%; }
