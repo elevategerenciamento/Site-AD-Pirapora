@@ -76,7 +76,7 @@ nav {
 
 /* ── TICKER (Letreiro Rotativo) ── */
 .ticker-wrap {
-  position: fixed;
+  position: absolute;
   top: var(--header-h);
   left: 0;
   width: 100%;
@@ -581,6 +581,22 @@ footer {
   overflow: hidden;
 }
 
+@media (min-width: 1025px) {
+  .pix-section {
+    background-image: radial-gradient(circle at 80% 50%, rgba(255, 107, 0, 0.15), transparent 60%);
+  }
+  
+  .pix-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 6rem;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
 .text-white { color: var(--white) !important; }
 
 .pix-desc {
@@ -591,10 +607,24 @@ footer {
   line-height: 1.6;
 }
 
+@media (min-width: 1025px) {
+  .pix-desc {
+    margin: 0 0 2rem 0;
+  }
+}
+
 .pix-card-wrap {
   position: relative;
   max-width: 450px;
   margin: 0 auto;
+}
+
+@media (min-width: 1025px) {
+  .pix-card-wrap {
+    margin: 0;
+    max-width: 500px;
+    width: 100%;
+  }
 }
 
 .pix-card {
