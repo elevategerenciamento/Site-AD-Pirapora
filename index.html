@@ -302,7 +302,7 @@
     </div>
   </section>
 
-  <!-- RÁDIO VALE FM (Sólido e Integrado) -->
+  <!-- RÁDIO VALE FM (Player Profissional) -->
   <section id="radio" class="bg-light">
     <div class="container">
       <div class="radio-card reveal">
@@ -310,22 +310,65 @@
           <img src="/radio-logo.jpg" alt="Logo Vale FM" class="radio-logo-circle">
           <span class="eyebrow">Sintonize</span>
           <h2 class="section-title">Rádio Vale FM 104.9</h2>
-          <p>Acompanhe nossa programação ao vivo direto do seu navegador.</p>
+          <p>Acompanhe nossa programação ao vivo direto do seu navegador. Clique para ouvir a transmissão em tempo real.</p>
         </div>
         <div class="radio-player-box">
-          <audio id="radioAudio" src="https://stm2.brasilcast.xyz/6698/stream"></audio>
+          <audio id="radioAudio" preload="none" crossorigin="anonymous">
+            <source src="https://stm2.brasilcast.xyz/6698/stream" type="audio/mpeg">
+            <source src="https://stm2.brasilcast.xyz/6698/;" type="audio/mpeg">
+          </audio>
+          
+          <!-- Equalizer visual -->
+          <div class="radio-eq" id="radioEq">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+
           <button id="radioPlayBtn" onclick="toggleRadio()" class="btn-radio">
             <i data-lucide="play" id="radioIcon"></i>
             <span id="radioText">Ouvir Agora</span>
           </button>
+
+          <!-- Volume -->
+          <div class="radio-volume-wrap">
+            <i data-lucide="volume-2" class="vol-icon"></i>
+            <input type="range" id="radioVolume" min="0" max="100" value="80" class="radio-volume-slider">
+          </div>
+
           <div id="radioStatus" class="radio-status">
             <span class="status-dot"></span>
-            <span id="statusLabel">Rádio Offline</span>
+            <span id="statusLabel">Pronto para tocar</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Mini Player Fixo (aparece quando rádio toca e seção sai da tela) -->
+  <div class="radio-mini-player" id="radioMiniPlayer">
+    <div class="mini-player-inner">
+      <div class="mini-eq" id="miniEq">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+      <div class="mini-info">
+        <strong>Vale FM 104.9</strong>
+        <span id="miniStatus">Ao Vivo</span>
+      </div>
+      <div class="mini-controls">
+        <button id="miniPlayBtn" onclick="toggleRadio()" class="mini-btn-play">
+          <i data-lucide="pause" id="miniIcon"></i>
+        </button>
+        <button onclick="closeMiniPlayer()" class="mini-btn-close">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+  </div>
   <footer>
     <div class="footer-inner">
       <!-- Coluna 1: Marca -->

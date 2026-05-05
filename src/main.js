@@ -676,13 +676,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Header scroll effect
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
-  if (header) {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-  }
-});
+
 
 // Reveal on scroll logic
 function observeReveal() {
@@ -733,46 +727,232 @@ window.copyPix = function() {
   });
 };
 
-// Radio player logic
+// ── RADIO PLAYER (Profissional) ──
+let radioIsPlaying = false;
+let radioRetryCount = 0;
+const RADIO_MAX_RETRIES = 3;
+let miniPlayerDismissed = false;
+
 window.toggleRadio = function() {
   const audio = document.getElementById('radioAudio');
+  if (!audio) return;
+
+  if (audio.paused || audio.ended) {
+    startRadio(audio);
+  } else {
+    stopRadio(audio);
+  }
+};
+
+function startRadio(audio) {
+  const btn = document.getElementById('radioPlayBtn');
   const icon = document.getElementById('radioIcon');
   const text = document.getElementById('radioText');
   const dot = document.querySelector('.status-dot');
   const label = document.getElementById('statusLabel');
+  const eq = document.getElementById('radioEq');
+  const card = document.querySelector('.radio-card');
 
-  if (audio.paused) {
-    // Tentar tocar
-    const playPromise = audio.play();
-    
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        icon.setAttribute('data-lucide', 'square');
-        text.textContent = 'Parar Rádio';
-        dot.classList.add('playing');
-        label.textContent = 'Ao Vivo';
-        label.style.color = '#22c55e';
+  // Estado: Carregando
+  btn.classList.add('loading');
+  dot.className = 'status-dot loading';
+  label.textContent = 'Conectando...';
+  label.style.color = 'var(--accent)';
+  icon.setAttribute('data-lucide', 'loader');
+  text.textContent = 'Conectando...';
+  if (window.lucide) window.lucide.createIcons();
+
+  // Forçar reload do stream (necessário para live streams)
+  audio.load();
+
+  const playPromise = audio.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      // Sucesso! Estado: Tocando
+      radioIsPlaying = true;
+      radioRetryCount = 0;
+      btn.classList.remove('loading');
+      btn.classList.add('is-playing');
+      card.classList.add('is-playing');
+      eq.classList.add('active');
+
+      icon.setAttribute('data-lucide', 'square');
+      text.textContent = 'Parar Rádio';
+      dot.className = 'status-dot playing';
+      label.textContent = 'Ao Vivo';
+      label.style.color = '#22c55e';
+
+      // Atualizar mini player
+      updateMiniPlayer('playing');
+      checkMiniPlayerVisibility();
+
+      if (window.lucide) window.lucide.createIcons();
+    }).catch(error => {
+      console.error("Erro ao tocar rádio:", error);
+      btn.classList.remove('loading');
+      
+      // Tentar reconectar
+      if (radioRetryCount < RADIO_MAX_RETRIES) {
+        radioRetryCount++;
+        dot.className = 'status-dot loading';
+        label.textContent = `Tentativa ${radioRetryCount}/${RADIO_MAX_RETRIES}...`;
+        label.style.color = 'var(--accent)';
+        icon.setAttribute('data-lucide', 'play');
+        text.textContent = 'Ouvir Agora';
         if (window.lucide) window.lucide.createIcons();
-      }).catch(error => {
-        console.error("Erro ao tocar rádio:", error);
-        alert("Não foi possível conectar à rádio agora. Tente novamente em instantes.");
-      });
-    }
+        
+        setTimeout(() => startRadio(audio), 2000);
+      } else {
+        // Falha total
+        dot.className = 'status-dot error';
+        label.textContent = 'Falha na conexão';
+        label.style.color = '#ef4444';
+        icon.setAttribute('data-lucide', 'play');
+        text.textContent = 'Tentar Novamente';
+        radioRetryCount = 0;
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+  }
+}
+
+function stopRadio(audio) {
+  const btn = document.getElementById('radioPlayBtn');
+  const icon = document.getElementById('radioIcon');
+  const text = document.getElementById('radioText');
+  const dot = document.querySelector('.status-dot');
+  const label = document.getElementById('statusLabel');
+  const eq = document.getElementById('radioEq');
+  const card = document.querySelector('.radio-card');
+
+  audio.pause();
+  // Remover src e recarregar para liberar o buffer de streaming
+  audio.removeAttribute('src');
+  audio.load();
+  // Restaurar sources originais
+  audio.innerHTML = `
+    <source src="https://stm2.brasilcast.xyz/6698/stream" type="audio/mpeg">
+    <source src="https://stm2.brasilcast.xyz/6698/;" type="audio/mpeg">
+  `;
+
+  radioIsPlaying = false;
+  btn.classList.remove('loading', 'is-playing');
+  card.classList.remove('is-playing');
+  eq.classList.remove('active');
+
+  icon.setAttribute('data-lucide', 'play');
+  text.textContent = 'Ouvir Agora';
+  dot.className = 'status-dot';
+  label.textContent = 'Pronto para tocar';
+  label.style.color = '';
+
+  // Esconder mini player
+  updateMiniPlayer('stopped');
+
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function updateMiniPlayer(state) {
+  const mini = document.getElementById('radioMiniPlayer');
+  const miniIcon = document.getElementById('miniIcon');
+  const miniStatus = document.getElementById('miniStatus');
+  if (!mini) return;
+
+  if (state === 'playing') {
+    miniIcon.setAttribute('data-lucide', 'pause');
+    miniStatus.textContent = 'Ao Vivo';
+    miniPlayerDismissed = false;
   } else {
-    // Parar
-    audio.pause();
-    audio.currentTime = 0; // Reset buffer
-    icon.setAttribute('data-lucide', 'play');
-    text.textContent = 'Ouvir Agora';
-    dot.classList.remove('playing');
-    label.textContent = 'Rádio Offline';
-    label.style.color = '';
-    if (window.lucide) window.lucide.createIcons();
+    miniIcon.setAttribute('data-lucide', 'play');
+    miniStatus.textContent = 'Parado';
+    mini.classList.remove('active');
+  }
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function checkMiniPlayerVisibility() {
+  const radioSection = document.getElementById('radio');
+  const mini = document.getElementById('radioMiniPlayer');
+  if (!radioSection || !mini || !radioIsPlaying || miniPlayerDismissed) return;
+
+  const rect = radioSection.getBoundingClientRect();
+  const isOutOfView = rect.bottom < 0 || rect.top > window.innerHeight;
+
+  if (isOutOfView) {
+    mini.classList.add('active');
+  } else {
+    mini.classList.remove('active');
+  }
+}
+
+window.closeMiniPlayer = function() {
+  const mini = document.getElementById('radioMiniPlayer');
+  if (mini) {
+    mini.classList.remove('active');
+    miniPlayerDismissed = true;
   }
 };
 
-// Initialize
+// Scroll listener para mini player
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (header) {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }
+  checkMiniPlayerVisibility();
+});
+
+// Volume control
 document.addEventListener('DOMContentLoaded', () => {
+  const volumeSlider = document.getElementById('radioVolume');
+  const audio = document.getElementById('radioAudio');
+  
+  if (volumeSlider && audio) {
+    audio.volume = volumeSlider.value / 100;
+    volumeSlider.addEventListener('input', (e) => {
+      audio.volume = e.target.value / 100;
+    });
+  }
+
+  // Audio event listeners para estados
+  if (audio) {
+    audio.addEventListener('waiting', () => {
+      if (radioIsPlaying) {
+        const label = document.getElementById('statusLabel');
+        const dot = document.querySelector('.status-dot');
+        if (label) { label.textContent = 'Carregando...'; label.style.color = 'var(--accent)'; }
+        if (dot) dot.className = 'status-dot loading';
+      }
+    });
+
+    audio.addEventListener('playing', () => {
+      const label = document.getElementById('statusLabel');
+      const dot = document.querySelector('.status-dot');
+      if (label) { label.textContent = 'Ao Vivo'; label.style.color = '#22c55e'; }
+      if (dot) dot.className = 'status-dot playing';
+    });
+
+    audio.addEventListener('error', () => {
+      if (radioIsPlaying && radioRetryCount < RADIO_MAX_RETRIES) {
+        radioRetryCount++;
+        const label = document.getElementById('statusLabel');
+        if (label) { label.textContent = 'Reconectando...'; label.style.color = 'var(--accent)'; }
+        setTimeout(() => {
+          audio.load();
+          audio.play().catch(() => {});
+        }, 3000);
+      }
+    });
+
+    audio.addEventListener('stalled', () => {
+      if (radioIsPlaying) {
+        const label = document.getElementById('statusLabel');
+        if (label) { label.textContent = 'Buffering...'; label.style.color = 'var(--accent)'; }
+      }
+    });
+  }
+
   renderCongs();
   observeReveal();
   if (window.lucide) {
