@@ -200,23 +200,69 @@
 
   <!-- ORAÇÃO (Sólido) -->
   <section id="oracao" class="bg-light">
-    <div class="container" style="max-width: 800px;">
-      <div class="section-head reveal">
-        <span class="eyebrow">Intercessão</span>
-        <h2 class="section-title">Pedido de Oração</h2>
-        <p>Preencha os campos abaixo e nossa equipe estará orando por você.</p>
-      </div>
-      <form class="clean-form reveal" id="oracaoForm" onsubmit="submitOracao(event)" style="background: white; padding: 3rem; border: 1px solid var(--gray-200); border-radius: 8px;">
-        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
-          <input type="tel" placeholder="WhatsApp" style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
+    <div class="container">
+      <div class="oracao-split">
+        <!-- Esquerda: Pedido de Oração -->
+        <div class="oracao-left">
+          <div class="section-head reveal" style="text-align: left; margin-bottom: 2rem;">
+            <span class="eyebrow">Intercessão</span>
+            <h2 class="section-title">Pedido de Oração</h2>
+            <p>Preencha os campos abaixo e nossa equipe estará orando por você.</p>
+          </div>
+          <form class="clean-form reveal" id="oracaoForm" onsubmit="submitOracao(event)" style="background: white; padding: 2.5rem; border: 1px solid var(--gray-200); border-radius: 8px;">
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
+              <input type="tel" placeholder="WhatsApp" style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
+            </div>
+            <textarea placeholder="Seu motivo de oração..." required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px; height: 150px; margin-bottom: 1rem;"></textarea>
+            <button type="submit" class="btn-solid" style="width: 100%; border: none; cursor: pointer;">Enviar Pedido</button>
+          </form>
+          <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: white; border: 1px solid var(--accent); border-radius: 8px; margin-top: 1rem;">
+             <h3 style="color: var(--accent);">Pedido Enviado!</h3>
+             <p>Deus te abençoe.</p>
+          </div>
         </div>
-        <textarea placeholder="Seu motivo de oração..." required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px; height: 150px; margin-bottom: 1rem;"></textarea>
-        <button type="submit" class="btn-solid" style="width: 100%; border: none; cursor: pointer;">Enviar Pedido</button>
-      </form>
-      <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: white; border: 1px solid var(--accent); border-radius: 8px; margin-top: 1rem;">
-         <h3 style="color: var(--accent);">Pedido Enviado!</h3>
-         <p>Deus te abençoe.</p>
+
+        <!-- Direita: Instagram Mockup -->
+        <div class="oracao-right reveal">
+          <div class="insta-call">
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem;">Acompanhe Nossa Igreja</h3>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Siga <strong>@adpirapora</strong> no Instagram para ficar por dentro de tudo o que acontece e acompanhar nossos conteúdos!</p>
+            <a href="https://www.instagram.com/adpirapora/" target="_blank" class="btn-insta">
+              <i data-lucide="instagram"></i> Seguir @adpirapora
+            </a>
+          </div>
+          
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="insta-header">
+                <strong>adpirapora</strong>
+                <i data-lucide="more-horizontal"></i>
+              </div>
+              <div class="insta-profile">
+                <img src="/favicon-flame.png" alt="Logo AD" class="insta-avatar">
+                <div class="insta-stats">
+                  <div><strong>+1k</strong><span>Posts</span></div>
+                  <div><strong>+2k</strong><span>Seguidores</span></div>
+                  <div><strong>120</strong><span>Seguindo</span></div>
+                </div>
+              </div>
+              <div class="insta-bio">
+                <strong>AD Pirapora</strong><br>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Amar a Deus, Cuidar das Pessoas e Ampliar o Reino. 🔥</span>
+              </div>
+              <div class="insta-grid">
+                <div class="insta-post" style="background: url('/hero.jpg') center/cover;"></div>
+                <div class="insta-post" style="background: var(--primary);"></div>
+                <div class="insta-post" style="background: var(--accent);"></div>
+                <div class="insta-post" style="background: url('/radio-logo.jpg') center/cover;"></div>
+                <div class="insta-post" style="background: var(--gray-200);"></div>
+                <div class="insta-post" style="background: #050f2b;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
