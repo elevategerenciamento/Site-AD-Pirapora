@@ -9,7 +9,8 @@ const congregacoes = [
     cultos: "Dom 18h30 · Ter 19h · Qui 19h",
     destaque: true,
     lideres: [
-      { cargo: "Pastor", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" }
+      { cargo: "Pastor", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" },
+      { cargo: "Pastor", nome: "Ronivan Luiz", telefone: "38 99969-0808" }
     ]
   },
   {

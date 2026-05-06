@@ -877,7 +877,7 @@ section { padding: 8rem 0; }
 
 .live-badge-insta {
   top: 5%;
-  left: 5%;
+  left: 2%;
   background: linear-gradient(45deg, #dc2743, #bc1888);
   color: white;
   padding: 0.5rem 1rem;
@@ -1924,7 +1924,7 @@ footer {
   .float-element { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
   .like-badge { right: 5%; }
   .comment-badge { left: 5%; }
-  .live-badge-insta { left: 10%; }
+  .live-badge-insta { left: 4%; }
   .insta-glow { width: 250px; height: 250px; }
 
   /* Oração section */
