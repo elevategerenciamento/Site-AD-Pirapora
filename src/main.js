@@ -878,10 +878,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('radioAudio');
   
   if (volumeSlider && audio) {
+    // Sincronizar volume inicial
     audio.volume = volumeSlider.value / 100;
+    
     volumeSlider.addEventListener('input', (e) => {
-      audio.volume = e.target.value / 100;
+      const vol = e.target.value / 100;
+      audio.volume = vol;
+      audio.muted = (vol === 0);
+      updateVolumeIcon(vol);
     });
+  }
+
+  window.toggleMute = function() {
+    if (!audio) return;
+    audio.muted = !audio.muted;
+    const volIcon = document.getElementById('volIcon');
+    if (audio.muted) {
+      volIcon.setAttribute('data-lucide', 'volume-x');
+      volumeSlider.style.opacity = '0.3';
+    } else {
+      updateVolumeIcon(audio.volume);
+      volumeSlider.style.opacity = '1';
+    }
+    if (window.lucide) window.lucide.createIcons();
+  };
+
+  function updateVolumeIcon(vol) {
+    const volIcon = document.getElementById('volIcon');
+    if (!volIcon) return;
+    
+    let iconName = 'volume-2';
+    if (vol === 0) iconName = 'volume-x';
+    else if (vol < 0.5) iconName = 'volume-1';
+    
+    volIcon.setAttribute('data-lucide', iconName);
+    if (window.lucide) window.lucide.createIcons();
   }
 
   // Audio event listeners para estados

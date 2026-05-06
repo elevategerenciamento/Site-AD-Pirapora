@@ -348,7 +348,9 @@
             <!-- Volume & Extra -->
             <div class="player-footer">
               <div class="volume-control">
-                <i data-lucide="volume-2" class="vol-icon"></i>
+                <button id="muteBtn" class="vol-btn" onclick="toggleMute()">
+                  <i data-lucide="volume-2" id="volIcon" class="vol-icon"></i>
+                </button>
                 <input type="range" id="radioVolume" min="0" max="100" value="80" class="spotify-slider">
               </div>
             </div>
