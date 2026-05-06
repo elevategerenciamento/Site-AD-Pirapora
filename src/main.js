@@ -832,8 +832,7 @@ function stopRadio(audio) {
   audio.load();
   // Restaurar sources originais
   audio.innerHTML = `
-    <source src="https://stm2.brasilcast.xyz/6698/stream" type="audio/mpeg">
-    <source src="https://stm2.brasilcast.xyz/6698/;" type="audio/mpeg">
+    <source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">
   `;
 
   radioIsPlaying = false;
