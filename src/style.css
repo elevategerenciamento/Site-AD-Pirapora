@@ -2060,3 +2060,7 @@ footer {
 .btn-back:hover i {
   transform: translateX(-3px);
 }
+
+/* -- CUSTOM FLAME ICON (Brand) -- */
+.cong-flame-icon { width: 24px; height: 24px; fill: var(--accent); display: block; }
+.modal-icon-wrap .cong-flame-icon { width: 28px; height: 28px; }
