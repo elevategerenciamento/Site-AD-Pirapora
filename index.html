@@ -303,45 +303,64 @@
   </section>
 
   <!-- RÁDIO VALE FM (Player Profissional) -->
+  <!-- RÁDIO VALE FM (Player Premium Spotify Style) -->
   <section id="radio" class="bg-light">
     <div class="container">
-      <div class="radio-card reveal">
-        <div class="radio-info">
-          <img src="/radio-logo.jpg" alt="Logo Vale FM" class="radio-logo-circle">
-          <span class="eyebrow">Sintonize</span>
-          <h2 class="section-title">Rádio Vale FM 104.9</h2>
-          <p>Acompanhe nossa programação ao vivo direto do seu navegador. Clique para ouvir a transmissão em tempo real.</p>
-        </div>
-        <div class="radio-player-box">
-          <audio id="radioAudio" preload="none">
-            <source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">
-          </audio>
+      <div class="radio-player-container reveal">
+        <!-- Player Background / Glass -->
+        <div class="player-glass">
           
-          <!-- Equalizer visual -->
-          <div class="radio-eq" id="radioEq">
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
-            <span class="eq-bar"></span>
+          <!-- Lado Esquerdo: Info / Capa -->
+          <div class="player-left">
+            <div class="player-art-wrap">
+              <img src="/radio-logo.jpg" alt="Vale FM Logo" class="player-art">
+              <div class="on-air-badge">
+                <span class="pulse-red"></span>
+                NO AR
+              </div>
+            </div>
+            <div class="player-meta">
+              <span class="eyebrow">Rádio Oficial</span>
+              <h2 class="radio-name">Vale FM 104.9</h2>
+              <p class="radio-slogan">"Tô na Vale, Tô com Cristo"</p>
+            </div>
           </div>
 
-          <button id="radioPlayBtn" onclick="toggleRadio()" class="btn-radio">
-            <i data-lucide="play" id="radioIcon"></i>
-            <span id="radioText">Ouvir Agora</span>
-          </button>
+          <!-- Lado Direito: Controles -->
+          <div class="player-right">
+            <div class="player-controls-group">
+              
+              <!-- Equalizer -->
+              <div class="player-eq" id="radioEq">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
 
-          <!-- Volume -->
-          <div class="radio-volume-wrap">
-            <i data-lucide="volume-2" class="vol-icon"></i>
-            <input type="range" id="radioVolume" min="0" max="100" value="80" class="radio-volume-slider">
+              <!-- Main Button -->
+              <button id="radioPlayBtn" onclick="toggleRadio()" class="spotify-play-btn">
+                <i data-lucide="play" id="radioIcon"></i>
+              </button>
+
+              <!-- Status -->
+              <div class="player-status-wrap">
+                <span id="statusLabel" class="status-txt">Pronto para ouvir</span>
+              </div>
+            </div>
+
+            <!-- Volume & Extra -->
+            <div class="player-footer">
+              <div class="volume-control">
+                <i data-lucide="volume-2" class="vol-icon"></i>
+                <input type="range" id="radioVolume" min="0" max="100" value="80" class="spotify-slider">
+              </div>
+            </div>
           </div>
 
-          <div id="radioStatus" class="radio-status">
-            <span class="status-dot"></span>
-            <span id="statusLabel">Pronto para tocar</span>
-          </div>
         </div>
+
+        <!-- Audio Element (Hidden) -->
+        <audio id="radioAudio" preload="none">
+          <source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">
+        </audio>
       </div>
     </div>
   </section>

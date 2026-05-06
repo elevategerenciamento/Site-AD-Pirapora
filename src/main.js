@@ -747,22 +747,17 @@ window.toggleRadio = function() {
 function startRadio(audio) {
   const btn = document.getElementById('radioPlayBtn');
   const icon = document.getElementById('radioIcon');
-  const text = document.getElementById('radioText');
-  const dot = document.querySelector('.status-dot');
   const label = document.getElementById('statusLabel');
   const eq = document.getElementById('radioEq');
-  const card = document.querySelector('.radio-card');
+  const playerGlass = document.querySelector('.player-glass');
 
   // Estado: Carregando
   btn.classList.add('loading');
-  dot.className = 'status-dot loading';
   label.textContent = 'Conectando...';
-  label.style.color = 'var(--accent)';
   icon.setAttribute('data-lucide', 'loader');
-  text.textContent = 'Conectando...';
   if (window.lucide) window.lucide.createIcons();
 
-  // Forçar reload do stream (necessário para live streams)
+  // Forçar reload do stream
   audio.load();
 
   const playPromise = audio.play();
@@ -774,14 +769,12 @@ function startRadio(audio) {
       radioRetryCount = 0;
       btn.classList.remove('loading');
       btn.classList.add('is-playing');
-      card.classList.add('is-playing');
       eq.classList.add('active');
+      if(playerGlass) playerGlass.classList.add('is-playing');
 
-      icon.setAttribute('data-lucide', 'square');
-      text.textContent = 'Parar Rádio';
-      dot.className = 'status-dot playing';
+      icon.setAttribute('data-lucide', 'pause');
       label.textContent = 'Ao Vivo';
-      label.style.color = '#22c55e';
+      label.style.color = 'var(--accent)';
 
       // Atualizar mini player
       updateMiniPlayer('playing');
@@ -795,21 +788,13 @@ function startRadio(audio) {
       // Tentar reconectar
       if (radioRetryCount < RADIO_MAX_RETRIES) {
         radioRetryCount++;
-        dot.className = 'status-dot loading';
         label.textContent = `Tentativa ${radioRetryCount}/${RADIO_MAX_RETRIES}...`;
-        label.style.color = 'var(--accent)';
-        icon.setAttribute('data-lucide', 'play');
-        text.textContent = 'Ouvir Agora';
-        if (window.lucide) window.lucide.createIcons();
-        
         setTimeout(() => startRadio(audio), 2000);
       } else {
         // Falha total
-        dot.className = 'status-dot error';
-        label.textContent = 'Falha na conexão';
+        label.textContent = 'Erro na conexão';
         label.style.color = '#ef4444';
         icon.setAttribute('data-lucide', 'play');
-        text.textContent = 'Tentar Novamente';
         radioRetryCount = 0;
         if (window.lucide) window.lucide.createIcons();
       }
@@ -820,30 +805,23 @@ function startRadio(audio) {
 function stopRadio(audio) {
   const btn = document.getElementById('radioPlayBtn');
   const icon = document.getElementById('radioIcon');
-  const text = document.getElementById('radioText');
-  const dot = document.querySelector('.status-dot');
   const label = document.getElementById('statusLabel');
   const eq = document.getElementById('radioEq');
-  const card = document.querySelector('.radio-card');
+  const playerGlass = document.querySelector('.player-glass');
 
   audio.pause();
   // Remover src e recarregar para liberar o buffer de streaming
   audio.removeAttribute('src');
   audio.load();
-  // Restaurar sources originais
-  audio.innerHTML = `
-    <source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">
-  `;
+  audio.innerHTML = `<source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">`;
 
   radioIsPlaying = false;
   btn.classList.remove('loading', 'is-playing');
-  card.classList.remove('is-playing');
   eq.classList.remove('active');
+  if(playerGlass) playerGlass.classList.remove('is-playing');
 
   icon.setAttribute('data-lucide', 'play');
-  text.textContent = 'Ouvir Agora';
-  dot.className = 'status-dot';
-  label.textContent = 'Pronto para tocar';
+  label.textContent = 'Pronto para ouvir';
   label.style.color = '';
 
   // Esconder mini player
