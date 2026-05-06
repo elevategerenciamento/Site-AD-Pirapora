@@ -21,7 +21,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Geremias Bispo Ramos", telefone: "38 99948-3323 / 38 99938-3323" }
+      { cargo: "1º Dirigente", nome: "Geremias Bispo Ramos", telefone: "38 99948-3323" },
+      { cargo: "2º Dirigente", nome: "Elton Pereira da Silva", telefone: "—" }
     ]
   },
   {
@@ -33,8 +34,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronivan Luiz Fonseca", telefone: "38 99969-0808" },
-      { cargo: "2º Dirigente", nome: "Marcos Magalhães Leite", telefone: "38 99847-3308" }
+      { cargo: "1º Dirigente", nome: "Marcos Magalhães Leite", telefone: "38 99847-3308" },
+      { cargo: "2º Dirigente", nome: "Gilberto Ferreira Fagundes", telefone: "38 99975-3768" }
     ]
   },
   {
@@ -46,8 +47,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Paulo Hernani de Andrade Júnior", telefone: "38 99234-2358" },
-      { cargo: "2º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
+      { cargo: "1º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
     ]
   },
   {
@@ -59,7 +59,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Narciso Pereira Batista", telefone: "38 99919-7450" },
+      { cargo: "1º Dirigente", nome: "Narciso Pereira Batista", telefone: "38 99919-7450" },
       { cargo: "2º Dirigente", nome: "Francisco Sidinei de Souza", telefone: "38 99880-9061" }
     ]
   },
@@ -72,8 +72,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Pr. Ronivan Luiz Fonseca de Oliveira", telefone: "38 99969-0808" },
-      { cargo: "2º Dirigente", nome: "Pb. José Rocha de Araújo", telefone: "38 99889-0055" }
+      { cargo: "1º Dirigente", nome: "José Rocha de Araújo", telefone: "38 99889-0055" },
+      { cargo: "2º Dirigente", nome: "André Baptista", telefone: "38 98845-0129" }
     ]
   },
   {
@@ -85,8 +85,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Wenyson Alves Santos", telefone: "38 99972-5481" },
-      { cargo: "2º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
+      { cargo: "1º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
     ]
   },
   {
@@ -98,8 +97,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Anderson Pereira da Silva", telefone: "38 98806-6601" },
-      { cargo: "2º Dirigente", nome: "Ernandes Batista", telefone: "38 9847-5305" }
+      { cargo: "1º Dirigente", nome: "Ernandes Batista", telefone: "38 9847-5305" }
     ]
   },
   {
@@ -111,8 +109,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Sebastião Moreira de Sena", telefone: "38 99154-3579" },
-      { cargo: "2º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
+      { cargo: "1º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
     ]
   },
   {
@@ -124,8 +121,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "André Marques Vieira", telefone: "38 99823-8119" },
-      { cargo: "2º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
+      { cargo: "1º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
     ]
   },
   {
@@ -137,7 +133,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Gilson dos Santos Santana", telefone: "38 99844-5306" },
+      { cargo: "1º Dirigente", nome: "Gilson dos Santos Santana", telefone: "38 99844-5306" },
       { cargo: "2º Dirigente", nome: "Jacó Ribeiro da Silva", telefone: "38 99902-0841" }
     ]
   },
@@ -150,7 +146,7 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Ademilson Cardoso da Silva", telefone: "38 98809-0621" },
+      { cargo: "1º Dirigente", nome: "Ademilson Cardoso da Silva", telefone: "38 98809-0621" },
       { cargo: "2º Dirigente", nome: "Eric Tulio Barbosa Silva", telefone: "38 99734-4133" }
     ]
   },
