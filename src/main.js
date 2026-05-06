@@ -9,8 +9,7 @@ const congregacoes = [
     cultos: "Dom 18h30 · Ter 19h · Qui 19h",
     destaque: true,
     lideres: [
-      { cargo: "Pastor", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" },
-      { cargo: "Pastor", nome: "Ronivan Luiz", telefone: "38 99969-0808" }
+      { cargo: "1º Dirigente", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" }
     ]
   },
   {
@@ -48,7 +47,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
+      { cargo: "1º Dirigente", nome: "Paulo Hernani de Andrade Júnior", telefone: "—" },
+      { cargo: "2º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
     ]
   },
   {
@@ -86,7 +86,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
+      { cargo: "1º Dirigente", nome: "Wenyson Alves Santos", telefone: "—" },
+      { cargo: "2º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
     ]
   },
   {
@@ -98,7 +99,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ernandes Batista", telefone: "38 9847-5305" }
+      { cargo: "1º Dirigente", nome: "Anderson Pereira da Silva", telefone: "—" },
+      { cargo: "2º Dirigente", nome: "Ernandes Batista", telefone: "38 9847-5305" }
     ]
   },
   {
@@ -110,7 +112,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
+      { cargo: "1º Dirigente", nome: "Sebastião Moreira de Sena", telefone: "—" },
+      { cargo: "2º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
     ]
   },
   {
@@ -122,7 +125,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
+      { cargo: "1º Dirigente", nome: "André Marques Vieira", telefone: "—" },
+      { cargo: "2º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
     ]
   },
   {
@@ -174,8 +178,8 @@ const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Pastor Oziel Ferreira", telefone: "38 99882-2164" },
-      { cargo: "2º Dirigente", nome: "Presbítero Diogo dos Santos Botelho", telefone: "38 99940-3683" }
+      { cargo: "1º Dirigente", nome: "Oziel Ferreira", telefone: "38 99882-2164" },
+      { cargo: "2º Dirigente", nome: "Diogo dos Santos Botelho", telefone: "38 99940-3683" }
     ]
   },
   // ── REGIÃO DE LAGOA DOS PATOS — 2º Setor ──
@@ -229,7 +233,7 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -241,9 +245,8 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Setorial", nome: "Ronaldo Moreira Costa", telefone: "38 9971-0987" },
-      { cargo: "1º Dirigente", nome: "Gedeon Roberto de Souza Papa", telefone: "31 99524-2165" },
-      { cargo: "2º Dirigente", nome: "Manoel Ferreira da Costa", telefone: "38 9903-4339" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 9971-0987" },
+      { cargo: "2º Dirigente", nome: "Gedeon Roberto de Souza Papa", telefone: "31 99524-2165" }
     ]
   },
   {
@@ -255,8 +258,8 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Setorial", nome: "Pr. Ronaldo Moreira", telefone: "38 99971-0987" },
-      { cargo: "1º Dirigente", nome: "Evangelista Ferreira dos Santos", telefone: "38 99747-8306" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira", telefone: "38 99971-0987" },
+      { cargo: "2º Dirigente", nome: "Ferreira dos Santos", telefone: "38 99747-8306" }
     ]
   },
   {
@@ -268,7 +271,7 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -280,7 +283,7 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -292,8 +295,8 @@ const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "Pastor/Setorial", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
-      { cargo: "1º Dirigente", nome: "Carlos Rodrigues Mourão", telefone: "38 99845-2415" }
+      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
+      { cargo: "2º Dirigente", nome: "Carlos Rodrigues Mourão", telefone: "38 99845-2415" }
     ]
   },
   {
@@ -438,7 +441,7 @@ const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Pastor Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Isaías Lourenço de Resende", telefone: "31 99771-1850" }
     ]
   },
