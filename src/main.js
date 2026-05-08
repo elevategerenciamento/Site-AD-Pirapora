@@ -6,7 +6,7 @@ const congregacoes = [
     endereco: "Rua Ouro Preto, 277, Bairro Santo Antônio — Pirapora",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Ouro+Preto+277+Santo+Antonio+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 18h30 · Ter 19h · Qui 19h",
+    cultos: "Dom 18h30 · Ter 19h · Qui 19h · EBD Dom 8h30",
     destaque: true,
     lideres: [
       { cargo: "1º Dirigente", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" }
@@ -19,7 +19,7 @@ const congregacoes = [
     endereco: "R. João Dias da Costa, 98 — Nova Pirapora, Pirapora-MG, 39270-000",
     maps: "https://maps.app.goo.gl/z7sK4DzJn4PmJtcv9",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Geremias Bispo Ramos", telefone: "38 99948-3323" },
       { cargo: "2º Dirigente", nome: "Elton Pereira da Silva", telefone: "38 99147-4348" }
@@ -32,7 +32,7 @@ const congregacoes = [
     endereco: "Joaquim Ferreira da Costa, 615 — 39272-278, Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Joaquim+Ferreira+da+Costa+615+Cidade+Jardim+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Marcos Magalhães Leite", telefone: "38 99847-3308" },
       { cargo: "2º Dirigente", nome: "Gilberto Ferreira Fagundes", telefone: "38 99975-3768" }
@@ -45,7 +45,7 @@ const congregacoes = [
     endereco: "Rua Rubi, 257 — 39276-314, Pirapora",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Rubi+257+Morada+do+Sol+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Paulo Hernani de Andrade Júnior", telefone: "38 99234-2358" },
       { cargo: "2º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
@@ -58,7 +58,7 @@ const congregacoes = [
     endereco: "Rua José Pedro da Silva, 437 — Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Jose+Pedro+da+Silva+437+Sao+Geraldo+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Narciso Pereira Batista", telefone: "38 99919-7450" },
       { cargo: "2º Dirigente", nome: "Francisco Sidinei de Souza", telefone: "38 99880-9061" }
@@ -71,7 +71,7 @@ const congregacoes = [
     endereco: "Rua Raimundo Nascimento, 80 — CEP 39276-034, Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+80+Santos+Dumont+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "José Rocha de Araújo", telefone: "38 99889-0055" },
       { cargo: "2º Dirigente", nome: "André Baptista", telefone: "38 98845-0129" }
@@ -84,7 +84,7 @@ const congregacoes = [
     endereco: "Rua das Acácias, nº 412 — Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+das+Acacias+412+Sagrada+Familia+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Wenyson Alves Santos", telefone: "38 99972-5481" },
       { cargo: "2º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
@@ -97,7 +97,7 @@ const congregacoes = [
     endereco: "Rua Tiago Quirino de Araújo, 189 — Pirapora-MG, 39270-000",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Tiago+Quirino+de+Araujo+189+Sao+Joao+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Anderson Pereira da Silva", telefone: "38 98806-6601" },
       { cargo: "2º Dirigente", nome: "Ernandes Batista", telefone: "38 98475-305" }
@@ -110,7 +110,7 @@ const congregacoes = [
     endereco: "Rua Luiz Cardoso Café, 264 — Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Luiz+Cardoso+Cafe+264+Bom+Jesus+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Sebastião Moreira de Sena", telefone: "38 99154-3579" },
       { cargo: "2º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
@@ -123,7 +123,7 @@ const congregacoes = [
     endereco: "Rua Professora Criselina Passos, 85 — Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Professora+Criselina+Passos+85+Cicero+Passos+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "André Marques Vieira", telefone: "38 99823-8119" },
       { cargo: "2º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
@@ -136,7 +136,7 @@ const congregacoes = [
     endereco: "Rua 2, nº 93 — 39276-086, Pirapora-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+2+93+Joao+Guimaraes+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Gilson dos Santos Santana", telefone: "38 99844-5306" },
       { cargo: "2º Dirigente", nome: "Jacó Ribeiro da Silva", telefone: "38 99902-0841" }
@@ -149,7 +149,7 @@ const congregacoes = [
     endereco: "Rua Emídio Magalhães Freire, 553, Industrial — Pirapora-MG, 39272-002",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Emidio+Magalhaes+Freire+553+Industrial+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ademilson Cardoso da Silva", telefone: "38 98809-0621" },
       { cargo: "2º Dirigente", nome: "Eric Túlio Barbosa Silva", telefone: "38 99734-4133" }
@@ -163,7 +163,7 @@ const congregacoes = [
     endereco: "Rua Amazonas, 231 — CEP 39260-000, Guaicuí",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Amazonas+231+Guaicui+Varzea+da+Palma+MG",
     cidade: "Guaicuí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Oziel Ferreira da Conceição", telefone: "38 99882-2164" },
       { cargo: "2º Dirigente", nome: "Manoel Messias", telefone: "38 99854-6013" }
@@ -176,7 +176,7 @@ const congregacoes = [
     endereco: "Assentamento Paco-Paco, BR-365",
     maps: "https://www.google.com/maps/search/?api=1&query=Assentamento+Paco+Paco+BR-365+Pirapora+MG",
     cidade: "Pirapora - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Oziel Ferreira", telefone: "38 99882-2164" },
       { cargo: "2º Dirigente", nome: "Diogo dos Santos Botelho", telefone: "38 99940-3683" }
@@ -190,7 +190,7 @@ const congregacoes = [
     endereco: "Dona Guiomar, 412 — 39360-000, Lagoa dos Patos",
     maps: "https://www.google.com/maps/search/?api=1&query=Dona+Guiomar+412+Lagoa+dos+Patos+MG",
     cidade: "Lagoa dos Patos - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Milton Atanazio de Oliveira", telefone: "38 99918-6975" },
       { cargo: "2º Dirigente", nome: "José Alves de Castro", telefone: "38 9830-7561" }
@@ -204,7 +204,7 @@ const congregacoes = [
     endereco: "Rua Belo Horizonte, nº 958 — 39350-000, Ibiaí-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Belo+Horizonte+958+Ibiai+MG",
     cidade: "Ibiaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "João Batista dos Santos", telefone: "38 99845-0056" },
       { cargo: "2º Dirigente", nome: "Ivaí Gabriel Pereira", telefone: "38 99735-7146" }
@@ -217,7 +217,7 @@ const congregacoes = [
     endereco: "Avenida São Francisco, 308, Centro — 39328-000, Ponto Chique-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Avenida+Sao+Francisco+308+Centro+Ponto+Chique+MG",
     cidade: "Ponto Chique - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Valdir Soares da Silva", telefone: "38 99744-5455" },
       { cargo: "2º Dirigente", nome: "Presbítero Edmilson Ramos Messias", telefone: "31 97572-2571" }
@@ -231,7 +231,7 @@ const congregacoes = [
     endereco: "Av. Epaminondas Leite — CEP 39320-000, Bentópolis, Ubaí-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Av+Epaminondas+Leite+Bentopolis+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
@@ -243,7 +243,7 @@ const congregacoes = [
     endereco: "Rua José Caetano Samer Filho — CEP 39320-000, Veloslândia",
     maps: "https://www.google.com/maps/search/?api=1&query=Veloslandia+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 9971-0987" },
       { cargo: "2º Dirigente", nome: "Gedeon Roberto de Souza Papa", telefone: "31 99524-2165" }
@@ -256,7 +256,7 @@ const congregacoes = [
     endereco: "Rua da Igreja CCB — CEP 39320-000, Malhada Bonita, Ubaí-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Malhada+Bonita+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira", telefone: "38 99971-0987" },
       { cargo: "2º Dirigente", nome: "Ferreira dos Santos", telefone: "38 99747-8306" }
@@ -269,7 +269,7 @@ const congregacoes = [
     endereco: "Cultos nas casas dos irmãos — Curralinho",
     maps: "https://www.google.com/maps/search/?api=1&query=Curralinho+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
@@ -281,7 +281,7 @@ const congregacoes = [
     endereco: "Cultos nas casas dos irmãos — Areão",
     maps: "https://www.google.com/maps/search/?api=1&query=Areao+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
@@ -293,7 +293,7 @@ const congregacoes = [
     endereco: "Assentamento Agrovila",
     maps: "https://www.google.com/maps/search/?api=1&query=Assentamento+Agrovila+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
       { cargo: "2º Dirigente", nome: "Carlos Rodrigues Mourão", telefone: "38 99845-2415" }
@@ -306,7 +306,7 @@ const congregacoes = [
     endereco: "Ponta da Ilha",
     maps: "https://www.google.com/maps/search/?api=1&query=Ponta+da+Ilha+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
       { cargo: "2º Dirigente", nome: "Joanir Ferreira de Souza", telefone: "38 99923-1141" }
@@ -319,7 +319,7 @@ const congregacoes = [
     endereco: "Fazenda Pilões",
     maps: "https://www.google.com/maps/search/?api=1&query=Fazenda+Piloes+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
       { cargo: "2º Dirigente", nome: "Gilmar Rodrigues de Souza", telefone: "38 99918-0834" }
@@ -333,7 +333,7 @@ const congregacoes = [
     endereco: "Av. Tancredo Neves, nº 32 — Ubaí-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Av+Tancredo+Neves+32+Ubai+MG",
     cidade: "Ubaí - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
       { cargo: "2º Dirigente", nome: "Everton Ritielle de Oliveira Queiroz", telefone: "38 99810-5155" }
@@ -346,7 +346,7 @@ const congregacoes = [
     endereco: "Comunidade Coqueiro",
     maps: "https://www.google.com/maps/search/?api=1&query=Comunidade+Coqueiro+Sao+Romao+MG",
     cidade: "São Romão - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
       { cargo: "2º Dirigente", nome: "Samuel Neves", telefone: "11 94299-7831" }
@@ -359,7 +359,7 @@ const congregacoes = [
     endereco: "Comunidade Capão da Onça",
     maps: "https://www.google.com/maps/search/?api=1&query=Capao+da+Onca+Sao+Romao+MG",
     cidade: "São Romão - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
       { cargo: "2º Dirigente", nome: "Josias Pereira", telefone: "38 99739-3283" }
@@ -372,7 +372,7 @@ const congregacoes = [
     endereco: "Presidente Tancredo Neves, 1210 — 39290-000, São Romão",
     maps: "https://www.google.com/maps/search/?api=1&query=Presidente+Tancredo+Neves+1210+Sao+Romao+MG",
     cidade: "São Romão - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Augusto Junio Jesus Amaral", telefone: "38 99825-1663" },
       { cargo: "2º Dirigente", nome: "Renato Gonçalves de Mendonça", telefone: "38 99868-8995" }
@@ -385,7 +385,7 @@ const congregacoes = [
     endereco: "Maria Braga, 211 — Icaraí de Minas-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Maria+Braga+211+Icarai+de+Minas+MG",
     cidade: "Icaraí de Minas - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
       { cargo: "2º Dirigente", nome: "Edinei Antonio Marques de Souza", telefone: "38 99889-5888" }
@@ -399,7 +399,7 @@ const congregacoes = [
     endereco: "Rua Ceará, nº 1470 — CEP 39282-116, Bairro Alto São Francisco, Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Ceara+1470+Alto+Sao+Francisco+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Warley Almeida de Oliveira", telefone: "38 99993-0662" }
@@ -412,7 +412,7 @@ const congregacoes = [
     endereco: "Av. Brasil, nº 241, Bairro São Francisco — Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Av+Brasil+241+Sao+Francisco+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Cícero Pereira do Carmo", telefone: "38 99913-1072" }
@@ -425,7 +425,7 @@ const congregacoes = [
     endereco: "Rua Joaquim Trindade Cota, 513, Bairro Vila Maria — 39280-000, Buritizeiro",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Trindade+Cota+513+Vila+Maria+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Altair Magalhães", telefone: "38 99812-7774" }
@@ -439,7 +439,7 @@ const congregacoes = [
     endereco: "Comunidade do Xupé — Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Comunidade+Xupe+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Isaías Lourenço de Resende", telefone: "31 99771-1850" }
@@ -452,7 +452,7 @@ const congregacoes = [
     endereco: "Rua Geraldo Carneiro Mendonça, 101 — Paredão de Minas",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Geraldo+Carneiro+Mendonca+101+Paredao+de+Minas+MG",
     cidade: "Paredão de Minas - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Gileno da Silva Lemos", telefone: "34 99820-9044" }
@@ -465,7 +465,7 @@ const congregacoes = [
     endereco: "Comunidade Santa Helena, Área Central — Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Comunidade+Santa+Helena+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "João Henrique", telefone: "38 99740-8018" }
@@ -478,7 +478,7 @@ const congregacoes = [
     endereco: "Fazenda Petkov — Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Fazenda+Petkov+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Pb. Gerson Ferreira Oliveira", telefone: "39 99936-6812" }
@@ -491,7 +491,7 @@ const congregacoes = [
     endereco: "Comunidade Ribeirão — Buritizeiro-MG",
     maps: "https://www.google.com/maps/search/?api=1&query=Comunidade+Ribeirao+do+Areia+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
       { cargo: "2º Dirigente", nome: "Sidinei da Silva", telefone: "38 99728-4492" }
@@ -505,7 +505,7 @@ const congregacoes = [
     endereco: "Rua Pará, 85 — 39288-000, Cachoeira do Manteiga",
     maps: "https://www.google.com/maps/search/?api=1&query=Rua+Para+85+Cachoeira+do+Manteiga+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Ter 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
       { cargo: "2º Dirigente", nome: "Leonardo Cézar dos Santos Monteiro", telefone: "34 99828-9021" }
@@ -518,7 +518,7 @@ const congregacoes = [
     endereco: "Comunidade São Bento / Cachoeira do Teobaldo — Buritizeiro, 39280-000",
     maps: "https://www.google.com/maps/search/?api=1&query=Cachoeira+do+Teobaldo+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
       { cargo: "2º Dirigente", nome: "Pb. Gilberto Afonso Ferreira", telefone: "34 97283-528" }
@@ -531,7 +531,7 @@ const congregacoes = [
     endereco: "Comunidade São Bento — Buritizeiro, 39280-000",
     maps: "https://www.google.com/maps/search/?api=1&query=Comunidade+Sao+Bento+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
       { cargo: "2º Dirigente", nome: "Manoel Raimundo Melo dos Santos", telefone: "38 99892-5186" }
@@ -544,7 +544,7 @@ const congregacoes = [
     endereco: "Assentamento 1º de Maio — Buritizeiro, 39280-000",
     maps: "https://www.google.com/maps/search/?api=1&query=Assentamento+1+de+Maio+Buritizeiro+MG",
     cidade: "Buritizeiro - MG",
-    cultos: "Dom 19h · Qua 19h30",
+    cultos: "Dom 19h · Qua 19h30 · EBD Dom 8h30",
     lideres: [
       { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" }
     ]
