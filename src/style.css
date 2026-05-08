@@ -2315,3 +2315,228 @@ footer {
 /* -- CUSTOM FLAME ICON (Brand) -- */
 .cong-flame-icon { width: 24px; height: 24px; fill: var(--accent); display: block; }
 .modal-icon-wrap .cong-flame-icon { width: 28px; height: 28px; }
+
+/* ── MINISTÉRIOS (Redesign Premium) ── */
+#departamentos {
+  background: var(--white);
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.dep-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+}
+
+.dep-tag {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 50px;
+}
+
+.dep-tag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.dep-header .section-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 550px;
+  line-height: 1.6;
+}
+
+.dep-header-right {
+  position: relative;
+  transform: translateY(20px);
+}
+
+.bg-text {
+  font-size: 8.5rem;
+  font-weight: 950;
+  color: rgba(255, 107, 0, 0.04); /* Laranja baixíssima opacidade */
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  font-family: 'Outfit', sans-serif;
+}
+
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.dep-card {
+  background: var(--white);
+  padding: 3.5rem 2.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--gray-100);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+}
+
+.dep-hover-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accent); /* Cor global por padrão */
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+/* Aplica a cor customizada definida no style inline do HTML */
+.dep-card[style*="--accent"] .dep-hover-bar {
+  background: var(--accent);
+}
+
+.dep-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.dep-card:hover .dep-hover-bar {
+  width: 6px;
+}
+
+.dep-icon-box {
+  width: 64px;
+  height: 64px;
+  background: var(--gray-50);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 2;
+}
+
+.dep-icon-box i { width: 30px; height: 30px; stroke-width: 1.5px; }
+
+.dep-card:hover .dep-icon-box {
+  transform: rotate(12deg) scale(1.1);
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.dep-sigla {
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.dep-card h3 {
+  font-size: 1.85rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+}
+
+.dep-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.dep-divider {
+  width: 45px;
+  height: 2px;
+  background: var(--gray-200);
+  margin: 2.5rem 0;
+  transition: all 0.5s ease;
+}
+
+.dep-card:hover .dep-divider {
+  width: 100%;
+  background: var(--accent);
+}
+
+.dep-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dep-arrow {
+  width: 48px;
+  height: 48px;
+  background: var(--gray-50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dep-card:hover .dep-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--primary);
+  color: white;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 1100px) {
+  .dep-grid { grid-template-columns: repeat(2, 1fr); }
+  .dep-header .section-title { font-size: 2.8rem; }
+  .bg-text { font-size: 6rem; }
+}
+
+@media (max-width: 768px) {
+  #departamentos { padding: 5rem 0; }
+  .dep-header { flex-direction: column; align-items: flex-start; margin-bottom: 3.5rem; }
+  .dep-header-right { display: none; }
+  .dep-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.2rem; 
+  }
+  .dep-card { padding: 2rem 1.5rem; border-radius: 16px; }
+  .dep-icon-box { width: 50px; height: 50px; margin-bottom: 1.5rem; }
+  .dep-icon-box i { width: 22px; height: 22px; }
+  .dep-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+  .dep-card p { font-size: 0.85rem; line-height: 1.5; }
+  .dep-footer { display: none; } /* Oculto no mobile como solicitado */
+  .dep-divider { margin: 1.5rem 0; }
+  .dep-sigla { font-size: 0.65rem; }
+}
+
+/* Staggered entrance animation delay */
+.dep-card.reveal {
+  transition-delay: var(--delay, 0s);
+}
