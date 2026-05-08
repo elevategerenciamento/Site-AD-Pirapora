@@ -571,10 +571,14 @@ section { padding: 8rem 0; }
   font-size: 0.75rem;
   font-weight: 700;
   background: var(--gray-50);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
   color: var(--primary);
   margin-bottom: 2rem;
+  white-space: pre-line;
+  text-align: center;
+  line-height: 1.4;
+  display: inline-block;
 }
 
 .btn-loc {
