@@ -298,6 +298,7 @@ nav {
   letter-spacing: -0.02em;
   background: linear-gradient(to bottom, #fff, rgba(255,255,255,0.6));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1775,12 +1776,14 @@ footer {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   -webkit-appearance: none;
+  appearance: none;
   outline: none;
   cursor: pointer;
 }
 
 .spotify-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
   background: var(--accent);
