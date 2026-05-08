@@ -771,17 +771,11 @@ function startRadio(audio) {
       updateMiniPlayer('playing');
       checkMiniPlayerVisibility();
 
-      // Sincronizar com Hero Card
-      const heroCard = document.getElementById('heroRadioCard');
-      const heroIcon = document.getElementById('heroRadioIcon');
-      const heroBtn = document.getElementById('heroRadioBtn');
-      if (heroCard) heroCard.classList.add('is-playing');
-      if (heroBtn) heroBtn.classList.add('is-playing');
-      if (heroIcon) {
-        heroIcon.setAttribute('data-lucide', 'pause');
-        const span = heroBtn.querySelector('span');
-        if (span) span.textContent = 'PAUSAR RÁDIO';
-      }
+      // Sincronizar com Header
+      const headerBtn = document.getElementById('headerRadioBtn');
+      const headerIcon = document.getElementById('headerRadioIcon');
+      if (headerBtn) headerBtn.classList.add('is-playing');
+      if (headerIcon) headerIcon.setAttribute('data-lucide', 'pause');
 
       if (window.lucide) window.lucide.createIcons();
     }).catch(error => {
@@ -829,17 +823,11 @@ function stopRadio(audio) {
     icon.removeAttribute('fill');
   }
 
-  // Sincronizar com Hero Card
-  const heroCard = document.getElementById('heroRadioCard');
-  const heroIcon = document.getElementById('heroRadioIcon');
-  const heroBtn = document.getElementById('heroRadioBtn');
-  if (heroCard) heroCard.classList.remove('is-playing');
-  if (heroBtn) heroBtn.classList.remove('is-playing');
-  if (heroIcon) {
-    heroIcon.setAttribute('data-lucide', 'play');
-    const span = heroBtn.querySelector('span');
-    if (span) span.textContent = 'OUVIR AGORA';
-  }
+  // Sincronizar com Header
+  const headerBtn = document.getElementById('headerRadioBtn');
+  const headerIcon = document.getElementById('headerRadioIcon');
+  if (headerBtn) headerBtn.classList.remove('is-playing');
+  if (headerIcon) headerIcon.setAttribute('data-lucide', 'play');
 
   updateMiniPlayer('stopped');
   if (window.lucide) window.lucide.createIcons();

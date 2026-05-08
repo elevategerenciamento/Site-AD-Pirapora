@@ -29,6 +29,20 @@
       <a href="/" class="logo-wrap">
         <img src="/logo-full.png" alt="Logo AD Pirapora" class="logo-img">
       </a>
+
+      <!-- Destaques de Live (Header) -->
+      <div class="header-live-actions">
+        <a href="#cultos" class="btn-h-tv">
+          <span class="pulse-red"></span>
+          <i data-lucide="monitor"></i>
+          <span>TV</span>
+        </a>
+        <button onclick="toggleRadio()" class="btn-h-radio" id="headerRadioBtn">
+          <i data-lucide="play" id="headerRadioIcon"></i>
+          <span>RÁDIO</span>
+        </button>
+      </div>
+
       <ul class="nav-links">
         <div class="nav-mobile-header">
            <button class="close-menu" onclick="toggleMenu()"><i data-lucide="arrow-left"></i></button>
@@ -68,54 +82,6 @@
       <span class="ticker-item">SEJA BEM-VINDO À ASSEMBLEIA DE DEUS — MINISTÉRIO DE PIRAPORA •</span>
     </div>
   </div>
-
-  <!-- HERO TOP (Live Highlight) -->
-  <section class="hero-top">
-    <div class="container hero-top-grid reveal">
-      
-      <!-- TV Online -->
-      <div class="live-card tv-card">
-        <div class="live-card-header">
-          <div class="live-dot"></div>
-          <h2>TV Online</h2>
-        </div>
-        <div class="live-card-content">
-          <div class="video-preview">
-            <iframe src="https://www.youtube.com/embed/XwY9am4lsMc" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="live-card-footer">
-          <a href="https://www.youtube.com/@tvadpirapora" target="_blank" class="btn-live btn-tv">
-            <i data-lucide="monitor"></i>
-            ASSISTIR AGORA
-          </a>
-        </div>
-      </div>
-
-      <!-- Rádio Vale FM -->
-      <div class="live-card radio-card" id="heroRadioCard">
-        <div class="live-card-header">
-          <div class="live-dot"></div>
-          <h2>Rádio Vale FM</h2>
-        </div>
-        <div class="live-card-content">
-          <div class="radio-display">
-            <div class="radio-wave" id="heroRadioWave">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <p>104.9 FM — Ao Vivo</p>
-          </div>
-        </div>
-        <div class="live-card-footer">
-          <button onclick="toggleRadio()" class="btn-live btn-radio" id="heroRadioBtn">
-            <i data-lucide="play" id="heroRadioIcon"></i>
-            <span>OUVIR AGORA</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <!-- HERO (Impacto e Profissionalismo) -->
   <section class="hero" id="inicio">
