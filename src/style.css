@@ -172,11 +172,13 @@ nav {
 
 #header.scrolled .btn-h-tv,
 #header.scrolled .btn-h-radio {
-  display: none;
+  display: none !important;
 }
 
 #header.scrolled .header-welcome-msg {
-  display: block;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes slideInDown {
