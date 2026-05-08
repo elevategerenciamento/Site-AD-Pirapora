@@ -843,13 +843,11 @@ window.openTVModal = function() {
       <button class="modal-live-close" onclick="closeLiveModal('modalTV')">
         <i data-lucide="x"></i>
       </button>
-      <div class="modal-live-icon">
-        <i data-lucide="monitor"></i>
-      </div>
+      <img src="/youtube-tv.png" alt="TV AD Pirapora Youtube" class="modal-live-banner">
       <h2>TV AD Pirapora</h2>
-      <p>Acompanhe nossa programação ao vivo com cultos, mensagens edificantes e eventos especiais diretamente do nosso estúdio central para sua casa.</p>
-      <a href="#cultos" class="btn-modal-action" onclick="closeLiveModal('modalTV')">
-        <i data-lucide="play-circle"></i> ASSISTIR AGORA
+      <p>Transmissão oficial da Assembleia de Deus — Ministério de Pirapora. Conteúdo que edifica sua vida 24 horas por dia através do nosso canal oficial.</p>
+      <a href="https://www.youtube.com/@tvadpirapora" target="_blank" class="btn-modal-action" onclick="closeLiveModal('modalTV')">
+        <i data-lucide="play"></i> ASSISTIR NO YOUTUBE
       </a>
     </div>
   `;
@@ -872,11 +870,9 @@ window.openRadioModal = function() {
       <button class="modal-live-close" onclick="closeLiveModal('modalRadio')">
         <i data-lucide="x"></i>
       </button>
-      <div class="modal-live-icon">
-        <i data-lucide="radio"></i>
-      </div>
-      <h2>Vale FM 104,9</h2>
-      <p>"Tô na Vale, Tô com Cristo". A rádio que leva a palavra de Deus e os melhores louvores para todo o norte de Minas e para o mundo inteiro via web.</p>
+      <img src="/radio-logo.jpg" alt="Vale FM Logo" class="modal-live-banner">
+      <h2>Vale 104,9</h2>
+      <p>"Tô na Vale, Tô com Cristo". A voz que ecoa a mensagem do Reino em toda Pirapora e região através da frequência 104,9 FM e para o mundo via web.</p>
       <button class="btn-modal-action" onclick="handleRadioModalClick()">
         <i data-lucide="headphones"></i> OUVIR AGORA
       </button>
