@@ -2326,8 +2326,8 @@ footer {
 .dep-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 5rem;
+  align-items: center;
+  margin-bottom: 4rem;
 }
 
 .dep-tag {
@@ -2352,17 +2352,17 @@ footer {
 }
 
 .dep-header .section-title {
-  font-size: 3.5rem;
-  line-height: 1.1;
+  font-size: 2.5rem;
+  line-height: 1.2;
   color: var(--primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .section-subtitle {
   color: var(--text-muted);
-  font-size: 1.1rem;
-  max-width: 550px;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  max-width: 800px;
+  line-height: 1.5;
 }
 
 .dep-header-right {
@@ -2371,9 +2371,9 @@ footer {
 }
 
 .bg-text {
-  font-size: 8.5rem;
+  font-size: 5.5rem;
   font-weight: 950;
-  color: rgba(255, 107, 0, 0.04); /* Laranja baixíssima opacidade */
+  color: rgba(255, 107, 0, 0.05); /* Laranja baixíssima opacidade */
   line-height: 1;
   user-select: none;
   white-space: nowrap;
