@@ -771,6 +771,18 @@ function startRadio(audio) {
       updateMiniPlayer('playing');
       checkMiniPlayerVisibility();
 
+      // Sincronizar com Hero Card
+      const heroCard = document.getElementById('heroRadioCard');
+      const heroIcon = document.getElementById('heroRadioIcon');
+      const heroBtn = document.getElementById('heroRadioBtn');
+      if (heroCard) heroCard.classList.add('is-playing');
+      if (heroBtn) heroBtn.classList.add('is-playing');
+      if (heroIcon) {
+        heroIcon.setAttribute('data-lucide', 'pause');
+        const span = heroBtn.querySelector('span');
+        if (span) span.textContent = 'PAUSAR RÁDIO';
+      }
+
       if (window.lucide) window.lucide.createIcons();
     }).catch(error => {
       console.error("Erro ao tocar rádio:", error);
@@ -794,31 +806,42 @@ function startRadio(audio) {
 }
 
 function stopRadio(audio) {
+  radioIsPlaying = false;
+  audio.pause();
+  
   const btn = document.getElementById('radioPlayBtn');
   const icon = document.getElementById('radioIcon');
   const label = document.getElementById('statusLabel');
   const eq = document.getElementById('radioEq');
   const playerGlass = document.querySelector('.player-glass');
 
-  audio.pause();
-  // Remover src e recarregar para liberar o buffer de streaming
-  audio.removeAttribute('src');
-  audio.load();
-  audio.innerHTML = `<source src="https://stm2.brasilcast.com:6698/;" type="audio/mpeg">`;
+  if (btn) {
+    btn.classList.remove('is-playing');
+    btn.classList.remove('loading');
+  }
+  if (eq) eq.classList.remove('active');
+  if (playerGlass) playerGlass.classList.remove('is-playing');
+  if (label) label.textContent = 'Pronto para ouvir';
+  if (label) label.style.color = '';
+  
+  if (icon) {
+    icon.setAttribute('data-lucide', 'play');
+    icon.removeAttribute('fill');
+  }
 
-  radioIsPlaying = false;
-  btn.classList.remove('loading', 'is-playing');
-  eq.classList.remove('active');
-  if(playerGlass) playerGlass.classList.remove('is-playing');
+  // Sincronizar com Hero Card
+  const heroCard = document.getElementById('heroRadioCard');
+  const heroIcon = document.getElementById('heroRadioIcon');
+  const heroBtn = document.getElementById('heroRadioBtn');
+  if (heroCard) heroCard.classList.remove('is-playing');
+  if (heroBtn) heroBtn.classList.remove('is-playing');
+  if (heroIcon) {
+    heroIcon.setAttribute('data-lucide', 'play');
+    const span = heroBtn.querySelector('span');
+    if (span) span.textContent = 'OUVIR AGORA';
+  }
 
-  icon.setAttribute('data-lucide', 'play');
-  icon.setAttribute('fill', 'currentColor');
-  label.textContent = 'Pronto para ouvir';
-  label.style.color = '';
-
-  // Esconder mini player
   updateMiniPlayer('stopped');
-
   if (window.lucide) window.lucide.createIcons();
 }
 
