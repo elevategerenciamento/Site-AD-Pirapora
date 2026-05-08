@@ -600,7 +600,8 @@ function renderCongs() {
   const grid = document.getElementById('congGrid');
   if (!grid) return;
   
-  grid.innerHTML = congregacoes.filter(c => c.destaque || congregacoes.indexOf(c) < 5).slice(0, 5).map(c => `
+  const limit = window.innerWidth < 768 ? 3 : 5;
+  grid.innerHTML = congregacoes.filter(c => c.destaque || congregacoes.indexOf(c) < limit).slice(0, limit).map(c => `
     <div class="cong-card reveal">
       <div class="cong-icon-wrap">
         <svg class="cong-flame-icon" viewBox="0 0 24 24"><path d="M12 2.3C12 2.3 8 7 8 13.5c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.5-2.5-4.5-2.5-4.5s1 2.5 1 4.5c0 1.1-.9 2-2 2s-2-.9-2-2C10.5 8 12 2.3 12 2.3z"/></svg>

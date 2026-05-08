@@ -457,9 +457,9 @@
       
       /* Mobile 2 a 2 lado a lado */
       .units-grid { 
-        padding: 2rem 1rem; 
-        gap: 0.8rem; 
-        grid-template-columns: repeat(2, 1fr); 
+        padding: 2rem 1.5rem; 
+        gap: 1.2rem; 
+        grid-template-columns: 1fr; 
       }
       .units-grid .cong-card { 
         padding: 1.5rem 0.8rem; 
@@ -605,7 +605,7 @@
   <script type="module" src="./src/main.js"></script>
   <script type="module">
     let currentPage = 1;
-    const itemsPerPage = 12;
+    const itemsPerPage = window.innerWidth < 768 ? 3 : 12;
     let filteredData = [...window.congregacoes];
 
     function renderAllUnits() {
