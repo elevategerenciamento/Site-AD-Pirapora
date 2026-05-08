@@ -438,7 +438,7 @@
 
     @media (max-width: 1200px) { .units-grid { grid-template-columns: repeat(3, 1fr); } }
 
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       .units-hero { padding: 9rem 1.5rem 5rem; }
       .units-hero h1 { font-size: 2.5rem !important; }
       .units-stats-bar { 
@@ -605,7 +605,7 @@
   <script type="module" src="./src/main.js"></script>
   <script type="module">
     let currentPage = 1;
-    const itemsPerPage = window.innerWidth < 768 ? 3 : 12;
+    const itemsPerPage = window.innerWidth <= 991 ? 3 : 12;
     let filteredData = [...window.congregacoes];
 
     function renderAllUnits() {

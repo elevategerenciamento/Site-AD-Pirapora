@@ -600,7 +600,7 @@ function renderCongs() {
   const grid = document.getElementById('congGrid');
   if (!grid) return;
   
-  const limit = window.innerWidth < 768 ? 3 : 5;
+  const limit = window.innerWidth <= 991 ? 3 : 5;
   grid.innerHTML = congregacoes.filter(c => c.destaque || congregacoes.indexOf(c) < limit).slice(0, limit).map(c => `
     <div class="cong-card reveal">
       <div class="cong-icon-wrap">
