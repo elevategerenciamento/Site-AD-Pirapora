@@ -964,12 +964,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sincronizar volume inicial
     audio.volume = volumeSlider.value / 100;
     
-    volumeSlider.addEventListener('input', (e) => {
+    const updateVol = (e) => {
       const vol = e.target.value / 100;
       audio.volume = vol;
       audio.muted = (vol === 0);
       updateVolumeIcon(vol);
-    });
+    };
+
+    volumeSlider.addEventListener('input', updateVol);
+    volumeSlider.addEventListener('change', updateVol);
   }
 
   window.toggleMute = function() {
