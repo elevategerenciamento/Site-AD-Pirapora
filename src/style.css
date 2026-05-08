@@ -2505,6 +2505,12 @@ footer {
 
 @media (max-width: 768px) {
   #departamentos { padding: 4rem 0; }
+  
+  .dep-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 3rem; }
+  .dep-header .section-title { font-size: 1.85rem; line-height: 1.3; margin-bottom: 0.8rem; }
+  .section-subtitle { font-size: 0.95rem; max-width: 100%; line-height: 1.5; }
+  .dep-header-right { display: none; } /* Oculta o AD PIRAPORA gigante no mobile para evitar cortes */
+
   .dep-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
   .dep-card { padding: 1.2rem 1rem; min-height: 90px; gap: 0.8rem; border-radius: 12px; }
   .dep-icon-box { width: 40px; height: 40px; border-radius: 10px; }
