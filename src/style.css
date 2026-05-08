@@ -541,10 +541,17 @@ section { padding: 8rem 0; }
 
 @media (max-width: 991px) {
   #congregacoes { background: var(--gray-50); padding: 5rem 0; }
-  .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; }
+  .cong-grid { grid-template-columns: repeat(2, 1fr); padding: 0 1rem; gap: 1rem; }
   
-  /* Mobile intocado conforme pedido */
-  /* Mobile intocado conforme pedido */
+  /* Ajustes para caber 2 cards lado a lado no mobile */
+  .cong-card { padding: 1.5rem 0.8rem; border-radius: 12px; }
+  .cong-icon-wrap { width: 44px; height: 44px; margin-bottom: 0.8rem; }
+  .cong-icon-wrap i { width: 20px; height: 20px; }
+  .cong-card h3 { font-size: 0.85rem; }
+  .cong-card p { font-size: 0.7rem; margin-bottom: 0.8rem; }
+  .cong-hours { font-size: 0.6rem; padding: 0.4rem 0.6rem; margin-bottom: 0.8rem; }
+  .btn-loc, .btn-saiba-mais { padding: 0.5rem 0.4rem; font-size: 0.6rem; }
+  
 }
 
 .cong-card {
