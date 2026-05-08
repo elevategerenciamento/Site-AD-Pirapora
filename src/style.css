@@ -155,6 +155,35 @@ nav {
   color: white !important;
 }
 
+.header-welcome-msg {
+  display: none;
+  background: var(--gray-50);
+  color: var(--primary);
+  padding: 0.55rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1.5px solid var(--gray-200);
+  white-space: nowrap;
+  animation: slideInDown 0.4s ease;
+}
+
+#header.scrolled .btn-h-tv,
+#header.scrolled .btn-h-radio {
+  display: none;
+}
+
+#header.scrolled .header-welcome-msg {
+  display: block;
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 .btn-h-tv {
   background: linear-gradient(to right, #991b1b, #ef4444);
   border-left: 4px solid #7f1d1d;
@@ -2109,6 +2138,10 @@ footer {
     padding: 0.4rem 0.6rem; 
     font-size: 0.58rem; 
     border-left-width: 2px;
+  }
+  .header-welcome-msg {
+    font-size: 0.55rem;
+    padding: 0.45rem 0.8rem;
   }
   .hamburger { margin-left: auto; }
   
