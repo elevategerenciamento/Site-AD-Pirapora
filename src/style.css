@@ -500,7 +500,7 @@ section { padding: 8rem 0; }
 
 .cong-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 0;
   max-width: var(--container);
@@ -543,9 +543,7 @@ section { padding: 8rem 0; }
   #congregacoes { background: var(--gray-50); padding: 5rem 0; }
   .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 2rem; }
   
-  /* Exibir apenas 3 unidades no Mobile (como solicitado) */
-  .cong-grid .cong-card:nth-child(n+4) { display: none; }
-  
+  /* Mobile intocado conforme pedido */
   /* Mobile intocado conforme pedido */
 }
 
