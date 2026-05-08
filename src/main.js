@@ -833,6 +833,82 @@ function stopRadio(audio) {
   if (window.lucide) window.lucide.createIcons();
 }
 
+// ── MODAIS DE LIVE (TV e RÁDIO) ──
+window.openTVModal = function() {
+  const modal = document.createElement('div');
+  modal.className = 'modal-live-overlay modal-live-tv';
+  modal.id = 'modalTV';
+  modal.innerHTML = `
+    <div class="modal-live-content">
+      <button class="modal-live-close" onclick="closeLiveModal('modalTV')">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-live-icon">
+        <i data-lucide="monitor"></i>
+      </div>
+      <h2>TV AD Pirapora</h2>
+      <p>Acompanhe nossa programação ao vivo com cultos, mensagens edificantes e eventos especiais diretamente do nosso estúdio central para sua casa.</p>
+      <a href="#cultos" class="btn-modal-action" onclick="closeLiveModal('modalTV')">
+        <i data-lucide="play-circle"></i> ASSISTIR AGORA
+      </a>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => modal.classList.add('active'));
+  lucide.createIcons();
+  
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLiveModal('modalTV');
+  });
+};
+
+window.openRadioModal = function() {
+  const modal = document.createElement('div');
+  modal.className = 'modal-live-overlay modal-live-radio';
+  modal.id = 'modalRadio';
+  modal.innerHTML = `
+    <div class="modal-live-content">
+      <button class="modal-live-close" onclick="closeLiveModal('modalRadio')">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-live-icon">
+        <i data-lucide="radio"></i>
+      </div>
+      <h2>Vale FM 104,9</h2>
+      <p>"Tô na Vale, Tô com Cristo". A rádio que leva a palavra de Deus e os melhores louvores para todo o norte de Minas e para o mundo inteiro via web.</p>
+      <button class="btn-modal-action" onclick="handleRadioModalClick()">
+        <i data-lucide="headphones"></i> OUVIR AGORA
+      </button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => modal.classList.add('active'));
+  lucide.createIcons();
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLiveModal('modalRadio');
+  });
+};
+
+window.closeLiveModal = function(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 400);
+  }
+};
+
+window.handleRadioModalClick = function() {
+  closeLiveModal('modalRadio');
+  const audio = document.getElementById('radioAudio');
+  if (audio && (audio.paused || audio.ended)) {
+    toggleRadio();
+  }
+};
+
 function updateMiniPlayer(state) {
   const mini = document.getElementById('radioMiniPlayer');
   const miniIcon = document.getElementById('miniIcon');
