@@ -2635,7 +2635,8 @@ footer {
   }
   .epas-overlay {
     top: -8px;
-    left: -8px;
+    left: auto;
+    right: -8px;
   }
   .epas-tag { 
     font-size: 0.55rem; 
