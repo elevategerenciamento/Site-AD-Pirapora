@@ -2572,7 +2572,7 @@ footer {
   aspect-ratio: 1920 / 480; /* Proporção ultra panorâmica solicitada */
   background: #000;
   border-radius: 24px;
-  overflow: hidden;
+  /* overflow: hidden; REMOVIDO para permitir o balão flutuar para fora */
   box-shadow: 0 30px 60px rgba(5, 15, 43, 0.15);
   border: 1px solid var(--gray-200);
   display: block; /* Garante que o link ocupe todo o espaço */
@@ -2591,36 +2591,57 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 24px; /* Borda aplicada diretamente no vídeo */
 }
 
 .mobile-only { display: none; }
 
 .epas-overlay {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: -12px; /* Levemente para fora */
+  left: -12px; /* No canto superior esquerdo */
+  right: auto;
   z-index: 10;
 }
 
 .epas-tag {
-  background: rgba(255, 107, 0, 0.9);
+  background: rgba(255, 107, 0, 0.95);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  font-size: 0.65rem;
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  backdrop-filter: blur(4px);
+  letter-spacing: 0.15em;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+  display: inline-block;
+  animation: float-epas-tag 3s ease-in-out infinite;
+}
+
+@keyframes float-epas-tag {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
 }
 
 @media (max-width: 768px) {
   .epas-ad-section { padding: 3rem 0 1rem; }
   .epas-video-card { 
-    aspect-ratio: 1080 / 450; /* Proporção do novo vídeo mobile */
+    aspect-ratio: 1080 / 450;
     border-radius: 16px; 
   }
-  .epas-tag { font-size: 0.55rem; padding: 0.4rem 0.8rem; }
+  .epas-video-loop {
+    border-radius: 16px;
+  }
+  .epas-overlay {
+    top: -8px;
+    left: -8px;
+  }
+  .epas-tag { 
+    font-size: 0.55rem; 
+    padding: 0.4rem 0.8rem;
+    animation-duration: 2.5s;
+  }
   
   .desktop-only { display: none; }
   .mobile-only { display: block; }
