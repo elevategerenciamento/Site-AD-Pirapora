@@ -2557,3 +2557,57 @@ footer {
 .dep-card.reveal {
   transition-delay: var(--delay, 0s);
 }
+
+/* ── ANÚNCIO EPAS (Video Banner) ── */
+.epas-ad-section {
+  padding: 4rem 0 2rem;
+  background: var(--gray-50);
+}
+
+.epas-video-card {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 1080 / 450;
+  background: #000;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(5, 15, 43, 0.15);
+  border: 1px solid var(--gray-200);
+}
+
+.epas-video-loop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.epas-overlay {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+.epas-tag {
+  background: rgba(255, 107, 0, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .epas-ad-section { padding: 3rem 0 1rem; }
+  .epas-video-card { 
+    aspect-ratio: 16 / 9; /* Mais quadrado no mobile */
+    border-radius: 16px; 
+  }
+  .epas-tag { font-size: 0.55rem; padding: 0.4rem 0.8rem; }
+}
