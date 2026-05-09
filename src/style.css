@@ -2379,15 +2379,15 @@ footer {
 
 .dep-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Voltando para 3 colunas como solicitado */
-  gap: 1.5rem;
-  max-width: 1300px; /* Aumentado levemente para os blocos crescerem para o lado */
+  grid-template-columns: repeat(4, 1fr); /* 4 Colunas para formar 2 linhas perfeitas (8 cards) */
+  gap: 1.2rem;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .dep-card {
   background: #0a1635;
-  padding: 2.2rem 1.4rem; /* Reduzido o padding lateral para dar mais espaço ao texto */
+  padding: 1.8rem 1.2rem; /* Padding ajustado para o novo grid de 4 colunas */
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
@@ -2396,10 +2396,10 @@ footer {
   display: flex;
   flex-direction: row; 
   align-items: center;
-  gap: 1.2rem; /* Gap original */
+  gap: 1rem; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: white;
-  min-height: 120px; /* Altura original */
+  min-height: 110px;
 }
 
 .dep-hover-bar {
@@ -2425,10 +2425,10 @@ footer {
 }
 
 .dep-icon-box {
-  width: 56px; /* Tamanho original */
-  height: 56px;
+  width: 48px; /* Reduzido levemente para o grid de 4 colunas */
+  height: 48px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2440,8 +2440,8 @@ footer {
 }
 
 .dep-icon-box i { 
-  width: 26px; 
-  height: 26px; 
+  width: 22px; 
+  height: 22px; 
   stroke-width: 1.5px; 
 }
 
@@ -2456,39 +2456,39 @@ footer {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.2rem;
   text-align: left;
   flex: 1;
   min-width: 0;
 }
 
 .dep-card h3 {
-  font-size: 1.4rem; /* Tamanho original que você gostava */
+  font-size: 1.1rem; /* Ajustado para caber em 4 colunas sem quebrar */
   color: white;
   margin: 0;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
   text-transform: uppercase;
-  white-space: nowrap; /* Mantendo sem quebrar linha */
+  white-space: nowrap;
 }
 
 .dep-sigla {
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   opacity: 0.8;
 }
 
 .dep-arrow {
   position: absolute;
-  right: 1.2rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%) translateX(10px);
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   display: flex;
@@ -2500,7 +2500,7 @@ footer {
   z-index: 2;
 }
 
-.dep-arrow i { width: 18px; height: 18px; }
+.dep-arrow i { width: 16px; height: 16px; }
 
 .dep-card:hover .dep-arrow {
   opacity: 1;
@@ -2511,8 +2511,9 @@ footer {
 
 /* ── RESPONSIVO MINISTÉRIOS ── */
 @media (max-width: 1100px) {
-  .dep-grid { grid-template-columns: repeat(2, 1fr); }
-  .dep-card h3 { font-size: 1.3rem; }
+  .dep-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .dep-card { padding: 1.5rem 1rem; }
+  .dep-card h3 { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -2524,25 +2525,30 @@ footer {
   .dep-header-right { display: none; }
 
   .dep-grid { 
-    grid-template-columns: 1fr;
-    gap: 1rem; 
+    grid-template-columns: repeat(2, 1fr); /* Dois a dois lado a lado no mobile */
+    gap: 0.8rem;
+    padding: 0 1rem;
   }
   
   .dep-card { 
-    padding: 1.5rem; 
-    min-height: 90px; 
-    gap: 1.2rem; 
-    border-radius: 14px; 
+    padding: 1.2rem 0.8rem; 
+    min-height: 80px; 
+    gap: 0.8rem; 
+    border-radius: 12px; 
+    flex-direction: column; /* No mobile 2 colunas, melhor ícone em cima ou manter linha? */
+    text-align: center;
+    align-items: center;
   }
   
-  .dep-icon-box { width: 48px; height: 48px; }
-  .dep-icon-box i { width: 22px; height: 22px; }
+  .dep-icon-box { width: 40px; height: 40px; }
+  .dep-icon-box i { width: 18px; height: 18px; }
   
+  .dep-info { text-align: center; }
   .dep-card h3 { 
-    font-size: 1.15rem; 
-    white-space: normal;
+    font-size: 0.8rem; 
+    white-space: nowrap; /* Tentar manter nowrap se possível */
   }
-  .dep-sigla { font-size: 0.65rem; }
+  .dep-sigla { font-size: 0.55rem; letter-spacing: 0.1em; }
   
   .dep-arrow { display: none; }
 }
