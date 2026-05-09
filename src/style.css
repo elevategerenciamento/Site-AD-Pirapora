@@ -2575,6 +2575,15 @@ footer {
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(5, 15, 43, 0.15);
   border: 1px solid var(--gray-200);
+  display: block; /* Garante que o link ocupe todo o espaço */
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.epas-video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 40px 80px rgba(5, 15, 43, 0.25);
+  border-color: var(--accent);
 }
 
 .epas-video-loop {
