@@ -955,66 +955,9 @@ section { padding: 8rem 0; }
   }
 }
 
-/* ── DEPARTAMENTOS (Formato Quick Bar em Azul) ── */
-.dep-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.dep-card {
-  background: var(--primary);
-  padding: 3.5rem 2.5rem;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(5, 15, 43, 0.2); /* Sombra muito mais leve */
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: float 5s ease-in-out infinite; /* Flutuação reativada */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--white);
-}
-
-/* Delay para um movimento mais natural */
-.dep-card:nth-child(even) { animation-delay: 2.5s; }
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); } /* Movimento bem pequeno */
-  100% { transform: translateY(0px); }
-}
-
-.dep-card:hover {
-  transform: translateY(-8px) scale(1.01) !important;
-  box-shadow: 0 15px 40px rgba(5, 15, 43, 0.3);
-  border-color: var(--accent);
-}
-
-.dep-logo-icon {
-  height: 50px;
-  width: auto;
-  margin-bottom: 1.5rem;
-}
-
-.dep-card h3 {
-  font-size: 1.4rem;
-  color: var(--white);
-  margin-bottom: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.dep-card p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-}
+/* ── DEPARTAMENTOS ── 
+   OBS: Estilos consolidados ao final do arquivo para melhor manutenção.
+*/
 
 /* ── FORMULÁRIO ── */
 .form-row {
@@ -2191,15 +2134,7 @@ footer {
 
   /* Grids de Conteúdo */
   .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 1.5rem; }
-  .dep-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    padding: 0 1rem; 
-    gap: 1rem; 
-  }
-  .dep-card { padding: 2rem 1rem; border-radius: 12px; }
-  .dep-logo-icon { height: 35px; margin-bottom: 1rem; }
-  .dep-card h3 { font-size: 0.9rem; }
-  .dep-card p { display: block; font-size: 0.75rem; line-height: 1.3; margin-top: 0.4rem; color: rgba(255,255,255,0.7); } /* Mostra a descrição no mobile com tamanho ajustado */
+  /* Ministérios - Ver final do arquivo para estilos consolidados */
 
   /* TV Section Mobile (Impacto) */
   .section-studio { padding: 5rem 0; }
@@ -2436,27 +2371,35 @@ footer {
   font-family: 'Outfit', sans-serif;
 }
 
+#departamentos {
+  background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.03), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(5, 15, 43, 0.02), transparent 40%);
+  position: relative;
+}
+
 .dep-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Desktop para caixas bem largas e retangulares */
   gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .dep-card {
-  background: var(--primary);
-  padding: 1.8rem 1.5rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #0a1635; /* Azul profundo mais premium */
+  padding: 2rem 3rem; /* Aumentado o padding lateral para mais elegância */
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   align-items: center;
-  gap: 1.2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  gap: 2rem; /* Mais espaço entre ícone e texto */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: white;
-  min-height: 110px;
+  min-height: 140px; /* Levemente mais alto para balancear a largura */
 }
 
 .dep-hover-bar {
@@ -2471,20 +2414,21 @@ footer {
 }
 
 .dep-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #0f1c3d;
 }
 
 .dep-card:hover .dep-hover-bar {
-  width: 4px;
+  width: 6px;
 }
 
 .dep-icon-box {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  width: 64px; /* Ícones um pouco maiores */
+  height: 64px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2495,12 +2439,16 @@ footer {
   flex-shrink: 0;
 }
 
-.dep-icon-box i { width: 24px; height: 24px; stroke-width: 2px; }
+.dep-icon-box i { 
+  width: 28px; 
+  height: 28px; 
+  stroke-width: 1.5px; 
+}
 
 .dep-card:hover .dep-icon-box {
-  transform: rotate(10deg);
-  background: white;
-  color: var(--primary);
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--accent);
+  color: white;
 }
 
 .dep-info {
@@ -2508,31 +2456,39 @@ footer {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
+  text-align: left;
+  flex: 1; /* Garante que ocupe o espaço restante */
+  min-width: 0; /* Permite que o flex item encolha se necessário, mas com nowrap ele vai forçar a largura se não houver overflow */
 }
 
 .dep-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.6rem; /* Título mais imponente */
   color: white;
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap; /* Não quebra o texto */
 }
 
 .dep-sigla {
-  font-weight: 600;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
+  opacity: 0.9;
 }
 
 .dep-arrow {
   position: absolute;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  width: 32px;
-  height: 32px;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  width: 40px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   display: flex;
@@ -2540,43 +2496,59 @@ footer {
   justify-content: center;
   color: white;
   opacity: 0;
-  transform: translateX(-10px);
   transition: all 0.4s ease;
   z-index: 2;
 }
 
-.dep-arrow i { width: 16px; height: 16px; }
+.dep-arrow i { width: 20px; height: 20px; }
 
 .dep-card:hover .dep-arrow {
   opacity: 1;
-  transform: translateX(0);
-  background: white;
+  transform: translateY(-50%) translateX(0);
+  background: var(--white);
   color: var(--primary);
 }
 
-/* ── RESPONSIVO ── */
-@media (max-width: 1024px) {
-  .dep-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+/* ── RESPONSIVO MINISTÉRIOS ── */
+@media (max-width: 1100px) {
+  .dep-grid { grid-template-columns: 1fr; } /* No tablet já vira coluna única para manter o aspecto retangular largo */
+  .dep-card { padding: 2rem; }
+  .dep-card h3 { font-size: 1.4rem; }
 }
 
 @media (max-width: 768px) {
-  #departamentos { padding: 4rem 0; }
+  #departamentos { padding: 5rem 0; }
   
-  .dep-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 3rem; }
-  .dep-header .section-title { font-size: 1.85rem; line-height: 1.3; margin-bottom: 0.8rem; }
-  .section-subtitle { font-size: 0.95rem; max-width: 100%; line-height: 1.5; }
-  .dep-header-right { display: none; } /* Oculta o AD PIRAPORA gigante no mobile para evitar cortes */
+  .dep-header { flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 3.5rem; }
+  .dep-header .section-title { font-size: 2rem; line-height: 1.2; }
+  .section-subtitle { font-size: 0.95rem; }
+  .dep-header-right { display: none; }
 
-  .dep-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-  .dep-card { padding: 1.2rem 1rem; min-height: 90px; gap: 0.8rem; border-radius: 12px; }
-  .dep-icon-box { width: 40px; height: 40px; border-radius: 10px; }
-  .dep-icon-box i { width: 20px; height: 20px; }
-  .dep-card h3 { font-size: 1rem; }
-  .dep-sigla { font-size: 0.6rem; }
+  .dep-grid { 
+    grid-template-columns: 1fr;
+    gap: 1rem; 
+  }
+  
+  .dep-card { 
+    padding: 1.5rem; 
+    min-height: 100px; 
+    gap: 1.2rem; 
+    border-radius: 14px; 
+  }
+  
+  .dep-icon-box { width: 52px; height: 52px; }
+  .dep-icon-box i { width: 24px; height: 24px; }
+  
+  .dep-card h3 { 
+    font-size: 1.2rem; 
+    white-space: normal; /* No mobile muito pequeno, permite quebrar se for necessário para não vazar a tela */
+  }
+  .dep-sigla { font-size: 0.65rem; }
+  
   .dep-arrow { display: none; }
 }
 
-/* Staggered entrance animation delay */
+/* Animação Reveal com delay */
 .dep-card.reveal {
   transition-delay: var(--delay, 0s);
 }
