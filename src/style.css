@@ -2379,15 +2379,15 @@ footer {
 
 .dep-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Desktop para caixas bem largas e retangulares */
+  grid-template-columns: repeat(3, 1fr); /* Voltando para 3 colunas como solicitado */
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1300px; /* Aumentado levemente para os blocos crescerem para o lado */
   margin: 0 auto;
 }
 
 .dep-card {
-  background: #0a1635; /* Azul profundo mais premium */
-  padding: 2rem 3rem; /* Aumentado o padding lateral para mais elegância */
+  background: #0a1635;
+  padding: 2.2rem 1.4rem; /* Reduzido o padding lateral para dar mais espaço ao texto */
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
@@ -2396,10 +2396,10 @@ footer {
   display: flex;
   flex-direction: row; 
   align-items: center;
-  gap: 2rem; /* Mais espaço entre ícone e texto */
+  gap: 1.2rem; /* Gap original */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   color: white;
-  min-height: 140px; /* Levemente mais alto para balancear a largura */
+  min-height: 120px; /* Altura original */
 }
 
 .dep-hover-bar {
@@ -2421,14 +2421,14 @@ footer {
 }
 
 .dep-card:hover .dep-hover-bar {
-  width: 6px;
+  width: 5px;
 }
 
 .dep-icon-box {
-  width: 64px; /* Ícones um pouco maiores */
-  height: 64px;
+  width: 56px; /* Tamanho original */
+  height: 56px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2440,8 +2440,8 @@ footer {
 }
 
 .dep-icon-box i { 
-  width: 28px; 
-  height: 28px; 
+  width: 26px; 
+  height: 26px; 
   stroke-width: 1.5px; 
 }
 
@@ -2458,37 +2458,37 @@ footer {
   flex-direction: column;
   gap: 0.3rem;
   text-align: left;
-  flex: 1; /* Garante que ocupe o espaço restante */
-  min-width: 0; /* Permite que o flex item encolha se necessário, mas com nowrap ele vai forçar a largura se não houver overflow */
+  flex: 1;
+  min-width: 0;
 }
 
 .dep-card h3 {
-  font-size: 1.6rem; /* Título mais imponente */
+  font-size: 1.4rem; /* Tamanho original que você gostava */
   color: white;
   margin: 0;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
   text-transform: uppercase;
-  white-space: nowrap; /* Não quebra o texto */
+  white-space: nowrap; /* Mantendo sem quebrar linha */
 }
 
 .dep-sigla {
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .dep-arrow {
   position: absolute;
-  right: 2rem;
+  right: 1.2rem;
   top: 50%;
   transform: translateY(-50%) translateX(10px);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   display: flex;
@@ -2500,7 +2500,7 @@ footer {
   z-index: 2;
 }
 
-.dep-arrow i { width: 20px; height: 20px; }
+.dep-arrow i { width: 18px; height: 18px; }
 
 .dep-card:hover .dep-arrow {
   opacity: 1;
@@ -2511,9 +2511,8 @@ footer {
 
 /* ── RESPONSIVO MINISTÉRIOS ── */
 @media (max-width: 1100px) {
-  .dep-grid { grid-template-columns: 1fr; } /* No tablet já vira coluna única para manter o aspecto retangular largo */
-  .dep-card { padding: 2rem; }
-  .dep-card h3 { font-size: 1.4rem; }
+  .dep-grid { grid-template-columns: repeat(2, 1fr); }
+  .dep-card h3 { font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) {
@@ -2531,17 +2530,17 @@ footer {
   
   .dep-card { 
     padding: 1.5rem; 
-    min-height: 100px; 
+    min-height: 90px; 
     gap: 1.2rem; 
     border-radius: 14px; 
   }
   
-  .dep-icon-box { width: 52px; height: 52px; }
-  .dep-icon-box i { width: 24px; height: 24px; }
+  .dep-icon-box { width: 48px; height: 48px; }
+  .dep-icon-box i { width: 22px; height: 22px; }
   
   .dep-card h3 { 
-    font-size: 1.2rem; 
-    white-space: normal; /* No mobile muito pequeno, permite quebrar se for necessário para não vazar a tela */
+    font-size: 1.15rem; 
+    white-space: normal;
   }
   .dep-sigla { font-size: 0.65rem; }
   
