@@ -2567,9 +2567,9 @@ footer {
 .epas-video-card {
   position: relative;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px; /* Aumentado para acomodar melhor o formato panorâmico */
   margin: 0 auto;
-  aspect-ratio: 1080 / 450;
+  aspect-ratio: 1920 / 480; /* Proporção ultra panorâmica solicitada */
   background: #000;
   border-radius: 24px;
   overflow: hidden;
