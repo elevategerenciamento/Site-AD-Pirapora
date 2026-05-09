@@ -2593,6 +2593,8 @@ footer {
   display: block;
 }
 
+.mobile-only { display: none; }
+
 .epas-overlay {
   position: absolute;
   top: 1.5rem;
@@ -2615,8 +2617,11 @@ footer {
 @media (max-width: 768px) {
   .epas-ad-section { padding: 3rem 0 1rem; }
   .epas-video-card { 
-    aspect-ratio: 16 / 9; /* Mais quadrado no mobile */
+    aspect-ratio: 1080 / 450; /* Proporção do novo vídeo mobile */
     border-radius: 16px; 
   }
   .epas-tag { font-size: 0.55rem; padding: 0.4rem 0.8rem; }
+  
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
 }
