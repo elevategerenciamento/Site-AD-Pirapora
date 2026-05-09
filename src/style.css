@@ -2598,8 +2598,8 @@ footer {
 
 .epas-overlay {
   position: absolute;
-  top: -12px; /* Levemente para fora */
-  left: -12px; /* No canto superior esquerdo */
+  top: -18px; /* Subi um pouco mais */
+  left: -12px; /* Mantive a lateral */
   right: auto;
   z-index: 10;
 }
@@ -2634,7 +2634,7 @@ footer {
     border-radius: 16px;
   }
   .epas-overlay {
-    top: -8px;
+    top: -12px; /* Subi um pouco mais no mobile também */
     left: auto;
     right: -8px;
   }
