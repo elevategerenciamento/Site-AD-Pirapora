@@ -287,24 +287,18 @@
   <section id="oracao" class="bg-light">
     <div class="container">
       <div class="oracao-split">
-        <!-- Esquerda: Pedido de Oração -->
-        <div class="oracao-left">
-          <div class="section-head reveal" style="text-align: left; margin-bottom: 2rem;">
-            <span class="eyebrow">Intercessão</span>
-            <h2 class="section-title">Pedido de Oração</h2>
-            <p>Preencha os campos abaixo e nossa equipe estará orando por você.</p>
+        <!-- Esquerda: Convite Sofisticado (Estilo Atitude) -->
+        <div class="oracao-welcome reveal">
+          <div class="welcome-image-box">
+            <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1935&auto=format&fit=crop" alt="Bem-vindo" class="welcome-img">
           </div>
-          <form class="clean-form reveal" id="oracaoForm" onsubmit="submitOracao(event)" style="background: white; padding: 2.5rem; border: 1px solid var(--gray-200); border-radius: 8px;">
-            <div class="form-row" style="display: grid; gap: 1rem; margin-bottom: 1rem;">
-              <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
-              <input type="tel" placeholder="WhatsApp" style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px;">
-            </div>
-            <textarea placeholder="Seu motivo de oração..." required style="width: 100%; padding: 1rem; border: 1px solid var(--gray-200); border-radius: 4px; height: 150px; margin-bottom: 1rem;"></textarea>
-            <button type="submit" class="btn-solid" style="width: 100%; border: none; cursor: pointer;">Enviar Pedido</button>
-          </form>
-          <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: white; border: 1px solid var(--accent); border-radius: 8px; margin-top: 1rem;">
-             <h3 style="color: var(--accent);">Pedido Enviado!</h3>
-             <p>Deus te abençoe.</p>
+          <div class="welcome-text-box">
+            <span class="welcome-eyebrow">BEM-VINDO À SUA CASA</span>
+            <h2 class="welcome-title">Você é importante para essa família</h2>
+            <p class="welcome-desc">Estamos aqui para orar por você e caminhar juntos na fé. Clique abaixo para enviar seu pedido de oração diretamente ao nosso WhatsApp.</p>
+            <a href="https://wa.me/5538999690808" target="_blank" class="welcome-btn">
+              PEDIR ORAÇÃO VIA WHATSAPP <i data-lucide="arrow-up-right"></i>
+            </a>
           </div>
         </div>
 
