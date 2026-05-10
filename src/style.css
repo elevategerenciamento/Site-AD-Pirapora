@@ -2648,9 +2648,9 @@ footer {
   .mobile-only { display: block; }
 }
 
-/* ── REGIONAIS (Estilo AD-BH) ── */
-.regionais-section {
-  background-color: #cbd5e1;
+/* ── DIRETORIA E PASTORES REGIONAIS ── */
+.diretoria-section {
+  background-color: #e2e8f0;
   background-image: 
     linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 40%),
     linear-gradient(225deg, rgba(0,0,0,0.05) 0%, transparent 40%);
@@ -2660,18 +2660,17 @@ footer {
   border-top: 1px solid var(--gray-200);
 }
 
-/* Polygons Background (Efeito de triângulos) */
-.regionais-section::before {
+.diretoria-section::before {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1000 400' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L400 0 L0 400 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M1000 0 L600 0 L1000 400 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M200 400 L500 0 L800 400 Z' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1000 400' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L400 0 L0 400 Z' fill='rgba(0,0,0,0.03)'/%3E%3Cpath d='M1000 0 L600 0 L1000 400 Z' fill='rgba(0,0,0,0.03)'/%3E%3Cpath d='M200 400 L500 0 L800 400 Z' fill='rgba(255,255,255,0.15)'/%3E%3C/svg%3E");
   background-size: cover;
   z-index: 1;
   pointer-events: none;
 }
 
-.regionais-section .container {
+.diretoria-section .container {
   position: relative;
   z-index: 2;
   display: flex;
@@ -2679,101 +2678,126 @@ footer {
   align-items: center;
 }
 
-.regionais-header {
+.diretoria-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
   align-self: flex-start;
 }
 
 .yellow-bar {
-  width: 5px;
-  height: 28px;
+  width: 6px;
+  height: 32px;
   background: #fbbf24;
   border-radius: 10px;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
 }
 
-.regionais-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #334155;
-  letter-spacing: 0.05em;
+.diretoria-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: #1e293b;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
-.regionais-strip {
+.diretoria-strip {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 4rem;
-  padding: 1rem 0;
+  margin-bottom: 5rem;
+  padding: 2rem 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
 
-.regionais-strip::-webkit-scrollbar { display: none; }
+.diretoria-strip::-webkit-scrollbar { display: none; }
 
-.regional-item {
+.diretoria-item {
   flex: 0 0 auto;
-  width: 95px;
-  height: 135px;
+  width: 110px;
+  height: 155px;
   background: white;
   margin-right: -12px;
   border: 4px solid white;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   position: relative;
 }
 
-.regional-item:hover {
-  transform: translateY(-15px) scale(1.1);
-  z-index: 10;
-  margin-right: 12px;
-  margin-left: 12px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+.diretoria-item:hover {
+  transform: translateY(-20px) scale(1.1);
+  z-index: 20;
+  margin-right: 15px;
+  margin-left: 15px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
-.regional-item img {
+.diretoria-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.regionais-action {
+/* Etiquetas de Nomes/Cargos */
+.item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1.5rem 0.4rem 0.5rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.diretoria-item:hover .item-label {
+  opacity: 1;
+}
+
+.diretoria-action {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
-.btn-regionais {
-  background: rgba(255, 255, 255, 0.5);
+.btn-diretoria {
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid #94a3b8;
   color: #1e293b;
-  padding: 0.8rem 2.5rem;
+  padding: 1rem 3rem;
   border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.btn-regionais:hover {
-  background: white;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  border-color: #334155;
+.btn-diretoria:hover {
+  background: #1e293b;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 991px) {
-  .regionais-strip { justify-content: flex-start; padding-left: 1rem; }
-  .regional-item { width: 75px; height: 110px; margin-right: -8px; }
-  .regionais-title { font-size: 1.5rem; }
-  .regionais-section { padding: 4rem 0; }
+  .diretoria-strip { justify-content: flex-start; padding-left: 2rem; }
+  .diretoria-item { width: 90px; height: 125px; margin-right: -10px; }
+  .diretoria-title { font-size: 1.5rem; }
 }
+
+
 
