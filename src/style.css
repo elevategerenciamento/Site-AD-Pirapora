@@ -2650,12 +2650,12 @@ footer {
 
 /* ── DIRETORIA E PASTORES REGIONAIS ── */
 .diretoria-section {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   background-image: 
-    linear-gradient(135deg, rgba(255,255,255,0.5) 0%, transparent 40%),
-    linear-gradient(225deg, rgba(0,0,0,0.03) 0%, transparent 40%);
+    linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(0,0,0,0.02) 0%, transparent 50%);
   position: relative;
-  padding: 6rem 0;
+  padding: 7rem 0;
   overflow: hidden;
   border-top: 1px solid var(--gray-200);
 }
@@ -2664,7 +2664,7 @@ footer {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1000 400' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L400 0 L0 400 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M1000 0 L600 0 L1000 400 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M200 400 L500 0 L800 400 Z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1000 400' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L400 0 L0 400 Z' fill='rgba(0,0,0,0.015)'/%3E%3Cpath d='M1000 0 L600 0 L1000 400 Z' fill='rgba(0,0,0,0.015)'/%3E%3C/svg%3E");
   background-size: cover;
   z-index: 1;
   pointer-events: none;
@@ -2675,65 +2675,76 @@ footer {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .diretoria-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-bottom: 5rem;
-  align-self: flex-start;
+  padding: 0 2rem;
 }
 
 .yellow-bar {
-  width: 6px;
-  height: 35px;
+  width: 7px;
+  height: 38px;
   background: #fbbf24;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
 }
 
 .diretoria-title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 950;
   color: #0f172a;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
+}
+
+.diretoria-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .diretoria-strip {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Presidente fixo na esquerda no início */
   align-items: center;
   width: 100%;
   margin-bottom: 6rem;
-  padding: 3rem 0;
+  padding: 3rem 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
-  gap: 1.5rem; /* Espaçamento real em vez de sobreposição para melhorar visibilidade */
+  gap: 2.5rem; /* Mais espaço para não parecer amontoado */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 .diretoria-strip::-webkit-scrollbar { display: none; }
 
 .diretoria-item {
   flex: 0 0 auto;
-  width: 220px; /* Tamanho muito maior para Alta Qualidade */
-  height: 310px;
+  width: 250px; /* Tamanho MAX para qualidade total */
+  height: 350px;
   background: white;
-  border: 6px solid white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  will-change: transform;
 }
 
 .diretoria-item:hover {
-  transform: translateY(-25px) scale(1.03);
+  transform: translateY(-15px) scale(1.02);
   z-index: 30;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
   border-color: #fbbf24;
 }
 
@@ -2741,64 +2752,99 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: -webkit-optimize-contrast; /* Melhora a nitidez no Chrome/Edge */
-  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  filter: contrast(1.08) brightness(1.02); /* Melhora o impacto visual */
   display: block;
+  transition: transform 0.5s ease;
 }
 
-/* Etiquetas de Nomes/Cargos - Mais Legíveis */
+.diretoria-item:hover img {
+  transform: scale(1.05);
+}
+
+.diretoria-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-130%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 40;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  color: #1e293b;
+}
+
+.diretoria-arrow:hover {
+  background: #1e293b;
+  color: white;
+  transform: translateY(-130%) scale(1.15);
+}
+
+.diretoria-arrow.prev { left: -10px; }
+.diretoria-arrow.next { right: -10px; }
+
 .item-label {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
   color: white;
-  font-size: 0.85rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 900;
   text-transform: uppercase;
-  padding: 3rem 0.5rem 1rem;
+  padding: 4rem 0.5rem 1.5rem;
   text-align: center;
   pointer-events: none;
   letter-spacing: 0.05em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .diretoria-action {
-  position: relative;
-  z-index: 2;
   text-align: center;
 }
 
 .btn-diretoria {
   background: #1e293b;
   color: white;
-  padding: 1.2rem 4rem;
+  padding: 1.2rem 5rem;
   border-radius: 100px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 900;
   text-decoration: none;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(30, 41, 59, 0.25);
 }
 
 .btn-diretoria:hover {
   background: #fbbf24;
   color: #000;
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 25px 50px rgba(251, 191, 36, 0.4);
 }
 
 @media (max-width: 1200px) {
-  .diretoria-item { width: 180px; height: 250px; }
+  .diretoria-item { width: 220px; height: 310px; }
+  .diretoria-arrow.prev { left: 10px; }
+  .diretoria-arrow.next { right: 10px; }
 }
 
 @media (max-width: 991px) {
-  .diretoria-strip { justify-content: flex-start; padding-left: 2rem; gap: 1rem; }
-  .diretoria-item { width: 140px; height: 200px; }
-  .diretoria-title { font-size: 1.8rem; }
+  .diretoria-wrapper { padding: 0; }
+  .diretoria-arrow { display: none; }
+  .diretoria-strip { gap: 1.2rem; padding: 2rem 1rem; }
+  .diretoria-item { width: 170px; height: 240px; border-radius: 8px; }
+  .diretoria-title { font-size: 2.2rem; }
+  .diretoria-header { padding: 0 1rem; }
 }
 
 

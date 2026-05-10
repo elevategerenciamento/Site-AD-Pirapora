@@ -1040,6 +1040,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  // ── Carrossel da Diretoria ──
+  const strip = document.getElementById('diretoria-strip');
+  const btnPrev = document.getElementById('diretoria-prev');
+  const btnNext = document.getElementById('diretoria-next');
+
+  if (strip && btnPrev && btnNext) {
+    const scrollAmount = 300;
+    
+    btnPrev.addEventListener('click', () => {
+      strip.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    btnNext.addEventListener('click', () => {
+      strip.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Ocultar setas se nǜo houver scroll
+    const toggleArrows = () => {
+      btnPrev.style.display = strip.scrollLeft > 0 ? 'flex' : 'none';
+      btnNext.style.display = (strip.scrollLeft + strip.clientWidth < strip.scrollWidth - 10) ? 'flex' : 'none';
+    };
+
+    strip.addEventListener('scroll', toggleArrows);
+    window.addEventListener('resize', toggleArrows);
+    setTimeout(toggleArrows, 500); // Check inicial
+  }
+
   renderCongs();
   observeReveal();
   if (window.lucide) {
