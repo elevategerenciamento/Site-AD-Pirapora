@@ -671,7 +671,7 @@ document.addEventListener('keydown', (e) => {
 
 // Reveal on scroll logic
 function observeReveal() {
-  const els = document.querySelectorAll('.reveal');
+  const els = document.querySelectorAll('.reveal, .reveal-right');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
