@@ -2874,8 +2874,35 @@ footer {
   font-weight: 800;
 }
 
-@media (max-width: 1024px) {
-  .about-content-inner { padding: 0 2rem; }
+@media (max-width: 768px) {
+  .about-minimalist { 
+    padding: 5rem 0; 
+    text-align: right; 
+  }
+  .about-content-inner { 
+    align-items: flex-end; 
+    text-align: right; 
+    padding: 0 1.5rem; 
+  }
+  .about-title { 
+    font-size: 1.8rem; 
+    margin-bottom: 1rem; 
+    color: #1e293b;
+    align-self: flex-end;
+  }
+  .about-text { 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    max-width: 100%;
+    margin-bottom: 0;
+    color: #64748b;
+  }
+  /* Detalhe da linha para a direita no mobile */
+  .about-minimalist::after {
+    left: auto;
+    right: 5%;
+    height: 60px;
+  }
 }
 
 
