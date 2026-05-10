@@ -2906,113 +2906,106 @@ footer {
 }
 
 
-/* ── ORAÇÃO & BOAS-VINDAS (Estilo Sofisticado) ── */
+/* ── ORAÇÃO & BOAS-VINDAS (Estilo Sofisticado Balanceado) ── */
+#oracao {
+  background: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.03) 0, transparent 50%), 
+    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.03) 0, transparent 50%);
+  padding: 10rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
 .oracao-split {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Mais espaço para o convite */
-  gap: 6rem;
+  grid-template-columns: 1fr 1px 1fr; /* Adiciona espaço para a linha divisória */
+  gap: 5rem;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Linha Divisória */
+.split-divider {
+  width: 1px;
+  height: 400px;
+  background: linear-gradient(to bottom, transparent, var(--gray-200), transparent);
 }
 
 .oracao-welcome {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .welcome-image-box {
-  width: 280px;
-  height: 420px;
+  width: 240px; /* Reduzido para balancear com o insta */
+  height: 380px;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 140px 0 140px 140px; /* Formato de Arco Sofisticado */
-  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-}
-
-.welcome-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1s ease;
-}
-
-.oracao-welcome:hover .welcome-img {
-  transform: scale(1.1);
-}
-
-.welcome-text-box {
-  text-align: left;
-}
-
-.welcome-eyebrow {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #64748b;
-  letter-spacing: 0.2em;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
+  border-radius: 120px 0 120px 120px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
 }
 
 .welcome-title {
-  font-size: 3.2rem;
+  font-size: 2.5rem; /* Reduzido para proporcionalidade */
   font-weight: 900;
   color: #0f172a;
   line-height: 1.1;
-  margin-bottom: 2rem;
-  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
 }
 
 .welcome-desc {
-  font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.7;
-  margin-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Ajustes no Instagram para não dominar a seção */
+.oracao-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.phone-scene {
+  transform: scale(0.85); /* Reduzido para balancear */
+  transform-origin: left center;
+  margin-left: -2rem;
+}
+
+.insta-call {
   max-width: 450px;
 }
 
-.welcome-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
-  font-weight: 900;
-  color: #f97316; /* Cor de destaque (Ouro Atitude) */
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s ease;
-}
-
-.welcome-btn i {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.welcome-btn:hover {
-  color: #0f172a;
-}
-
-.welcome-btn:hover i {
-  transform: translate(5px, -5px);
+.insta-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 1400px) {
-  .oracao-split { gap: 3rem; }
-  .welcome-title { font-size: 2.5rem; }
+  .oracao-split { padding: 0 2rem; gap: 3rem; }
+  .phone-scene { transform: scale(0.75); }
 }
 
-@media (max-width: 1200px) {
-  .oracao-welcome { flex-direction: column; text-align: center; gap: 2.5rem; }
+@media (max-width: 1024px) {
+  .oracao-split { grid-template-columns: 1fr; gap: 4rem; }
+  .split-divider { display: none; }
+  .oracao-welcome { flex-direction: column; text-align: center; }
+  .welcome-image-box { width: 100%; max-width: 280px; }
   .welcome-text-box { text-align: center; }
-  .welcome-image-box { width: 100%; max-width: 320px; height: 400px; border-radius: 120px 0 120px 120px; margin: 0 auto; }
-  .welcome-desc { margin-left: auto; margin-right: auto; }
   .welcome-btn { justify-content: center; }
+  .oracao-right { align-items: center; text-align: center; }
+  .phone-scene { transform: scale(0.8); transform-origin: center; margin-left: 0; }
+  .insta-call { text-align: center; }
 }
 
-@media (max-width: 991px) {
-  .oracao-split { grid-template-columns: 1fr; gap: 6rem; }
+@media (max-width: 768px) {
+  #oracao { padding: 6rem 0; }
+  .welcome-title { font-size: 2.2rem; }
+  .phone-scene { transform: scale(0.7); }
 }
 
 
