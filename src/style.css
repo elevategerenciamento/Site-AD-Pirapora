@@ -1503,280 +1503,214 @@ footer {
   box-shadow: 0 15px 30px rgba(255, 107, 0, 0.4);
 }
 
-/* ── RADIO PLAYER LIGHT & CLEAN ── */
-.radio-player-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.player-glass {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 2rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+/* ── RÁDIO VALE FM (Design Banner Premium) ── */
+.radio-section-new {
   position: relative;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-  border: 1px solid var(--gray-200);
-  transition: all 0.4s ease;
+  padding: 8rem 0;
+  color: white;
+  overflow: hidden;
+  background: #0f172a;
 }
 
-.player-glass.is-playing {
-  border-color: var(--accent);
-  box-shadow: 0 20px 50px rgba(255, 107, 0, 0.08);
+.radio-banner-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
 }
 
-/* Lado Esquerdo: Capa e Info */
-.player-left {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  flex: 1;
-}
-
-.player-art-wrap {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  flex-shrink: 0;
-}
-
-.player-art {
+.radio-banner-bg .bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  border: 1px solid var(--gray-100);
+  opacity: 0.4;
+  filter: grayscale(100%) brightness(0.6);
 }
 
-.on-air-badge {
+.radio-banner-bg .bg-overlay {
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--white);
-  color: var(--primary);
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-size: 0.6rem;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.95) 100%);
+}
+
+.radio-container-new {
+  position: relative;
+  z-index: 5;
+}
+
+.radio-grid-new {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  align-items: center;
+  gap: 6rem;
+}
+
+.radio-main-logo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.radio-main-logo:hover {
+  transform: scale(1.03);
+}
+
+.radio-title-new {
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  letter-spacing: 0.1em;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border: 1px solid var(--gray-100);
-  white-space: nowrap;
-}
-
-.pulse-red {
-  width: 6px;
-  height: 6px;
-  background: #ef4444;
-  border-radius: 50%;
-  animation: pulse-red-anim 1.5s infinite;
-}
-
-.player-meta {
-  text-align: left;
-}
-
-.player-meta .eyebrow {
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  font-size: 0.65rem;
-  margin-bottom: 0.4rem;
-  display: block;
-}
-
-.radio-name {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 0.2rem;
-  letter-spacing: -0.02em;
-}
-
-.radio-slogan {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-/* Lado Direito: Controles */
-.player-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  min-width: 250px;
-}
-
-.player-controls-group {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.spotify-play-btn {
-  width: 64px;
-  height: 64px;
-  background: var(--accent);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
-}
-
-.spotify-play-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(255, 107, 0, 0.3);
-}
-
-.spotify-play-btn i {
-  width: 24px;
-  height: 24px;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
   color: white;
 }
 
-/* Equalizer Minimalista */
-.player-eq {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 20px;
+.radio-title-new span {
+  color: #fbbf24;
+  position: relative;
 }
 
-.player-eq span {
-  width: 3px;
-  background: var(--accent);
+.radio-title-new span::after {
+  content: '';
+  position: absolute;
+  bottom: 5px; left: 0; width: 100%; height: 4px;
+  background: #fbbf24;
+  opacity: 0.3;
   border-radius: 10px;
-  height: 4px;
-  opacity: 0.2;
-  transition: all 0.3s;
 }
 
-.player-eq.active span {
-  opacity: 1;
-  animation: light-eq 0.8s ease-in-out infinite alternate;
+.radio-desc-new {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 3.5rem;
 }
 
-@keyframes light-eq {
-  0% { height: 4px; }
-  100% { height: 18px; }
-}
-
-.status-txt {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  font-weight: 700;
-}
-
-/* Volume */
-.player-footer {
-  width: 100%;
-}
-
-.volume-control {
+.radio-controls-direct {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-.vol-btn {
+.btn-play-banner {
+  background: #fbbf24;
+  color: #000;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 30px rgba(251, 191, 36, 0.2);
+  letter-spacing: 0.05em;
+}
+
+.btn-play-banner:hover {
+  background: white;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
+.btn-play-banner i {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.volume-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vol-icon-btn {
   background: none;
   border: none;
-  padding: 0.5rem;
+  color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  transition: all 0.2s;
-  border-radius: 50%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
-.vol-btn:hover {
-  color: var(--accent);
-  background: rgba(0, 0, 0, 0.05);
-}
+.vol-icon-btn:hover { opacity: 1; }
 
-.vol-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.spotify-slider {
-  flex: 1;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.1);
+.slider-banner {
+  width: 150px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  cursor: pointer;
 }
 
-.spotify-slider::-webkit-slider-thumb {
+.slider-banner::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--accent);
+  width: 18px;
+  height: 18px;
+  background: #fbbf24;
   border-radius: 50%;
   cursor: pointer;
-  border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
-.spotify-slider:active::-webkit-slider-thumb {
-  transform: scale(1.2);
+/* Equalizer Visual */
+.radio-eq-visual {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 30px;
 }
 
-/* Responsivo Mobile */
-@media (max-width: 800px) {
-  .player-glass {
-    flex-direction: column;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .player-left {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .player-meta {
-    text-align: center;
-  }
-  
-  .player-right {
-    width: 100%;
-    min-width: auto;
-  }
+.radio-eq-visual span {
+  width: 4px;
+  background: #fbbf24;
+  height: 6px;
+  border-radius: 10px;
+  transition: 0.3s;
+  opacity: 0.3;
+}
 
-  .spotify-slider {
-    height: 12px; /* Maior para toque */
-  }
+.radio-eq-visual.active span {
+  opacity: 1;
+  animation: eq-bounce 0.8s ease-in-out infinite alternate;
+}
 
-  .spotify-slider::-webkit-slider-thumb {
-    width: 28px; /* Thumb bem maior para mobile */
-    height: 28px;
-  }
+.radio-eq-visual.active span:nth-child(2) { animation-delay: 0.1s; }
+.radio-eq-visual.active span:nth-child(3) { animation-delay: 0.2s; }
+.radio-eq-visual.active span:nth-child(4) { animation-delay: 0.15s; }
+.radio-eq-visual.active span:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes eq-bounce {
+  0% { height: 6px; }
+  100% { height: 30px; }
+}
+
+@media (max-width: 1100px) {
+  .radio-grid-new { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+  .radio-main-logo { margin: 0 auto; max-width: 250px; }
+  .radio-controls-direct { justify-content: center; }
+  .radio-desc-new { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 768px) {
+  .radio-section-new { padding: 5rem 0; }
+  .btn-play-banner { width: 100%; justify-content: center; }
+  .volume-banner { width: 100%; justify-content: center; }
+  .slider-banner { width: 100%; }
+  .radio-eq-visual { display: none; }
 }
 
 /* ── MINI PLAYER FIXO ── */
