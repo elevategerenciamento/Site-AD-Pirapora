@@ -2586,22 +2586,12 @@ footer {
 .diretoria-section {
   background-color: #f8fafc;
   background-image: 
-    linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(255,255,255,0.7) 0%, transparent 50%),
     linear-gradient(225deg, rgba(0,0,0,0.02) 0%, transparent 50%);
   position: relative;
-  padding: 7rem 0;
+  padding: 8rem 0;
   overflow: hidden;
   border-top: 1px solid var(--gray-200);
-}
-
-.diretoria-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1000 400' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L400 0 L0 400 Z' fill='rgba(0,0,0,0.015)'/%3E%3Cpath d='M1000 0 L600 0 L1000 400 Z' fill='rgba(0,0,0,0.015)'/%3E%3C/svg%3E");
-  background-size: cover;
-  z-index: 1;
-  pointer-events: none;
 }
 
 .diretoria-section .container {
@@ -2620,15 +2610,15 @@ footer {
 }
 
 .yellow-bar {
-  width: 7px;
-  height: 38px;
+  width: 8px;
+  height: 40px;
   background: #fbbf24;
   border-radius: 10px;
-  box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
 }
 
 .diretoria-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 950;
   color: #0f172a;
   letter-spacing: -0.04em;
@@ -2638,21 +2628,21 @@ footer {
 .diretoria-wrapper {
   position: relative;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
 }
 
 .diretoria-strip {
   display: flex;
-  justify-content: flex-start; /* Presidente fixo na esquerda no início */
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   margin-bottom: 6rem;
   padding: 3rem 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
-  gap: 2.5rem; /* Mais espaço para não parecer amontoado */
+  gap: 3rem; /* Espaçamento Premium */
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
@@ -2661,24 +2651,25 @@ footer {
 
 .diretoria-item {
   flex: 0 0 auto;
-  width: 250px; /* Tamanho MAX para qualidade total */
-  height: 350px;
+  width: 300px; /* Tamanho Ultra HD Desktop */
+  height: 420px;
   background: white;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
   scroll-snap-align: start;
+  transform: translateZ(0); /* Força renderização via GPU para nitidez */
   will-change: transform;
 }
 
 .diretoria-item:hover {
-  transform: translateY(-15px) scale(1.02);
+  transform: translateY(-20px);
   z-index: 30;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.15);
   border-color: #fbbf24;
 }
 
@@ -2687,30 +2678,30 @@ footer {
   height: 100%;
   object-fit: cover;
   image-rendering: -webkit-optimize-contrast;
-  filter: contrast(1.08) brightness(1.02); /* Melhora o impacto visual */
+  filter: contrast(1.05) brightness(1.02) saturate(1.05);
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease;
 }
 
 .diretoria-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .diretoria-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-130%);
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background: white;
-  border: none;
+  border: 1px solid var(--gray-100);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 40;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   color: #1e293b;
 }
@@ -2718,27 +2709,26 @@ footer {
 .diretoria-arrow:hover {
   background: #1e293b;
   color: white;
-  transform: translateY(-130%) scale(1.15);
+  transform: translateY(-130%) scale(1.1);
 }
 
-.diretoria-arrow.prev { left: -10px; }
-.diretoria-arrow.next { right: -10px; }
+.diretoria-arrow.prev { left: -15px; }
+.diretoria-arrow.next { right: -15px; }
 
 .item-label {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
   color: white;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 900;
   text-transform: uppercase;
-  padding: 4rem 0.5rem 1.5rem;
+  padding: 5rem 0.5rem 1.8rem;
   text-align: center;
   pointer-events: none;
   letter-spacing: 0.05em;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .diretoria-action {
@@ -2756,29 +2746,83 @@ footer {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  box-shadow: 0 20px 40px rgba(30, 41, 59, 0.25);
+  box-shadow: 0 20px 40px rgba(30, 41, 59, 0.2);
 }
 
 .btn-diretoria:hover {
   background: #fbbf24;
   color: #000;
   transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(251, 191, 36, 0.4);
+  box-shadow: 0 25px 50px rgba(251, 191, 36, 0.35);
 }
 
+/* ── RESPONSIVIDADE MOBILE REFINADA ── */
+
 @media (max-width: 1200px) {
-  .diretoria-item { width: 220px; height: 310px; }
-  .diretoria-arrow.prev { left: 10px; }
-  .diretoria-arrow.next { right: 10px; }
+  .diretoria-item { width: 240px; height: 340px; }
 }
 
 @media (max-width: 991px) {
-  .diretoria-wrapper { padding: 0; }
-  .diretoria-arrow { display: none; }
-  .diretoria-strip { gap: 1.2rem; padding: 2rem 1rem; }
-  .diretoria-item { width: 170px; height: 240px; border-radius: 8px; }
-  .diretoria-title { font-size: 2.2rem; }
-  .diretoria-header { padding: 0 1rem; }
+  /* Título Menor e Discreto no Mobile */
+  .diretoria-header { margin-bottom: 3rem; padding: 0 1rem; }
+  .diretoria-title { font-size: 1.6rem; letter-spacing: -0.02em; }
+  .yellow-bar { height: 28px; width: 5px; }
+
+  /* Fotos Menores para Mostrar Mais de Primeira */
+  .diretoria-wrapper { padding: 0 0.5rem; }
+  .diretoria-strip { gap: 1rem; padding: 1.5rem 0.5rem; margin-bottom: 4rem; }
+  .diretoria-item { width: 145px; height: 205px; border-radius: 10px; }
+  .item-label { font-size: 0.75rem; padding: 3rem 0.3rem 1rem; }
+
+  /* Setas Discretas e Menores no Mobile */
+  .diretoria-arrow { 
+    display: flex; /* Habilitado no mobile mas discreto */
+    width: 38px; height: 38px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(0,0,0,0.05);
+  }
+  .diretoria-arrow i { width: 18px; }
+  .diretoria-arrow.prev { left: 0px; }
+  .diretoria-arrow.next { right: 0px; }
+
+  /* Botão de Baixo Otimizado */
+  .btn-diretoria { padding: 1rem 2.5rem; font-size: 0.85rem; letter-spacing: 0.05em; }
+
+  /* ── RADIO MOBILE MINIMALISTA ── */
+  .radio-section-new { padding: 4rem 0; }
+  .radio-grid-new { gap: 2rem; }
+  .radio-main-logo { max-width: 160px; border-radius: 12px; }
+  .radio-title-new { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .radio-desc-new { font-size: 0.9rem; line-height: 1.4; margin-bottom: 2rem; padding: 0 1rem; }
+  
+  .radio-controls-direct { 
+    flex-direction: column; 
+    gap: 1.2rem; 
+    padding: 0 1.5rem; 
+  }
+  
+  .btn-play-banner { 
+    width: 100%; 
+    padding: 1rem; 
+    font-size: 0.9rem; 
+    justify-content: center;
+    border-radius: 8px;
+  }
+  
+  .volume-banner { 
+    width: 100%; 
+    padding: 0.7rem 1.5rem; 
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .slider-banner { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .diretoria-item { width: 130px; height: 185px; }
+  .diretoria-title { font-size: 1.4rem; }
 }
 
 
