@@ -2910,7 +2910,9 @@ footer {
 .section-split-impact {
   display: flex;
   overflow: hidden;
-  background: white;
+  background: white; 
+  margin: 0;
+  padding: 0;
 }
 
 .split-side {
@@ -2918,7 +2920,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 5%;
+  padding: 8rem 5%; 
 }
 
 .left-side {
