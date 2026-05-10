@@ -2906,105 +2906,157 @@ footer {
 }
 
 
-/* ── ORAÇÃO & BOAS-VINDAS (Estilo Sofisticado Balanceado) ── */
+/* ── ORAÇÃO & BOAS-VINDAS (Design Ultra-Clean) ── */
 #oracao {
-  background: #f8fafc;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.03) 0, transparent 50%), 
-    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.03) 0, transparent 50%);
-  padding: 10rem 0;
+  background: #fdfdfd; /* Quase branco, mas com um toque de luxo */
+  padding: 12rem 0;
   position: relative;
-  overflow: hidden;
 }
 
 .oracao-split {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr; /* Adiciona espaço para a linha divisória */
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Linha Divisória */
-.split-divider {
-  width: 1px;
-  height: 400px;
-  background: linear-gradient(to bottom, transparent, var(--gray-200), transparent);
 }
 
 .oracao-welcome {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 4rem;
 }
 
 .welcome-image-box {
-  width: 240px; /* Reduzido para balancear com o insta */
-  height: 380px;
+  width: 260px;
+  height: 400px;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 120px 0 120px 120px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  border-radius: 130px 0 130px 130px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.06);
+}
+
+.welcome-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.oracao-welcome:hover .welcome-img {
+  transform: scale(1.1);
+}
+
+.welcome-text-box {
+  text-align: left;
+}
+
+.welcome-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .welcome-title {
-  font-size: 2.5rem; /* Reduzido para proporcionalidade */
+  font-size: 2.8rem;
   font-weight: 900;
   color: #0f172a;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.04em;
 }
 
 .welcome-desc {
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  color: #64748b;
+  margin-bottom: 3.5rem;
+  max-width: 400px;
 }
 
-/* Ajustes no Instagram para não dominar a seção */
+.welcome-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.welcome-btn i {
+  width: 18px;
+  height: 18px;
+  color: #f97316;
+  transition: transform 0.4s ease;
+}
+
+.welcome-btn:hover {
+  border-bottom-color: #f97316;
+  color: #f97316;
+}
+
+.welcome-btn:hover i {
+  transform: translate(8px, -8px);
+}
+
+/* Instagram section proporcional */
 .oracao-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.phone-scene {
-  transform: scale(0.85); /* Reduzido para balancear */
-  transform-origin: left center;
-  margin-left: -2rem;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
 }
 
 .insta-call {
-  max-width: 450px;
-}
-
-.insta-title {
-  font-size: 2rem;
+  max-width: 400px;
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1400px) {
-  .oracao-split { padding: 0 2rem; gap: 3rem; }
-  .phone-scene { transform: scale(0.75); }
+.insta-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
 }
 
-@media (max-width: 1024px) {
-  .oracao-split { grid-template-columns: 1fr; gap: 4rem; }
-  .split-divider { display: none; }
+.insta-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.phone-scene {
+  transform: scale(0.8); /* Tamanho perfeito para balancear com o texto de oração */
+  margin: 0;
+}
+
+@media (max-width: 1400px) {
+  .oracao-split { gap: 4rem; padding: 0 2rem; }
+  .welcome-title { font-size: 2.2rem; }
+  .oracao-welcome { gap: 2rem; }
+  .welcome-image-box { width: 200px; height: 320px; }
+}
+
+@media (max-width: 1100px) {
+  .oracao-split { grid-template-columns: 1fr; gap: 8rem; }
   .oracao-welcome { flex-direction: column; text-align: center; }
-  .welcome-image-box { width: 100%; max-width: 280px; }
-  .welcome-text-box { text-align: center; }
-  .welcome-btn { justify-content: center; }
-  .oracao-right { align-items: center; text-align: center; }
-  .phone-scene { transform: scale(0.8); transform-origin: center; margin-left: 0; }
-  .insta-call { text-align: center; }
+  .welcome-text-box { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .welcome-image-box { width: 100%; max-width: 260px; }
 }
 
 @media (max-width: 768px) {
   #oracao { padding: 6rem 0; }
-  .welcome-title { font-size: 2.2rem; }
   .phone-scene { transform: scale(0.7); }
 }
 
