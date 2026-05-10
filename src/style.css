@@ -2820,9 +2820,85 @@ footer {
   .slider-banner { width: 100%; }
 }
 
-@media (max-width: 480px) {
-  .diretoria-item { width: 130px; height: 185px; }
-  .diretoria-title { font-size: 1.4rem; }
+/* ── QUEM SOMOS (Design Minimalista) ── */
+.about-minimalist {
+  padding: 10rem 0;
+  background-color: #f8fafc; /* Fundo discreto (Off-white/Gray) */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Detalhe sutil de fundo */
+.about-minimalist::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--gray-200), transparent);
+}
+
+.about-content-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #475569;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.about-text strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.about-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-minimalist {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  border: 1.5px solid #1e293b;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border-radius: 4px;
+}
+
+.btn-minimalist:hover {
+  background: #1e293b;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(30, 41, 59, 0.15);
+}
+
+@media (max-width: 768px) {
+  .about-minimalist { padding: 6rem 0; }
+  .about-text { font-size: 1.05rem; line-height: 1.6; }
+  .btn-minimalist { width: 100%; justify-content: center; }
 }
 
 
