@@ -2823,16 +2823,16 @@ footer {
 /* ── QUEM SOMOS (Design Minimalista Premium) ── */
 .about-minimalist {
   padding: 12rem 0;
-  background-color: #f1f5f9; /* Fundo discreto e sofisticado (Slightly darker gray) */
+  background-color: #f1f5f9; /* Fundo discreto e sofisticado */
   position: relative;
   overflow: hidden;
 }
 
-/* Detalhe sutil de linha vertical na direita */
+/* Detalhe sutil de linha vertical na esquerda */
 .about-minimalist::after {
   content: '';
   position: absolute;
-  top: 0; right: 10%;
+  top: 0; left: 10%;
   width: 1px;
   height: 100px;
   background: linear-gradient(to bottom, #cbd5e1, transparent);
@@ -2844,8 +2844,8 @@ footer {
   padding: 0 4rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Alinha tudo à direita */
-  text-align: right;    /* Texto à direita */
+  align-items: flex-start; /* Alinha tudo à esquerda */
+  text-align: left;       /* Texto à esquerda */
 }
 
 .about-title {
@@ -2862,40 +2862,13 @@ footer {
   line-height: 2;
   color: #475569;
   font-weight: 400;
-  margin-bottom: 4rem;
-  max-width: 850px; /* Mantém o bloco elegante */
+  margin-bottom: 0; /* Sem botão, não precisa de margem inferior grande */
+  max-width: 850px;
 }
 
 .about-text strong {
   color: #1e293b;
   font-weight: 800;
-}
-
-.about-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-minimalist {
-  display: inline-flex;
-  align-items: center;
-  padding: 1.2rem 3.5rem;
-  border: 2px solid #0f172a;
-  color: #0f172a;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background: transparent;
-  border-radius: 2px;
-}
-
-.btn-minimalist:hover {
-  background: #0f172a;
-  color: white;
-  transform: translateX(-10px); /* Move para a esquerda no hover por estar na direita */
-  box-shadow: -15px 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1024px) {
@@ -2905,10 +2878,7 @@ footer {
 @media (max-width: 768px) {
   .about-minimalist { padding: 6rem 0; text-align: center; }
   .about-content-inner { align-items: center; text-align: center; padding: 0 1.5rem; }
-  .about-text { font-size: 1.1rem; line-height: 1.7; margin-bottom: 3rem; }
-  .about-actions { justify-content: center; width: 100%; }
-  .btn-minimalist { width: 100%; justify-content: center; }
-  .btn-minimalist:hover { transform: translateY(-5px); }
+  .about-text { font-size: 1.1rem; line-height: 1.7; }
 }
 
 
