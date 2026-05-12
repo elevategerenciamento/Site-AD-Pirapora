@@ -745,7 +745,7 @@ function startRadio(audio) {
   // Estado: Carregando
   btn.classList.add('loading');
   label.textContent = 'Conectando...';
-  icon.setAttribute('data-lucide', 'loader');
+  icon.setAttribute('data-lucide', 'play');
   if (window.lucide) window.lucide.createIcons();
 
   // Forçar reload do stream
@@ -873,7 +873,7 @@ window.openRadioModal = function() {
       </button>
       <img src="/radio-logo.jpg" alt="Vale FM Logo" class="modal-live-banner">
       <h2>Vale 104,9</h2>
-      <p>"Tô na Vale, Tô com Cristo". A voz que ecoa a mensagem do Reino em toda Pirapora e região através da frequência 104,9 FM e para o mundo via web.</p>
+      <p>A rádio AD Pirapora tem o compromisso junto a Associação Jeruel de levar a palavra de Deus e o refrigério aos corações, com louvores que elevam sua fé às alturas.</p>
       <button class="btn-modal-action" onclick="handleRadioModalClick()">
         <i data-lucide="headphones"></i> OUVIR AGORA
       </button>
