@@ -2682,13 +2682,19 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges; /* Garante bordas nítidas */
+  object-position: center top;
+  image-rendering: auto; /* Suavização natural do navegador para fotos */
+  -webkit-image-rendering: optimizeQuality;
   display: block;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); /* GPU acceleration para renderização suave */
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .diretoria-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.08) translateZ(0);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .diretoria-arrow {
@@ -2878,18 +2884,18 @@ footer {
 @media (max-width: 768px) {
   .about-minimalist { 
     padding: 5rem 0; 
-    text-align: right; 
+    text-align: left; 
   }
   .about-content-inner { 
-    align-items: flex-end; 
-    text-align: right; 
+    align-items: flex-start; 
+    text-align: left; 
     padding: 0 1.5rem; 
   }
   .about-title { 
     font-size: 1.8rem; 
     margin-bottom: 1rem; 
     color: #1e293b;
-    align-self: flex-end;
+    align-self: flex-start;
   }
   .about-text { 
     font-size: 0.95rem; 
@@ -2898,10 +2904,10 @@ footer {
     margin-bottom: 0;
     color: #64748b;
   }
-  /* Detalhe da linha para a direita no mobile */
+  /* Detalhe da linha para a esquerda no mobile */
   .about-minimalist::after {
-    left: auto;
-    right: 5%;
+    left: 5%;
+    right: auto;
     height: 60px;
   }
 }
