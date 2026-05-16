@@ -1141,14 +1141,6 @@ const ministriesData = {
     desc: "Valorizando a sabedoria e a experiência, este ministério promove a integração, o cuidado e a vivência espiritual plena dos nossos idosos.",
     cor: "#8b5cf6",
     icon: "users"
-  },
-  todos: {
-    nome: "Todos os Ministérios",
-    sigla: "AD PIRAPORA",
-    lider: "Presidência e Diretoria",
-    desc: "A Assembleia de Deus — Ministério de Pirapora conta com diversas frentes de atuação para servir a toda a comunidade. Cada departamento trabalha em união para o crescimento do Reino.",
-    cor: "#0f172a",
-    icon: "grid"
   }
 };
 
