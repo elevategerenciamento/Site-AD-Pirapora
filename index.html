@@ -609,6 +609,36 @@
   <script>
     // Inicializar Ícones Lucide
     lucide.createIcons();
+
+    // ── PROTEÇÃO DE CONTEÚDO (Deterrente contra cópia) ──
+    
+    // Desabilitar clique direito em todo o site
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    // Desabilitar arrastar imagens
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Deterrente contra atalhos de ferramentas de desenvolvedor
+    document.addEventListener('keydown', (e) => {
+      // Bloquear F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+      }
+      // Bloquear Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (Ver código fonte)
+      if (e.ctrlKey && (e.shiftKey && (e.keyCode === 73 || e.keyCode === 74) || e.keyCode === 85)) {
+        e.preventDefault();
+        return false;
+      }
+    });
   </script>
 </body>
 </html>
