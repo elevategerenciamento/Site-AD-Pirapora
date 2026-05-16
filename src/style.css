@@ -3199,5 +3199,186 @@ footer {
   .impact-community { flex-direction: column; text-align: center; gap: 1rem; }
 }
 
+/* ── MODAIS (ESTILO GERAL E MINISTÉRIOS) ── */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(5, 15, 43, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  position: relative;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
+  color: #1e293b;
+}
+
+.modal-close:hover {
+  background: #ef4444;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  padding: 3rem 2.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.modal-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-icon-wrap i {
+  width: 32px;
+  height: 32px;
+}
+
+.modal-header-text h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.modal-sigla {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.modal-body {
+  padding: 0 2.5rem 2.5rem;
+}
+
+.modal-leadership {
+  background: #f8fafc;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border-left: 4px solid currentColor;
+}
+
+.modal-leadership .label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.leader-name {
+  font-size: 1.1rem;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.modal-description p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.modal-footer {
+  padding: 1.5rem 2.5rem 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-close-modal {
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-close-modal:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ── ESTILO GLASSMORPHISM PARA MINISTÉRIOS ── */
+.ministry-modal .modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+  .modal-overlay { padding: 1rem; }
+  .modal-content { border-radius: 20px; }
+  .modal-header { padding: 2.5rem 1.5rem 1rem; gap: 1rem; }
+  .modal-icon-wrap { width: 50px; height: 50px; border-radius: 12px; }
+  .modal-icon-wrap i { width: 24px; height: 24px; }
+  .modal-header-text h2 { font-size: 1.4rem; }
+  .modal-body { padding: 0 1.5rem 1.5rem; }
+  .modal-leadership { padding: 1rem; margin-bottom: 1.5rem; }
+  .leader-name { font-size: 1rem; }
+  .modal-description p { font-size: 0.95rem; }
+  .modal-footer { padding: 1rem 1.5rem 2rem; }
+  .btn-close-modal { width: 100%; }
+}
+
+
 
 

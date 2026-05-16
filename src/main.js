@@ -1,4 +1,4 @@
-const congregacoes = [
+export const congregacoes = [
   {
     id: 1,
     nome: "Templo Sede — Pirapora",
@@ -551,7 +551,7 @@ const congregacoes = [
   }
 ];
 
-window.congregacoes = congregacoes;
+
 
 // Renderizar cards de congregações (página inicial — exibe apenas 3 no mobile)
 function renderCongs() {
@@ -1074,3 +1074,149 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 });
+
+// ── LÓGICA DE MINISTÉRIOS (Popups) ──
+
+const ministriesData = {
+  missao: {
+    nome: "Missão",
+    sigla: "SEMADEP",
+    lider: "Pr. Ronivan Luiz",
+    desc: "Responsável por levar o evangelho a todas as nações, apoiando missionários e projetos de evangelismo urbano e transcultural em diversos campos.",
+    cor: "#2563eb",
+    icon: "globe"
+  },
+  jovens: {
+    nome: "Jovens",
+    sigla: "UMADECAMP",
+    lider: "Coordenação de Jovens",
+    desc: "Um espaço dinâmico para jovens se conectarem com Deus, desenvolverem amizades saudáveis e crescerem na fé através de louvor, estudo bíblico e comunhão.",
+    cor: "#ef4444",
+    icon: "flame"
+  },
+  ebd: {
+    nome: "Escola Bíblica",
+    sigla: "EBD",
+    lider: "Coordenação Geral EBD",
+    desc: "O coração do ensino da nossa igreja, onde todas as faixas etárias aprendem as Escrituras de forma sistemática e profunda todos os domingos pela manhã.",
+    cor: "#059669",
+    icon: "book-open"
+  },
+  familia: {
+    nome: "Família",
+    sigla: "MIN. FAMÍLIA",
+    lider: "Ministério de Casais",
+    desc: "Dedicado ao fortalecimento dos laços familiares e casamentos, oferecendo apoio, aconselhamento e eventos específicos para edificar o lar cristão.",
+    cor: "#f97316",
+    icon: "home"
+  },
+  homens: {
+    nome: "Homens",
+    sigla: "FRATERNIDADE",
+    lider: "Liderança Masculina",
+    desc: "Um grupo focado no crescimento espiritual dos homens, promovendo a responsabilidade cristã, a amizade e o serviço dedicado na obra de Deus.",
+    cor: "#1e3a8a",
+    icon: "shield"
+  },
+  criancas: {
+    nome: "Crianças",
+    sigla: "DISCIPULADO",
+    lider: "Coordenação Infantil",
+    desc: "Ensinando o caminho em que a criança deve andar. Um ministério lúdico e bíblico focado na base espiritual e no crescimento dos nossos pequenos.",
+    cor: "#fbbf24",
+    icon: "star"
+  },
+  mulheres: {
+    nome: "Mulheres",
+    sigla: "UMADEP",
+    lider: "Liderança Feminina",
+    desc: "Mulheres unidas em oração e serviço, promovendo o crescimento espiritual feminino e o apoio mútuo através de encontros, círculos de oração e congressos.",
+    cor: "#db2777",
+    icon: "heart"
+  },
+  "3idade": {
+    nome: "3ª Idade",
+    sigla: "COMUNHÃO",
+    lider: "Coordenação Melhor Idade",
+    desc: "Valorizando a sabedoria e a experiência, este ministério promove a integração, o cuidado e a vivência espiritual plena dos nossos idosos.",
+    cor: "#8b5cf6",
+    icon: "users"
+  },
+  todos: {
+    nome: "Todos os Ministérios",
+    sigla: "AD PIRAPORA",
+    lider: "Presidência e Diretoria",
+    desc: "A Assembleia de Deus — Ministério de Pirapora conta com diversas frentes de atuação para servir a toda a comunidade. Cada departamento trabalha em união para o crescimento do Reino.",
+    cor: "#0f172a",
+    icon: "grid"
+  }
+};
+
+window.openMinistryModal = function(id) {
+  const data = ministriesData[id];
+  if (!data) return;
+
+  // Remover modal existente se houver
+  const existing = document.getElementById('modalMinistry');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'modalMinistry';
+  modal.className = 'modal-overlay ministry-modal';
+  modal.innerHTML = `
+    <div class="modal-content" style="border-top: 5px solid ${data.cor}">
+      <button class="modal-close" onclick="closeMinistryModal()">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-header">
+        <div class="modal-icon-wrap" style="background: ${data.cor}20; color: ${data.cor}">
+          <i data-lucide="${data.icon}"></i>
+        </div>
+        <div class="modal-header-text">
+          <span class="modal-sigla" style="color: ${data.cor}">${data.sigla}</span>
+          <h2>${data.nome}</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-leadership">
+          <span class="label">Liderança</span>
+          <strong class="leader-name">${data.lider}</strong>
+        </div>
+        <div class="modal-description">
+          <p>${data.desc}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-close-modal" onclick="closeMinistryModal()">Fechar</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  
+  requestAnimationFrame(() => {
+    modal.classList.add('active');
+  });
+
+  if (window.lucide) window.lucide.createIcons();
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeMinistryModal();
+  });
+};
+
+window.closeMinistryModal = function() {
+  const modal = document.getElementById('modalMinistry');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 300);
+  }
+};
+
+// Fechar com ESC também para o ministério
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMinistryModal();
+});
+

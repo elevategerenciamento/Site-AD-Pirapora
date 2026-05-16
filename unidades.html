@@ -607,9 +607,10 @@
   <!-- Importar dados do main.js -->
   <script type="module" src="./src/main.js"></script>
   <script type="module">
+    import { congregacoes } from './src/main.js';
     let currentPage = 1;
     const itemsPerPage = window.innerWidth <= 991 ? 8 : 12;
-    let filteredData = [...window.congregacoes];
+    let filteredData = [...congregacoes];
 
     function renderAllUnits() {
       const grid = document.getElementById('allUnitsGrid');
@@ -662,13 +663,13 @@
       nextBtn.disabled = currentPage === totalPages || totalPages === 0;
       
       // Atualizar contador no hero
-      document.getElementById('totalCount').innerText = `${window.congregacoes.length}`;
+      document.getElementById('totalCount').innerText = `${congregacoes.length}`;
     }
 
     // Busca com Reset de Página — pesquisa por bairro, nome ou pastor
     document.getElementById('unitSearch').addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      filteredData = window.congregacoes.filter(c => 
+      filteredData = congregacoes.filter(c => 
         c.nome.toLowerCase().includes(term) || 
         c.bairro.toLowerCase().includes(term) ||
         c.lideres.some(l => l.nome.toLowerCase().includes(term))
