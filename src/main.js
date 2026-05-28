@@ -705,7 +705,8 @@ window.submitOracao = function(e) {
 
 // Pix copy logic
 window.copyPix = function() {
-  const key = document.getElementById('pixKey').textContent;
+  const pixKeyEl = document.getElementById('pixKey');
+  const key = pixKeyEl.getAttribute('data-key') || pixKeyEl.textContent;
   navigator.clipboard.writeText(key).then(() => {
     const btn = document.getElementById('pixBtn');
     if (btn) {
