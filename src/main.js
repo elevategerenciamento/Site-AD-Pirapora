@@ -1096,6 +1096,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderCongs();
   observeReveal();
+
+  // Forçar autoplay e loop do vídeo do EPAS (evitando bloqueios de navegadores)
+  const epasVideos = document.querySelectorAll('.epas-video-loop');
+  epasVideos.forEach(video => {
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = true;
+    
+    // Tentar tocar
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Se falhar (bloqueio do browser), tentar tocar na primeira interação
+        const forcePlay = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('click', forcePlay);
+          document.removeEventListener('touchstart', forcePlay);
+        };
+        document.addEventListener('click', forcePlay);
+        document.addEventListener('touchstart', forcePlay);
+      });
+    }
+  });
+
   if (window.lucide) {
     window.lucide.createIcons();
   }
