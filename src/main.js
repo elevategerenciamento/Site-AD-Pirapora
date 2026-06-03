@@ -1041,7 +1041,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   // ── Carrossel da Diretoria ──
   const strip = document.getElementById('diretoria-strip');
   const btnPrev = document.getElementById('diretoria-prev');
@@ -1058,7 +1057,7 @@ document.addEventListener('DOMContentLoaded', () => {
       strip.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
 
-    // Ocultar setas se nǜo houver scroll
+    // Ocultar setas se não houver scroll
     const toggleArrows = () => {
       btnPrev.style.display = strip.scrollLeft > 0 ? 'flex' : 'none';
       btnNext.style.display = (strip.scrollLeft + strip.clientWidth < strip.scrollWidth - 10) ? 'flex' : 'none';
@@ -1080,66 +1079,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const ministriesData = {
   missao: {
-    nome: "Missão",
+    nome: "Ministério de Missões",
     sigla: "SEMADEP",
     lider: "Pr. Ronivan Luiz",
-    desc: "Responsável por levar o evangelho a todas as nações, apoiando missionários e projetos de evangelismo urbano e transcultural em diversos campos.",
+    desc: "Levar a mensagem do Evangelho a diferentes comunidades, apoiando ações evangelísticas, missionárias e sociais, promovendo o amor de Cristo e o cuidado com o próximo.",
     cor: "#2563eb",
     icon: "globe"
   },
   jovens: {
-    nome: "Jovens",
+    nome: "Ministério de Jovens",
     sigla: "UMADECAMP",
     lider: "Coordenação de Jovens",
-    desc: "Um espaço dinâmico para jovens se conectarem com Deus, desenvolverem amizades saudáveis e crescerem na fé através de louvor, estudo bíblico e comunhão.",
+    desc: "Orientar e fortalecer os jovens em sua caminhada cristã, incentivando o crescimento espiritual, a comunhão, a liderança e a participação ativa na igreja e na sociedade.",
     cor: "#ef4444",
     icon: "flame"
   },
   ebd: {
-    nome: "Escola Bíblica",
+    nome: "Escola Bíblica Dominical (EBD)",
     sigla: "EBD",
     lider: "Coordenação Geral EBD",
-    desc: "O coração do ensino da nossa igreja, onde todas as faixas etárias aprendem as Escrituras de forma sistemática e profunda todos os domingos pela manhã.",
+    desc: "Ensinar a Palavra de Deus de forma sistemática, promovendo o conhecimento bíblico, o amadurecimento da fé e a aplicação dos ensinamentos cristãos na vida diária.",
     cor: "#059669",
     icon: "book-open"
   },
   familia: {
-    nome: "Família",
+    nome: "Ministério da Família",
     sigla: "MIN. FAMÍLIA",
     lider: "Ministério de Casais",
-    desc: "Dedicado ao fortalecimento dos laços familiares e casamentos, oferecendo apoio, aconselhamento e eventos específicos para edificar o lar cristão.",
+    desc: "Fortalecer os lares por meio dos princípios bíblicos, promovendo relacionamentos saudáveis, união familiar, aconselhamento e desenvolvimento espiritual de pais, filhos e casais.",
     cor: "#f97316",
     icon: "home"
   },
   homens: {
-    nome: "Homens",
+    nome: "Ministério de Homens",
     sigla: "FRATERNIDADE",
     lider: "Liderança Masculina",
-    desc: "Um grupo focado no crescimento espiritual dos homens, promovendo a responsabilidade cristã, a amizade e o serviço dedicado na obra de Deus.",
+    desc: "Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.",
     cor: "#1e3a8a",
     icon: "shield"
   },
   criancas: {
-    nome: "Crianças",
+    nome: "Ministério Infantil (Crianças)",
     sigla: "DISCIPULADO",
     lider: "Coordenação Infantil",
-    desc: "Ensinando o caminho em que a criança deve andar. Um ministério lúdico e bíblico focado na base espiritual e no crescimento dos nossos pequenos.",
+    desc: "Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.",
     cor: "#fbbf24",
     icon: "star"
   },
   mulheres: {
-    nome: "Mulheres",
+    nome: "Ministério de Mulheres",
     sigla: "UMADEP",
     lider: "Liderança Feminina",
-    desc: "Mulheres unidas em oração e serviço, promovendo o crescimento espiritual feminino e o apoio mútuo através de encontros, círculos de oração e congressos.",
+    desc: "Fortalecer a vida espiritual das mulheres, promovendo comunhão, serviço cristão e o exercício de seu papel como servas de Deus, incluindo o cuidado, a influência e os valores do papel maternal no lar e na sociedade.",
     cor: "#db2777",
     icon: "heart"
   },
   "3idade": {
-    nome: "3ª Idade",
+    nome: "Ministério da Terceira Idade",
     sigla: "COMUNHÃO",
     lider: "Coordenação Melhor Idade",
-    desc: "Valorizando a sabedoria e a experiência, este ministério promove a integração, o cuidado e a vivência espiritual plena dos nossos idosos.",
+    desc: "Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual, cuidado, apoio e participação ativa no serviço cristão.",
     cor: "#8b5cf6",
     icon: "users"
   }
