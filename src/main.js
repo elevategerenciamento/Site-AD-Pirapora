@@ -766,7 +766,7 @@ function startRadio(audio) {
 
       icon.setAttribute('data-lucide', 'pause');
       icon.setAttribute('fill', 'currentColor');
-      label.textContent = 'Ao Vivo';
+      label.textContent = 'PAUSAR';
       label.style.color = 'var(--accent)';
 
       // Atualizar mini player
@@ -778,6 +778,7 @@ function startRadio(audio) {
       const headerIcon = document.getElementById('headerRadioIcon');
       if (headerBtn) headerBtn.classList.add('is-playing');
       if (headerIcon) headerIcon.setAttribute('data-lucide', 'pause');
+      updateHeaderRadioUI(true);
 
       if (window.lucide) window.lucide.createIcons();
     }).catch(error => {
@@ -817,7 +818,7 @@ function stopRadio(audio) {
   }
   if (eq) eq.classList.remove('active');
   if (playerGlass) playerGlass.classList.remove('is-playing');
-  if (label) label.textContent = 'Pronto para ouvir';
+  if (label) label.textContent = 'OUVIR AO VIVO';
   if (label) label.style.color = '';
   
   if (icon) {
@@ -830,10 +831,34 @@ function stopRadio(audio) {
   const headerIcon = document.getElementById('headerRadioIcon');
   if (headerBtn) headerBtn.classList.remove('is-playing');
   if (headerIcon) headerIcon.setAttribute('data-lucide', 'play');
+  updateHeaderRadioUI(false);
 
   updateMiniPlayer('stopped');
   if (window.lucide) window.lucide.createIcons();
 }
+
+function updateHeaderRadioUI(isPlaying) {
+  const headerBtn = document.getElementById('headerRadioBtn');
+  if (!headerBtn) return;
+  const textFull = headerBtn.querySelector('.btn-text-full');
+  const textMobile = headerBtn.querySelector('.btn-text-mobile');
+  if (isPlaying) {
+    if (textFull) textFull.textContent = 'PAUSAR';
+    if (textMobile) textMobile.textContent = 'PAUSAR';
+  } else {
+    if (textFull) textFull.textContent = 'RÁDIO VALE 104,9';
+    if (textMobile) textMobile.textContent = 'RÁDIO';
+  }
+}
+
+window.handleHeaderRadioClick = function() {
+  if (radioIsPlaying) {
+    const audio = document.getElementById('radioAudio');
+    if (audio) stopRadio(audio);
+  } else {
+    openRadioModal();
+  }
+};
 
 // ── MODAIS DE LIVE (TV e RÁDIO) ──
 window.openTVModal = function() {
@@ -1017,8 +1042,9 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('playing', () => {
       const label = document.getElementById('statusLabel');
       const dot = document.querySelector('.status-dot');
-      if (label) { label.textContent = 'Ao Vivo'; label.style.color = '#22c55e'; }
+      if (label) { label.textContent = 'PAUSAR'; label.style.color = '#22c55e'; }
       if (dot) dot.className = 'status-dot playing';
+      updateHeaderRadioUI(true);
     });
 
     audio.addEventListener('error', () => {
