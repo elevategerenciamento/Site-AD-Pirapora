@@ -1580,6 +1580,33 @@ footer {
   box-shadow: 0 15px 30px rgba(255, 107, 0, 0.4);
 }
 
+.btn-pix-qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--accent);
+  padding: 1.25rem;
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-pix-qr:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+}
+
 /* ── RÁDIO VALE FM (Design Banner Premium) ── */
 .radio-section-new {
   position: relative;

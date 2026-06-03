@@ -719,6 +719,112 @@ window.copyPix = function() {
   });
 };
 
+// CRC16 CCITT Calculation helper for Pix
+function getCRC16(data) {
+  let crc = 0xFFFF;
+  for (let i = 0; i < data.length; i++) {
+    let code = data.charCodeAt(i);
+    crc ^= (code << 8);
+    for (let j = 0; j < 8; j++) {
+      if ((crc & 0x8000) !== 0) {
+        crc = ((crc << 1) ^ 0x1021) & 0xFFFF;
+      } else {
+        crc = (crc << 1) & 0xFFFF;
+      }
+    }
+  }
+  let hex = crc.toString(16).toUpperCase();
+  return hex.padStart(4, '0');
+}
+
+// Pix QR Code Modal logic
+window.openPixQRModal = function() {
+  const payloadBase = "00020101021126580014br.gov.bcb.pix0114112239400001665204000053039865802BR5925Assembleia de Deus Pirapor6008Pirapora62070503***6304";
+  const crc = getCRC16(payloadBase);
+  const pixCode = payloadBase + crc;
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(pixCode)}`;
+
+  // Remover modal existente se houver
+  const existing = document.getElementById('modalPixQR');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'modalPixQR';
+  modal.className = 'modal-overlay';
+  modal.innerHTML = `
+    <div class="modal-content text-center" style="max-width: 420px; padding: 2.5rem 2rem;">
+      <button class="modal-close" onclick="closePixQRModal()">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-header" style="flex-direction: column; align-items: center; gap: 0.5rem; border-bottom: none; margin-bottom: 1.5rem; text-align: center; display: flex;">
+        <div class="modal-icon-wrap" style="background: var(--accent)20; color: var(--accent); margin-bottom: 0.5rem; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+          <i data-lucide="qr-code" style="width: 28px; height: 28px;"></i>
+        </div>
+        <h2 style="font-size: 1.6rem; color: var(--primary); margin: 0; font-weight: 800; text-transform: uppercase; font-family: 'Outfit', sans-serif;">QR Code do Pix</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.4;">Aponte a câmera do seu celular no QR Code abaixo pelo aplicativo do seu banco para contribuir.</p>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 0;">
+        <div style="background: white; padding: 1rem; border-radius: 16px; border: 1px solid var(--gray-200); box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: inline-flex;">
+          <img src="${qrCodeUrl}" alt="QR Code Pix" style="width: 180px; height: 180px; display: block;">
+        </div>
+        <div style="width: 100%;">
+          <span style="display: block; font-size: 0.75rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; text-align: left;">Ou utilize o Pix Copia e Cola</span>
+          <div style="display: flex; gap: 0.5rem; width: 100%;">
+            <input type="text" id="pixCopiaColaText" readonly value="${pixCode}" style="flex: 1; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--gray-300); font-size: 0.85rem; font-family: monospace; background: var(--gray-50); color: var(--primary); outline: none;">
+            <button id="copyPixCCBtn" onclick="copyPixCopiaCola()" style="background: var(--accent); color: white; border: none; padding: 0 1.2rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; box-shadow: 0 5px 15px rgba(255, 107, 0, 0.15);">
+              <i data-lucide="copy" style="width: 18px; height: 18px;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  
+  requestAnimationFrame(() => {
+    modal.classList.add('active');
+  });
+  
+  if (window.lucide) window.lucide.createIcons();
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closePixQRModal();
+  });
+};
+
+window.closePixQRModal = function() {
+  const modal = document.getElementById('modalPixQR');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 300);
+  }
+};
+
+window.copyPixCopiaCola = function() {
+  const input = document.getElementById('pixCopiaColaText');
+  if (!input) return;
+  navigator.clipboard.writeText(input.value).then(() => {
+    const btn = document.getElementById('copyPixCCBtn');
+    if (btn) {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<i data-lucide="check" style="width: 18px; height: 18px;"></i>';
+      if (window.lucide) window.lucide.createIcons();
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        if (window.lucide) window.lucide.createIcons();
+      }, 2000);
+    }
+  });
+};
+
+// Fechar com ESC também para o Pix QR Code
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePixQRModal();
+});
+
 // ── RADIO PLAYER (Profissional) ──
 let radioIsPlaying = false;
 let radioRetryCount = 0;
