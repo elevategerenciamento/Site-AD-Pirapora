@@ -1112,7 +1112,7 @@ const ministriesData = {
   },
   homens: {
     nome: "Ministério de Homens",
-    sigla: "FRATERNIDADE",
+    sigla: "",
     lider: "Liderança Masculina",
     desc: "Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.",
     cor: "#1e3a8a",
@@ -1120,7 +1120,7 @@ const ministriesData = {
   },
   criancas: {
     nome: "Ministério Infantil (Crianças)",
-    sigla: "DISCIPULADO",
+    sigla: "",
     lider: "Coordenação Infantil",
     desc: "Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.",
     cor: "#fbbf24",
@@ -1136,7 +1136,7 @@ const ministriesData = {
   },
   "3idade": {
     nome: "Ministério da Terceira Idade",
-    sigla: "COMUNHÃO",
+    sigla: "",
     lider: "Coordenação Melhor Idade",
     desc: "Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual, cuidado, apoio e participação ativa no serviço cristão.",
     cor: "#8b5cf6",
@@ -1165,7 +1165,7 @@ window.openMinistryModal = function(id) {
           <i data-lucide="${data.icon}"></i>
         </div>
         <div class="modal-header-text">
-          <span class="modal-sigla" style="color: ${data.cor}">${data.sigla}</span>
+          ${data.sigla ? `<span class="modal-sigla" style="color: ${data.cor}">${data.sigla}</span>` : ''}
           <h2>${data.nome}</h2>
         </div>
       </div>
