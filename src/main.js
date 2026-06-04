@@ -1131,7 +1131,7 @@ const ministriesData = {
   missao: {
     nome: "Ministério de Missões",
     sigla: "SEMADEP",
-    lider: "Pr. Ronivan Luiz",
+    lider: "Narciso Batista",
     desc: "Levar a mensagem do Evangelho a diferentes comunidades, apoiando ações evangelísticas, missionárias e sociais, promovendo o amor de Cristo e o cuidado com o próximo.",
     cor: "#2563eb",
     icon: "globe"
@@ -1139,7 +1139,7 @@ const ministriesData = {
   jovens: {
     nome: "Ministério de Jovens",
     sigla: "UMADECAMP",
-    lider: "Coordenação de Jovens",
+    lider: "Fabiano Soares",
     desc: "Orientar e fortalecer os jovens em sua caminhada cristã, incentivando o crescimento espiritual, a comunhão, a liderança e a participação ativa na igreja e na sociedade.",
     cor: "#ef4444",
     icon: "flame"
@@ -1147,7 +1147,7 @@ const ministriesData = {
   ebd: {
     nome: "Escola Bíblica Dominical (EBD)",
     sigla: "EBD",
-    lider: "Coordenação Geral EBD",
+    lider: "Alan Soares",
     desc: "Ensinar a Palavra de Deus de forma sistemática, promovendo o conhecimento bíblico, o amadurecimento da fé e a aplicação dos ensinamentos cristãos na vida diária.",
     cor: "#059669",
     icon: "book-open"
@@ -1155,7 +1155,7 @@ const ministriesData = {
   familia: {
     nome: "Ministério da Família",
     sigla: "MIN. FAMÍLIA",
-    lider: "Ministério de Casais",
+    lider: "Pr. Ronivan Luiz",
     desc: "Fortalecer os lares por meio dos princípios bíblicos, promovendo relacionamentos saudáveis, união familiar, aconselhamento e desenvolvimento espiritual de pais, filhos e casais.",
     cor: "#f97316",
     icon: "home"
@@ -1163,7 +1163,7 @@ const ministriesData = {
   homens: {
     nome: "Ministério de Homens",
     sigla: "",
-    lider: "Liderança Masculina",
+    lider: "Joaquim Marques",
     desc: "Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.",
     cor: "#1e3a8a",
     icon: "shield"
@@ -1171,7 +1171,7 @@ const ministriesData = {
   criancas: {
     nome: "Ministério Infantil (Crianças)",
     sigla: "",
-    lider: "Coordenação Infantil",
+    lider: "Sara Emanuelly",
     desc: "Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.",
     cor: "#fbbf24",
     icon: "star"
@@ -1179,7 +1179,7 @@ const ministriesData = {
   mulheres: {
     nome: "Ministério de Mulheres",
     sigla: "UMADEP",
-    lider: "Liderança Feminina",
+    lider: "Mecy Patrícia",
     desc: "Fortalecer a vida espiritual das mulheres, promovendo comunhão, serviço cristão e o exercício de seu papel como servas de Deus, incluindo o cuidado, a influência e os valores do papel maternal no lar e na sociedade.",
     cor: "#db2777",
     icon: "heart"
@@ -1187,7 +1187,7 @@ const ministriesData = {
   "3idade": {
     nome: "Ministério da Terceira Idade",
     sigla: "",
-    lider: "Coordenação Melhor Idade",
+    lider: "Paulo Hernani",
     desc: "Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual, cuidado, apoio e participação ativa no serviço cristão.",
     cor: "#8b5cf6",
     icon: "users"
