@@ -716,8 +716,87 @@ window.copyPix = function() {
         btn.innerHTML = originalHTML;
       }, 2500);
     }
+    // Abrir modal de segurança após copiar
+    setTimeout(() => {
+      openPixSecurityModal();
+    }, 300);
   });
 };
+
+window.openPixSecurityModal = function() {
+  const existing = document.getElementById('modalPixSecurity');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'modalPixSecurity';
+  modal.className = 'modal-overlay pix-security-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <button class="modal-close" onclick="closePixSecurityModal()">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-header-pix">
+        <div class="modal-icon-pix-check">
+          <i data-lucide="check-circle"></i>
+        </div>
+        <h3>Chave Copiada!</h3>
+      </div>
+      <div class="modal-body-pix">
+        <p class="pix-instructions">Antes de confirmar, certifique-se de que os dados do destinatário no aplicativo do seu banco sejam:</p>
+        
+        <div class="pix-details-box">
+          <div class="pix-detail-item">
+            <span class="detail-label">Favorecido:</span>
+            <strong class="detail-value">Assembleia De Deus Ministerio De Pirapora Mg</strong>
+          </div>
+          <div class="pix-detail-item">
+            <span class="detail-label">CNPJ:</span>
+            <strong class="detail-value">11.223.940/0001-66</strong>
+          </div>
+          <div class="pix-detail-item">
+            <span class="detail-label">Banco / Instituição:</span>
+            <strong class="detail-value">Ccla Sicoob Credmissão Ltda.</strong>
+          </div>
+        </div>
+
+        <div class="pix-security-warning">
+          <i data-lucide="shield-alert"></i>
+          <span><strong>Aviso de Segurança:</strong> A igreja não solicita ofertas por números desconhecidos ou links enviados em nome de terceiros.</span>
+        </div>
+      </div>
+      <div class="modal-footer-pix">
+        <button class="btn-confirm-pix" onclick="closePixSecurityModal()">Ok, entendi</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  
+  requestAnimationFrame(() => {
+    modal.classList.add('active');
+  });
+
+  if (window.lucide) window.lucide.createIcons();
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closePixSecurityModal();
+  });
+};
+
+window.closePixSecurityModal = function() {
+  const modal = document.getElementById('modalPixSecurity');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 300);
+  }
+};
+
+// Fechar com ESC também para o Pix
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePixSecurityModal();
+});
 
 // ── RADIO PLAYER (Profissional) ──
 let radioIsPlaying = false;

@@ -3532,6 +3532,139 @@ footer {
   .btn-close-modal { width: 100%; }
 }
 
+/* ── MODAL DE SEGURANÇA PIX ── */
+.pix-security-modal .modal-content {
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.modal-header-pix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.modal-icon-pix-check {
+  width: 52px;
+  height: 52px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.modal-icon-pix-check i {
+  width: 28px;
+  height: 28px;
+}
+
+.modal-header-pix h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.modal-body-pix {
+  padding: 0 2rem 1.5rem;
+}
+
+.pix-instructions {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 1.2rem;
+  text-align: center;
+}
+
+.pix-details-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.pix-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.pix-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: #0f172a;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.pix-security-warning {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 3px solid #f59e0b;
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+}
+
+.pix-security-warning i {
+  width: 18px;
+  height: 18px;
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.pix-security-warning span {
+  font-size: 0.82rem;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.modal-footer-pix {
+  padding: 0 2rem 2rem;
+  display: flex;
+}
+
+.btn-confirm-pix {
+  width: 100%;
+  background: #0f1c3d;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-confirm-pix:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
 
 
 
