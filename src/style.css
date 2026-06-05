@@ -1405,6 +1405,14 @@ footer {
   transform: translateY(-3px);
 }
 
+.footer-socials a i,
+.footer-socials a svg {
+  width: 18px;
+  height: 18px;
+  color: var(--white);
+  display: block;
+}
+
 /* Bottom Bar */
 .footer-bottom {
   background: rgba(0, 0, 0, 0.2);
