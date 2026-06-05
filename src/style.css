@@ -2464,10 +2464,12 @@ footer {
   flex-shrink: 0;
 }
 
-.dep-icon-box i { 
+.dep-icon-box i,
+.dep-logo-svg { 
   width: 22px; 
   height: 22px; 
-  stroke-width: 1.5px; 
+  stroke-width: 1.5px;
+  fill: currentColor;
 }
 
 .dep-card:hover .dep-icon-box {
