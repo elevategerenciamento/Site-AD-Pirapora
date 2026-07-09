@@ -5,7 +5,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        unidades: 'unidades.html'
+        unidades: 'unidades.html',
+        ministerio: 'nosso-ministerio.html'
       }
     }
   }
