@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO -->
-  <title>Nosso Ministério em Fotos — AD Pirapora</title>
-  <meta name="description" content="Galeria de fotos oficial da Assembleia de Deus — Ministério de Pirapora. Registros de nossos cultos, batismos, comunhão, ações sociais e atividades infantis.">
+  <title>Nosso Ministério — AD Pirapora</title>
+  <meta name="description" content="Corpo pastoral e diretoria da Assembleia de Deus — Ministério de Pirapora. Dedicados a servir a Deus e guiar a comunidade.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon-flame.png" />
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="./src/style.css">
   
   <style>
-    /* ── ESTILOS EXCLUSIVOS DA GALERIA ── */
-    .gallery-hero {
+    /* ── ESTILOS DA SEÇÃO DE PASTORES (SEM FILTROS) ── */
+    .pastores-hero {
       padding: 12rem 2rem 6rem;
       background: radial-gradient(circle at 70% 30%, rgba(255, 107, 0, 0.12), transparent 40%),
                   linear-gradient(rgba(5, 15, 43, 0.96), rgba(5, 15, 43, 0.96)),
@@ -49,356 +49,148 @@
     .breadcrumb a { color: white; text-decoration: none; transition: color 0.3s; }
     .breadcrumb a:hover { color: var(--accent); }
 
-    /* Filtros da Galeria */
-    .filter-container {
-      background: var(--gray-50);
-      padding: 2.5rem 1rem;
-      border-bottom: 1px solid var(--gray-200);
-      position: sticky;
-      top: var(--header-h);
-      z-index: 100;
-    }
-
-    @media (max-width: 768px) {
-      .filter-container {
-        top: var(--header-h-mobile);
-        padding: 1.5rem 1rem;
-      }
-    }
-
-    .filters-wrap {
-      max-width: var(--container);
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-filter {
+    .pastores-section {
+      padding: 5rem 2rem 8rem;
       background: var(--white);
-      color: var(--text-muted);
-      border: 1px solid var(--gray-200);
-      padding: 0.8rem 1.6rem;
-      border-radius: 100px;
-      font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     }
 
-    .btn-filter:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .btn-filter.active {
-      background: var(--accent);
-      color: var(--white);
-      border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
-    }
-
-    /* Grid da Galeria */
-    .gallery-section {
-      padding: 4rem 2rem 8rem;
-      background: var(--white);
-      min-height: 50vh;
-    }
-
-    .gallery-grid {
+    .pastores-grid {
       max-width: var(--container);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
     }
 
-    @media (max-width: 991px) {
-      .gallery-grid {
+    @media (max-width: 1024px) {
+      .pastores-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pastores-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
+      .pastores-section {
+        padding: 3rem 1.5rem 6rem;
+      }
     }
 
-    @media (max-width: 600px) {
-      .gallery-grid {
+    @media (max-width: 480px) {
+      .pastores-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .gallery-section {
-        padding: 2.5rem 1rem 5rem;
+        gap: 2rem;
+        max-width: 320px;
+        margin: 0 auto;
       }
     }
 
-    /* Cards de Fotos */
-    .photo-card {
-      position: relative;
-      border-radius: 16px;
+    /* Pastor Card */
+    .pastor-card {
+      background: var(--white);
+      border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 4 / 3;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      background: var(--gray-100);
-      transform: translateY(0);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--gray-200);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
     }
 
-    .photo-card:hover {
+    .pastor-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      border-color: rgba(255, 107, 0, 0.2);
     }
 
-    .photo-card img {
+    /* Fallback de Imagem e Placeholder */
+    .pastor-img-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(135deg, #0a1b47 0%, var(--primary) 100%);
+      overflow: hidden;
+    }
+
+    .pastor-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.5);
+      gap: 1rem;
+      z-index: 1;
+      padding: 2rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+    }
+
+    .pastor-placeholder i {
+      width: 50px;
+      height: 50px;
+      stroke-width: 1.5;
+      color: var(--accent);
+      opacity: 0.8;
+      background: rgba(255, 107, 0, 0.1);
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+    }
+
+    .pastor-placeholder span {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      opacity: 0.7;
+    }
+
+    .pastor-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      pointer-events: none;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.08);
-    }
-
-    /* Overlays de Informação e Ícones */
-    .photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(5, 15, 43, 0.85) 0%, rgba(5, 15, 43, 0.3) 60%, transparent 100%);
+      z-index: 2;
       opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .pastor-img.loaded {
+      opacity: 1;
+    }
+
+    /* Pastor Info */
+    .pastor-info {
+      padding: 1.5rem;
+      text-align: center;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.8rem;
-      transition: opacity 0.4s ease;
-    }
-
-    .photo-card:hover .photo-overlay {
-      opacity: 1;
-    }
-
-    .photo-zoom-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 107, 0, 0.95);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-      opacity: 0;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: var(--white);
     }
 
-    .photo-card:hover .photo-zoom-icon {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+    .pastor-info h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
     }
 
-    .photo-title {
-      color: white;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      transform: translateY(10px);
-      transition: transform 0.4s ease;
-    }
-
-    .photo-desc {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.8rem;
-      font-weight: 400;
-      transform: translateY(10px);
-      transition: transform 0.4s ease 0.05s;
-    }
-
-    .photo-card:hover .photo-title,
-    .photo-card:hover .photo-desc {
-      transform: translateY(0);
-    }
-
-    .photo-tag {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(5, 15, 43, 0.8);
-      backdrop-filter: blur(5px);
+    .pastor-info p {
+      font-size: 0.75rem;
       color: var(--accent);
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border: 1px solid rgba(255, 107, 0, 0.3);
-      z-index: 10;
-    }
-
-    /* Modal Lightbox Premium */
-    .lightbox-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 15, 43, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .lightbox-modal.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .lightbox-container {
-      width: 90%;
-      max-width: 1000px;
-      max-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    .lightbox-image-wrap {
-      width: 100%;
-      height: 100%;
-      max-height: 70vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      background: #000;
-    }
-
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 70vh;
-      object-fit: contain;
-      user-select: none;
-      -webkit-user-drag: none;
-      opacity: 0;
-      transform: scale(0.95);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .lightbox-img.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .lightbox-caption {
-      width: 100%;
-      text-align: center;
-      color: white;
-      margin-top: 1.5rem;
-      padding: 0 1rem;
-    }
-
-    .lightbox-caption h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-
-    .lightbox-caption p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    /* Botões do Lightbox */
-    .btn-lightbox {
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 100;
-    }
-
-    .btn-lightbox:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-      box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .btn-lightbox-prev { left: -70px; }
-    .btn-lightbox-next { right: -70px; }
-
-    @media (max-width: 1199px) {
-      .btn-lightbox-prev { left: 1rem; background: rgba(5, 15, 43, 0.7); }
-      .btn-lightbox-next { right: 1rem; background: rgba(5, 15, 43, 0.7); }
-    }
-
-    @media (max-width: 600px) {
-      .btn-lightbox {
-        width: 44px;
-        height: 44px;
-      }
-    }
-
-    .btn-lightbox-close {
-      position: absolute;
-      top: -60px;
-      right: 0;
-      background: rgba(255, 255, 255, 0.05);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 105;
-    }
-
-    @media (max-width: 1199px) {
-      .btn-lightbox-close {
-        top: 1rem;
-        right: 1rem;
-        background: rgba(5, 15, 43, 0.7);
-      }
-    }
-
-    .btn-lightbox-close:hover {
-      background: #ef4444;
-      color: white;
-      border-color: #ef4444;
-      box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
-      transform: scale(1.08);
+      letter-spacing: 0.08em;
     }
 
     .btn-back-header {
@@ -460,7 +252,7 @@
   </div>
 
   <!-- HERO SECTION -->
-  <section class="gallery-hero">
+  <section class="pastores-hero">
     <div class="container">
       <div class="breadcrumb">
         <a href="index.html">Início</a>
@@ -468,129 +260,139 @@
         <span style="color: var(--accent);">Nosso Ministério</span>
       </div>
       
-      <h1 style="font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Nosso Ministério em Fotos</h1>
+      <h1 style="font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;">Nosso Ministério</h1>
       <p style="font-size: 1.1rem; opacity: 0.73; max-width: 650px; margin: 0 auto; line-height: 1.6;">
-        Veja os registros dos momentos mais importantes de nossa igreja. Cultos, comunhão, ações sociais, batismos e a nossa dedicação em expandir o Reino.
+        Conheça a liderança pastoral da Assembleia de Deus — Ministério de Pirapora. Pastores dedicados a pregar a palavra e pastorear o rebanho com amor.
       </p>
     </div>
   </section>
 
-  <!-- FILTROS -->
-  <section class="filter-container">
-    <div class="filters-wrap">
-      <button class="btn-filter active" data-filter="all">Todos os Registros</button>
-      <button class="btn-filter" data-filter="cultos">Cultos e Adoração</button>
-      <button class="btn-filter" data-filter="comunhao">Comunhão e Jovens</button>
-      <button class="btn-filter" data-filter="social">Ação Social</button>
-      <button class="btn-filter" data-filter="batismos">Batismos</button>
-      <button class="btn-filter" data-filter="infantil">EBD & Crianças</button>
+  <!-- SEÇÃO DE PASTORES -->
+  <section class="pastores-section">
+    <div class="pastores-grid">
+      
+      <!-- Card 1: Pastor Presidente -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/DIRETORIA/ronivan.jpeg" alt="Pr. Ronivan Luiz Fonseca de Oliveira" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pr. Ronivan Luiz</h3>
+          <p>Presidente</p>
+        </div>
+      </div>
+
+      <!-- Card 2: 1º Vice-Presidente -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/DIRETORIA/antonio.jpg" alt="Pr. Antonio Marcos de Almeida" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pr. Antonio Marcos</h3>
+          <p>1º Vice-Presidente</p>
+        </div>
+      </div>
+
+      <!-- Card 3: 2º Vice-Presidente -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/DIRETORIA/valentino.jpg" alt="Pr. Valentino Gomes" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pr. Valentino Gomes</h3>
+          <p>2º Vice-Presidente</p>
+        </div>
+      </div>
+
+      <!-- Card 4: 3º Vice-Presidente -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/DIRETORIA/geremias.jpg" alt="Pr. Geremias Bispo Ramos" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pr. Geremias Bispo</h3>
+          <p>3º Vice-Presidente</p>
+        </div>
+      </div>
+
+      <!-- Card 5: Pastor Auxiliar 1 -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/ministerio/pastor5.jpg" alt="Pastor Auxiliar" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pastor Auxiliar</h3>
+          <p>Liderança</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Pastor Auxiliar 2 -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/ministerio/pastor6.jpg" alt="Pastor Auxiliar" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pastor Auxiliar</h3>
+          <p>Liderança</p>
+        </div>
+      </div>
+
+      <!-- Card 7: Pastor Auxiliar 3 -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/ministerio/pastor7.jpg" alt="Pastor Auxiliar" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pastor Auxiliar</h3>
+          <p>Liderança</p>
+        </div>
+      </div>
+
+      <!-- Card 8: Pastor Auxiliar 4 -->
+      <div class="pastor-card">
+        <div class="pastor-img-container">
+          <div class="pastor-placeholder">
+            <i data-lucide="user"></i>
+            <span>Foto em breve</span>
+          </div>
+          <img src="/ministerio/pastor8.jpg" alt="Pastor Auxiliar" class="pastor-img" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+        </div>
+        <div class="pastor-info">
+          <h3>Pastor Auxiliar</h3>
+          <p>Liderança</p>
+        </div>
+      </div>
+
     </div>
   </section>
-
-  <!-- GRID DE FOTOS -->
-  <section class="gallery-section">
-    <div class="gallery-grid" id="galleryGrid">
-      
-      <!-- Foto 1: Adoração -->
-      <div class="photo-card" data-category="cultos" data-index="0">
-        <span class="photo-tag">Cultos</span>
-        <img src="/ministerio/adoracao.png" alt="Adoração Coletiva">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Adoração Coletiva</h3>
-          <p class="photo-desc">A igreja reunida em um clamor de adoração e busca ao Espírito Santo.</p>
-        </div>
-      </div>
-
-      <!-- Foto 2: Batismo -->
-      <div class="photo-card" data-category="batismos" data-index="1">
-        <span class="photo-tag">Batismos</span>
-        <img src="/ministerio/batismo.png" alt="Batismo nas Águas">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Batismo nas Águas</h3>
-          <p class="photo-desc">O testemunho público de fé e o renascimento em Cristo Jesus.</p>
-        </div>
-      </div>
-
-      <!-- Foto 3: Comunhão -->
-      <div class="photo-card" data-category="comunhao" data-index="2">
-        <span class="photo-tag">Comunhão</span>
-        <img src="/ministerio/comunhao.png" alt="Estudo e Comunhão">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Comunhão dos Jovens</h3>
-          <p class="photo-desc">Mocidade reunida para estudo bíblico e crescimento espiritual mútuo.</p>
-        </div>
-      </div>
-
-      <!-- Foto 4: Ação Social -->
-      <div class="photo-card" data-category="social" data-index="3">
-        <span class="photo-tag">Ação Social</span>
-        <img src="/ministerio/acao_social.png" alt="Ação Social">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Mãos que Ajudam</h3>
-          <p class="photo-desc">Evangelho em ação através da assistência às famílias de nossa comunidade.</p>
-        </div>
-      </div>
-
-      <!-- Foto 5: EBD -->
-      <div class="photo-card" data-category="infantil" data-index="4">
-        <span class="photo-tag">EBD & Crianças</span>
-        <img src="/ministerio/ebd.png" alt="Escola Bíblica Infantil">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Futuro da Igreja</h3>
-          <p class="photo-desc">Crianças sendo instruídas na Palavra de Deus com amor e alegria na EBD.</p>
-        </div>
-      </div>
-
-      <!-- Foto 6: Louvor -->
-      <div class="photo-card" data-category="cultos" data-index="5">
-        <span class="photo-tag">Cultos</span>
-        <img src="/ministerio/louvor.png" alt="Grupo de Louvor">
-        <div class="photo-zoom-icon">
-          <i data-lucide="maximize-2"></i>
-        </div>
-        <div class="photo-overlay">
-          <h3 class="photo-title">Louvor e Canção</h3>
-          <p class="photo-desc">Ministros de louvor conduzindo a congregação através da música inspiradora.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LIGHTBOX MODAL -->
-  <div class="lightbox-modal" id="lightboxModal">
-    <div class="lightbox-container">
-      <button class="btn-lightbox-close" id="closeLightbox" aria-label="Fechar"><i data-lucide="x"></i></button>
-      
-      <button class="btn-lightbox btn-lightbox-prev" id="prevPhoto" aria-label="Foto anterior"><i data-lucide="chevron-left"></i></button>
-      
-      <div class="lightbox-image-wrap">
-        <img src="" alt="" class="lightbox-img" id="lightboxImg">
-      </div>
-      
-      <button class="btn-lightbox btn-lightbox-next" id="nextPhoto" aria-label="Próxima foto"><i data-lucide="chevron-right"></i></button>
-      
-      <div class="lightbox-caption">
-        <h3 id="lightboxTitle"></h3>
-        <p id="lightboxDesc"></p>
-      </div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer style="padding: 4.5rem 2rem; background: var(--primary); color: white; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
@@ -603,152 +405,6 @@
     // Inicializar Ícones
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
-    });
-
-    // ── LÓGICA DE FILTRAGEM ──
-    const filterButtons = document.querySelectorAll('.btn-filter');
-    const photoCards = document.querySelectorAll('.photo-card');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remover active de todos e adicionar no clicado
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filterValue = button.getAttribute('data-filter');
-
-        photoCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filterValue === 'all' || category === filterValue) {
-            card.style.display = 'block';
-            // Efeito visual suave de reaparecer
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            }, 50);
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95)';
-            // Aguarda a transição antes de ocultar
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 300);
-          }
-        });
-      });
-    });
-
-    // ── LÓGICA DO LIGHTBOX ──
-    const lightboxModal = document.getElementById('lightboxModal');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxDesc = document.getElementById('lightboxDesc');
-    const closeLightboxBtn = document.getElementById('closeLightbox');
-    const prevPhotoBtn = document.getElementById('prevPhoto');
-    const nextPhotoBtn = document.getElementById('nextPhoto');
-
-    let currentPhotosList = [];
-    let currentIndex = 0;
-
-    // Coleta as fotos visíveis no grid (respeitando o filtro atual)
-    function updateVisiblePhotosList() {
-      currentPhotosList = [];
-      photoCards.forEach(card => {
-        if (card.style.display !== 'none') {
-          const img = card.querySelector('img');
-          const title = card.querySelector('.photo-title').innerText;
-          const desc = card.querySelector('.photo-desc').innerText;
-          currentPhotosList.push({
-            src: img.getAttribute('src'),
-            alt: img.getAttribute('alt'),
-            title: title,
-            desc: desc
-          });
-        }
-      });
-    }
-
-    // Abre o lightbox com a foto selecionada
-    function openLightbox(src) {
-      updateVisiblePhotosList();
-      currentIndex = currentPhotosList.findIndex(photo => photo.src === src);
-      if (currentIndex === -1) currentIndex = 0;
-
-      showPhoto(currentIndex);
-      lightboxModal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Libera scroll
-    }
-
-    // Exibe a foto pelo índice na lista visível
-    function showPhoto(index) {
-      const photo = currentPhotosList[index];
-      if (!photo) return;
-
-      // Animação de fade-out antes de trocar
-      lightboxImg.classList.remove('active');
-      
-      setTimeout(() => {
-        lightboxImg.setAttribute('src', photo.src);
-        lightboxImg.setAttribute('alt', photo.alt);
-        lightboxTitle.innerText = photo.title;
-        lightboxDesc.innerText = photo.desc;
-        
-        // Fade-in com a nova imagem
-        lightboxImg.classList.add('active');
-      }, 150);
-    }
-
-    // Fechar Lightbox
-    function closeLightbox() {
-      lightboxModal.classList.remove('active');
-      document.body.style.overflow = ''; // Libera scroll
-      setTimeout(() => {
-        lightboxImg.setAttribute('src', '');
-      }, 300);
-    }
-
-    // Eventos nos cards
-    photoCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const src = card.querySelector('img').getAttribute('src');
-        openLightbox(src);
-      });
-    });
-
-    // Eventos dos botões do lightbox
-    closeLightboxBtn.addEventListener('click', closeLightbox);
-    
-    prevPhotoBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      currentIndex = (currentIndex - 1 + currentPhotosList.length) % currentPhotosList.length;
-      showPhoto(currentIndex);
-    });
-
-    nextPhotoBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      currentIndex = (currentIndex + 1) % currentPhotosList.length;
-      showPhoto(currentIndex);
-    });
-
-    // Clique fora da imagem fecha o lightbox
-    lightboxModal.addEventListener('click', (e) => {
-      if (e.target === lightboxModal || e.target.classList.contains('lightbox-container') || e.target.classList.contains('lightbox-image-wrap')) {
-        closeLightbox();
-      }
-    });
-
-    // Navegação via teclado
-    document.addEventListener('keydown', (e) => {
-      if (!lightboxModal.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') {
-        currentIndex = (currentIndex - 1 + currentPhotosList.length) % currentPhotosList.length;
-        showPhoto(currentIndex);
-      }
-      if (e.key === 'ArrowRight') {
-        currentIndex = (currentIndex + 1) % currentPhotosList.length;
-        showPhoto(currentIndex);
-      }
     });
 
     // ── PROTEÇÃO DE CONTEÚDO ──
