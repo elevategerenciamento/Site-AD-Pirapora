@@ -2191,7 +2191,7 @@ footer {
   .q-item strong { font-size: 0.75rem; }
 
   /* Grids de Conteúdo */
-  .cong-grid { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 1.5rem; }
+  .cong-grid { grid-template-columns: repeat(2, 1fr); padding: 0 0.8rem; gap: 0.8rem; }
   /* Ministérios - Ver final do arquivo para estilos consolidados */
 
   /* TV Section Mobile (Impacto) */
