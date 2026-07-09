@@ -81,10 +81,22 @@
 
     @media (max-width: 480px) {
       .pastores-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        max-width: 320px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        max-width: 100%;
         margin: 0 auto;
+      }
+      .pastor-info {
+        padding: 1rem 0.6rem;
+      }
+      .pastor-info h3 {
+        font-size: 0.95rem;
+      }
+      .pastor-info p {
+        font-size: 0.65rem;
+      }
+      .pastores-section {
+        padding: 2rem 0.8rem 4rem;
       }
     }
 
