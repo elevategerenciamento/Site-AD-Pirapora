@@ -2190,6 +2190,16 @@ footer {
   .q-icon { font-size: 1.3rem; margin-bottom: 0.8rem; }
   .q-item strong { font-size: 0.75rem; }
 
+  .btn-diretoria {
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    display: inline-block;
+    max-width: calc(100% - 2rem);
+    box-sizing: border-box;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
   /* Grids de Conteúdo */
   .cong-grid { grid-template-columns: repeat(2, 1fr); padding: 0 0.5rem; gap: 0.6rem; }
   .cong-grid .cong-card {
