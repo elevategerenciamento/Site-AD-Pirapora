@@ -20,6 +20,125 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <link rel="stylesheet" href="./src/style.css">
+
+  <!-- Tailwind CSS & Google Fonts for Ministérios Section -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#474744",
+                        "on-secondary-container": "#636360",
+                        "secondary": "#5e5e5c",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container-high": "#eae8e7",
+                        "on-primary-container": "#6f88ad",
+                        "surface-container": "#efeded",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary-fixed": "#1b1c1a",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-tertiary-container": "#ce6c0a",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0e0300",
+                        "primary-fixed-dim": "#afc8f0",
+                        "inverse-primary": "#afc8f0",
+                        "outline": "#74777f",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-dim": "#dbd9d9",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "primary": "#000613",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001c3a",
+                        "primary-fixed": "#d4e3ff",
+                        "secondary-fixed": "#e4e2de",
+                        "on-background": "#1b1c1c",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c3",
+                        "on-tertiary-fixed": "#301400",
+                        "background": "#fbf9f8",
+                        "on-surface-variant": "#43474e",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "secondary-container": "#e1dfdc",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#341600",
+                        "surface-container-low": "#f5f3f3",
+                        "on-surface": "#1b1c1c",
+                        "surface-tint": "#476083",
+                        "outline-variant": "#c4c6cf",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#001f3f",
+                        "brand-orange": "#E67E22",
+                        "brand-navy": "#001F3F",
+                        "brand-off-white": "#FDFBF7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "1rem",
+                        "margin-desktop": "2.5rem",
+                        "section-gap": "5rem",
+                        "container-max": "1280px",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+  </script>
+  <style>
+      .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .editorial-divider {
+          height: 1px;
+          background-color: #E67E22;
+          width: 80px;
+      }
+      .ministry-card {
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .ministry-card:hover {
+          transform: translateY(-4px);
+          border-color: #001F3F;
+      }
+  </style>
 </head>
 <body>
 
@@ -159,109 +278,184 @@
   </section>
 
   <!-- DEPARTAMENTOS -->
-  <section id="departamentos">
-    <div class="container">
-      <div class="dep-header reveal">
-        <div class="dep-header-left">
-          <span class="dep-tag">MINISTÉRIOS</span>
-          <h2 class="section-title">Encontre seu lugar na obra de Deus</h2>
-          <p class="section-subtitle">Cada ministério é uma porta aberta para servir, crescer e pertencer. Conheça nossas frentes de atuação.</p>
+  <section id="departamentos" class="bg-brand-off-white font-body-md text-on-surface">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+      <!-- Hero Section Title -->
+      <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
+        <div class="max-w-2xl">
+          <div class="editorial-divider mb-6"></div>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-navy mb-4">Encontre seu lugar na obra de Deus</h2>
+          <p class="font-body-lg text-secondary max-w-xl">
+            Cada ministério é uma porta aberta para servir, crescer e pertencer. Nossa igreja é composta por diversos ministérios que servem à comunidade e fortalecem a nossa fé. Há um lugar especial esperando por você.
+          </p>
         </div>
-        <div class="dep-header-right">
-          <span class="bg-text">AD PIRAPORA</span>
+        <div class="flex items-center gap-4 text-brand-navy border-b border-brand-navy/20 pb-2 cursor-pointer group">
+          <span class="font-label-caps text-label-caps group-hover:text-brand-orange transition-colors">FILTRAR POR CATEGORIA</span>
+          <span class="material-symbols-outlined text-sm group-hover:text-brand-orange transition-colors">keyboard_arrow_down</span>
         </div>
       </div>
 
-      <div class="dep-grid">
-        <!-- Missão -->
-        <div class="dep-card reveal" style="--accent: #2563eb; --delay: 0.1s; cursor: pointer;" onclick="openMinistryModal('missao')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Missão</h3>
-            <span class="dep-sigla">SEMADEP</span>
+      <!-- Editorial Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
+        <!-- FEATURED CARD (SEMADEP) - Hero item spanning 8 columns -->
+        <div class="md:col-span-8 group relative overflow-hidden bg-brand-navy rounded-lg p-8 md:p-12 text-surface-bright ministry-card flex flex-col justify-between min-h-[450px]" style="border: 1px solid rgba(255,255,255,0.1);">
+          <div class="flex justify-between items-start relative z-10">
+            <div class="p-3 bg-surface-bright/10 rounded-xl">
+              <img alt="Missão Icon" class="w-12 h-12" src="https://lh3.googleusercontent.com/aida/AP1WRLuTOnQimA3XtVKvRiZuR_mMoa-9KkqS5ZkH_oMDItCYP23MBvr_dnO_xDyUtg7tqhMLjGOQdmTygIN-J2oha6jSsdKRz_e6m7md05FFv756OncV5QlEhu1pRaIEfJi5gOfTe0O9xoenJds_74h6lfo8ltsYGib8Z8e0mfWHtRsxoEO5wohknMsGZA4klLRsorxPX9E-GVmIpDgOdRUz73sWXqQ21_aMVIGP8jnGtluKBSGfxiXQ4L1gmTo"/>
+            </div>
+            <span class="font-label-caps text-label-caps bg-brand-orange px-4 py-1.5 rounded-full text-white">DESTAQUE</span>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <div class="mt-auto relative z-10">
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-[0.2em] block mb-2">SEMADEP</span>
+            <h3 class="font-display-lg text-display-lg mb-4">Ministério de Missões</h3>
+            <p class="font-body-lg text-white/80 max-w-lg mb-2">
+              Levar a mensagem do Evangelho a diferentes comunidades, apoiando ações evangelísticas, missionárias e sociais, promovendo o amor de Cristo e o cuidado com o próximo.
+            </p>
+            <p class="font-label-caps text-label-caps text-brand-orange mb-8">Líder: Narciso Batista</p>
+            <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-orange hover:text-white transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('missao')">
+              Conheça o ministério
+              <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Jovens -->
-        <div class="dep-card reveal" style="--accent: #ef4444; --delay: 0.2s; cursor: pointer;" onclick="openMinistryModal('jovens')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Jovens</h3>
-            <span class="dep-sigla">UMADECAMP</span>
+        <!-- JOVENS (UMADECAMP) - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="Jovens Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvPDOl8CSzM7OcSeCq7EWBKL5G5CKNlPknP7QRiKCDspheABKIKv5FJUeUGyqpyx9gi-gcScojU20m34_kMSGTlEFaVNgz2667f7D6qEumhkkRR-yQB385RHFGspXVXd-9S3n4P9hs5JqF8wDuMTCTzPbC3mTJQxQ-jtf3J-ofmD9j9jqB4FeNaNtZnTH5l6UG-uAWEG_xWY7JsuMoFrEsKymacW4oKQEXrbKGcM01t9AcBYzL2m9hF7mE"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">UMADECAMP</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Jovens</h3>
+            <p class="font-body-md text-secondary mb-2">Orientar e fortalecer os jovens em sua caminhada cristã, incentivando o crescimento espiritual, a comunhão, a liderança e a participação ativa.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Fabiano Soares</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('jovens')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- EBD -->
-        <div class="dep-card reveal" style="--accent: #059669; --delay: 0.3s; cursor: pointer;" onclick="openMinistryModal('ebd')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Escola Bíblica</h3>
-            <span class="dep-sigla">EBD</span>
+        <!-- ESCOLA BÍBLICA (EBD) - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="EBD Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLv5jabEGQl7motlMZ2YkjrSIUWxMv0KrifjyJeRtXzAqbmj1XUk5YjaSadUOdPSwgRzu9D2wNDEM60AVPlhQTogl3x2GsZvnpxDWvxBlT0a9qeW50HiPNPej_vat8HDDM6lfxGYe_S1w4jnSM8L3xxUfsY-56i7TdFjXJ0MThKkx558WCBkEekXvlvR2XSOgeo4pLGnWAyBeXanaGb78FFKE2nUEFWVor24EVA1UrO3wyARIUlg00nHcw"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">EBD</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Escola Bíblica</h3>
+            <p class="font-body-md text-secondary mb-2">Ensinar a Palavra de Deus de forma sistemática, promovendo o conhecimento bíblico, o amadurecimento da fé e a aplicação dos ensinamentos cristãos.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Alan Soares</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('ebd')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- Família -->
-        <div class="dep-card reveal" style="--accent: #f97316; --delay: 0.4s; cursor: pointer;" onclick="openMinistryModal('familia')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Família</h3>
-            <span class="dep-sigla">MIN. FAMÍLIA</span>
+        <!-- FAMÍLIA - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="Família Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvTicoKYWrnZb8kvV_e5LgrB1XYZfepnma38uhkq7520iYkDM3QErZvyAJw5Kmxu0vff-wKiXXylQaAyp0_HGV8dx6F3wanWYEibXos1MG6YrXjj9YA_KlLtZ3klg1jGmyzaxq9_z7fnzKTRXhMKW28dbbV1IMRGCCPv1J5tvMhMB2zI6MrqsU6BTznReOWWGpSOR7J06PgfnTCUDH3v-F3OKdODbKMGS6d8nuRr6eJKc23mEyQ5L0OMRc"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">MIN. FAMÍLIA</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Família</h3>
+            <p class="font-body-md text-secondary mb-2">Fortalecer os lares por meio dos princípios bíblicos, promovendo relacionamentos saudáveis, união familiar, aconselhamento e desenvolvimento espiritual.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Pr. Ronivan Luiz</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('familia')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- Homens -->
-        <div class="dep-card reveal" style="--accent: #1e3a8a; --delay: 0.5s; cursor: pointer;" onclick="openMinistryModal('homens')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Homens</h3>
+        <!-- HOMENS - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="Homens Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLt_3YBllWYVe9QoATzlvTcXctJ4SjtyRFliDoO5SdlX7rTmYdURjOiKDIzKzmywIdoQfUJYMmfYTWnVvwBaHqo4zZMmC58VEPInj76tT4OqpeYd_0plYms-DFlmd_zEo9g9gV5p-EWYzLr8QoWrBtFTPwlMbdTj5bryMvlGtyal039SCYAmazT1DjNjiXCF8IVlhRhNEWG8gFeqFcZjyOLzCEoQGCt774FchC8tymypzl9SFqU0OOedg7k"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">HOMENS</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Homens</h3>
+            <p class="font-body-md text-secondary mb-2">Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Joaquim Marques</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('homens')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- Crianças -->
-        <div class="dep-card reveal" style="--accent: #fbbf24; --delay: 0.6s; cursor: pointer;" onclick="openMinistryModal('criancas')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Crianças</h3>
+        <!-- CRIANÇAS - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="Crianças Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLvY-WbaUrxb9Qsc1Y4gRnOd2PMWqCV_TO4OCqnjfX-znVyGpN0cXc7NGZyoGFn1yv6tX956YBxmeaODbVaO8wAz36a9cTdVXuLLFy2WT8jq5pux6wwDNWh_CgP9bdJ9jHt20Cn0Ltv3ntYGtZDGL5GanPoB8hYsXPrK7qucC6UVRwrcU-p-dy4S2TWh4qsmXUg0yUMBStzqb_JkkhH_5PnTkUHRhY-qfyhUUVRLHyJ2kEU3lY16-6F_mnQ"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">MIN. INFANTIL</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério Infantil</h3>
+            <p class="font-body-md text-secondary mb-2">Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Sara Emanuelly</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('criancas')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- Mulheres -->
-        <div class="dep-card reveal" style="--accent: #db2777; --delay: 0.7s; cursor: pointer;" onclick="openMinistryModal('mulheres')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>Mulheres</h3>
-            <span class="dep-sigla">UMADEP</span>
+        <!-- MULHERES (UMADEP) - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="Mulheres Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLtBUh0IvjhhsbBWptSEHCg9fERrwgZE4r52H6uqLKEExy6yKP8Qn7mkqbS5ALbtWh2W6oUtg-nRS0baP8URCoCA4z-58meOO0Co7jpCieRTIR5NHMJQ0YMW3p1Vs3f-FSt6shtAUquZjoA966JCRBgMJoD6RubNj5-1GATyHiry2kQsgudMrr9Jkivkjd_M8EST8_KFWtm9EDe-7Hrzkyt15rJMkaIVldGxWpYpHCewU0cE7ech3blkFg"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">UMADEP</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Mulheres</h3>
+            <p class="font-body-md text-secondary mb-2">Fortalecer a vida espiritual das mulheres, promovendo comunhão, serviço cristão e o exercício de seu papel como servas de Deus.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Mecy Patrícia</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('mulheres')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
 
-        <!-- Melhor Idade -->
-        <div class="dep-card reveal" style="--accent: #8b5cf6; --delay: 0.8s; cursor: pointer;" onclick="openMinistryModal('3idade')">
-          <div class="dep-hover-bar"></div>
-          <div class="dep-icon-box"><img src="/logoicone.png" alt="Logo AD" class="dep-logo-img"></div>
-          <div class="dep-info">
-            <h3>3ª Idade</h3>
+        <!-- 3ª IDADE - 4 columns -->
+        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
+          <div>
+            <div class="mb-6">
+              <img alt="3ª Idade Icon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLsiWby-igCm5BOap1qQfsy1Ib3aMGCSLFkbhvoiZx1LpJ2TJQ9sed_Fs2zclgv0Z6GFTsg9HsAM3eQsfqsffAvB5eCoMMgfjre5Et9_IotvJQ8PaiSZFfoxb1ArXiqT1eZuZaMrCJ6_A7mwksXupXh0b_xrK2kChHw28i5zUS0wJTuUaqrkjfFBH6kuACpNj7vg1r5ddo6ZlJAw0p0LyZ1GxW-yGKqcPeewxx4sVOFrYkS-S88MVRQgMOg"/>
+            </div>
+            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">TERCEIRA IDADE</span>
+            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">3ª Idade</h3>
+            <p class="font-body-md text-secondary mb-2">Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual e participação ativa.</p>
+            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Paulo Hernani</p>
           </div>
-          <div class="dep-arrow"><i data-lucide="arrow-right"></i></div>
+          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('3idade')">
+            Conheça o ministério
+            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          </a>
         </div>
+      </div>
 
+      <!-- CTA Section -->
+      <div class="mt-section-gap py-16 bg-white border border-outline-variant/30 rounded-lg text-center px-margin-mobile reveal">
+        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-navy mb-4">Ainda não sabe onde servir?</h3>
+        <p class="font-body-lg text-secondary mb-10 max-w-2xl mx-auto">
+          Participe do nosso curso de integração e descubra seus dons espirituais para servir com propósito na casa do Senhor.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="bg-brand-orange text-white px-8 py-4 rounded-lg font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all shadow-md">
+            AGENDE UMA CONVERSA
+          </button>
+          <button class="border-2 border-brand-navy text-brand-navy px-8 py-4 rounded-lg font-label-caps text-label-caps hover:bg-brand-navy hover:text-white transition-all">
+            BAIXAR GUIA DE MINISTÉRIOS
+          </button>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- TV AD PIRAPORA (Estética de Estúdio) -->
   <section id="cultos" class="section-studio">
     <div class="container tv-container">
