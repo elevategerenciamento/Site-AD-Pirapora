@@ -278,173 +278,157 @@
   </section>
 
   <!-- DEPARTAMENTOS -->
-  <section id="departamentos" class="bg-brand-off-white font-body-md text-on-surface">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
-      <!-- Hero Section Title -->
-      <div class="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
-        <div class="max-w-2xl">
-          <div class="editorial-divider mb-6"></div>
-          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-navy mb-4">Encontre seu lugar na obra de Deus</h2>
-          <p class="font-body-lg text-secondary max-w-xl">
-            Cada ministério é uma porta aberta para servir, crescer e pertencer. Nossa igreja é composta por diversos ministérios que servem à comunidade e fortalecem a nossa fé. Há um lugar especial esperando por você.
+  <section id="departamentos">
+    <!-- Intro Section -->
+    <header class="px-margin-mobile pt-10 pb-8 text-left">
+      <div class="editorial-divider mb-4" style="background-color: #E67E22;"></div>
+      <h2 class="text-headline-lg-mobile md:text-headline-lg font-bold text-primary mb-4" style="font-family: Outfit, sans-serif;">Encontre seu lugar na obra de Deus</h2>
+      <p class="text-body-md text-secondary leading-relaxed max-w-sm">
+        Nossa igreja se move através de mãos voluntárias e corações dispostos. Descubra como você pode servir e crescer em comunidade através dos nossos diversos ministérios.
+      </p>
+    </header>
+
+    <!-- Featured Ministry: SEMADEP -->
+    <section class="px-margin-mobile mb-10">
+      <div class="relative rounded-lg overflow-hidden min-h-[340px] flex flex-col justify-end p-6 cursor-pointer" style="background-color: #001F3F;" onclick="openMinistryModal('missao')">
+        <div class="absolute inset-0 z-0">
+          <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5W4pY8ZeFzW4zij8UQSpE2FHsXPjkJTiKR2OpYUUuK0v84wkF561UvoMO8radmj1ksmWItrqTLOAOCFY4bOIeg6BXBB4H9e1xswwFnY5fUcU0bltFL_fYWCVAp-sRlGdfxktzq-ex5dTMEFjvNVKve9OGHHQd5UiII4tsY4iWcyLWagaV4nt8FQSOs5HdDfvW287EvZd7891WgP94633HhiixwPDx3S8nvISv1gjQLhYmF8LfING3_0Zyq7gfQUT1mHzN6y9SGXM')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#001F3F] via-[#001F3F]/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10">
+          <span class="inline-block text-white text-[10px] font-bold tracking-widest px-2 py-1 rounded mb-3 uppercase" style="background-color: #E67E22;">Destaque</span>
+          <h3 class="text-2xl font-bold text-white mb-2" style="font-family: Outfit, sans-serif;">Missões e Evangelismo (SEMADEP)</h3>
+          <p class="text-white/80 text-body-md mb-6 leading-snug">
+            Levando a palavra e o amor de Deus além das fronteiras locais através de projetos sociais e evangelísticos.
           </p>
+          <a class="inline-flex items-center gap-2 text-white px-5 py-3 rounded-lg font-bold text-label-sm hover:brightness-110 active:scale-95 transition-all" style="background-color: #E67E22;">
+            Conheça o ministério
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
         </div>
       </div>
+    </section>
 
-      <!-- Editorial Grid Layout -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter reveal">
-        <!-- FEATURED CARD (SEMADEP) - Hero item spanning 8 columns -->
-        <div class="md:col-span-8 group relative overflow-hidden bg-brand-navy rounded-lg p-8 md:p-12 text-surface-bright ministry-card flex flex-col justify-between min-h-[450px]" style="border: 1px solid rgba(255,255,255,0.1);">
-          <div class="flex justify-between items-start relative z-10">
-            <div class="p-3 bg-surface-bright/10 rounded-xl">
-              <img alt="Logo AD" class="w-12 h-12" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps bg-brand-orange px-4 py-1.5 rounded-full text-white">DESTAQUE</span>
+    <!-- Ministries Grid/List -->
+    <section class="px-margin-mobile mb-section-gap max-w-container-max mx-auto md:px-margin-desktop">
+      <h4 class="text-label-caps font-label-caps mb-6" style="color: #E67E22;">TODOS OS MINISTÉRIOS</h4>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+        <!-- EBD -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('ebd')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <div class="mt-auto relative z-10">
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-[0.2em] block mb-2">SEMADEP</span>
-            <h3 class="font-display-lg text-display-lg mb-4">Ministério de Missões</h3>
-            <p class="font-body-lg text-white/80 max-w-lg mb-2">
-              Levar a mensagem do Evangelho a diferentes comunidades, apoiando ações evangelísticas, missionárias e sociais, promovendo o amor de Cristo e o cuidado com o próximo.
-            </p>
-            <p class="font-label-caps text-label-caps text-brand-orange mb-8">Líder: Narciso Batista</p>
-            <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-orange hover:text-white transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('missao')">
-              Conheça o ministério
-              <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Escola Bíblica (EBD)</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Fundamentando a fé através do estudo profundo das Escrituras.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
             </a>
           </div>
-        </div>
+        </article>
 
-        <!-- JOVENS (UMADECAMP) - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">UMADECAMP</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Jovens</h3>
-            <p class="font-body-md text-secondary mb-2">Orientar e fortalecer os jovens em sua caminhada cristã, incentivando o crescimento espiritual, a comunhão, a liderança e a participação ativa.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Fabiano Soares</p>
+        <!-- Jovens -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('jovens')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('jovens')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Jovens (UMADECAMP)</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Uma comunidade vibrante focada no discipulado e comunhão.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- ESCOLA BÍBLICA (EBD) - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">EBD</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Escola Bíblica</h3>
-            <p class="font-body-md text-secondary mb-2">Ensinar a Palavra de Deus de forma sistemática, promovendo o conhecimento bíblico, o amadurecimento da fé e a aplicação dos ensinamentos cristãos.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Alan Soares</p>
+        <!-- Família -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('familia')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('ebd')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Família</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Fortalecer os lares por meio dos princípios bíblicos.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- FAMÍLIA - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">MIN. FAMÍLIA</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Família</h3>
-            <p class="font-body-md text-secondary mb-2">Fortalecer os lares por meio dos princípios bíblicos, promovendo relacionamentos saudáveis, união familiar, aconselhamento e desenvolvimento espiritual.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Pr. Ronivan Luiz</p>
+        <!-- Homens -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('homens')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('familia')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Homens</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Capacitar os homens para viverem de acordo com os valores cristãos.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- HOMENS - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">HOMENS</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Homens</h3>
-            <p class="font-body-md text-secondary mb-2">Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Joaquim Marques</p>
+        <!-- Infantil -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('criancas')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('homens')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Infantil</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Ensinar às crianças os princípios da fé cristã.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- CRIANÇAS - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">MIN. INFANTIL</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério Infantil</h3>
-            <p class="font-body-md text-secondary mb-2">Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Sara Emanuelly</p>
+        <!-- Mulheres -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('mulheres')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('criancas')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">Mulheres (UMADEP)</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Fortalecer a vida espiritual e promover comunhão.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
 
-        <!-- MULHERES (UMADEP) - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">UMADEP</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">Ministério de Mulheres</h3>
-            <p class="font-body-md text-secondary mb-2">Fortalecer a vida espiritual das mulheres, promovendo comunhão, serviço cristão e o exercício de seu papel como servas de Deus.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Mecy Patrícia</p>
+        <!-- 3ª Idade -->
+        <article class="bg-surface border border-outline-variant/40 p-3 md:p-6 rounded-lg flex flex-col items-start gap-2 shadow-soft cursor-pointer group hover:-translate-y-1 transition-transform" onclick="openMinistryModal('3idade')">
+          <div class="bg-surface-container-low p-2 rounded-lg flex-shrink-0">
+            <img alt="Logo AD" class="w-6 h-6 md:w-8 md:h-8" src="/logoicone.png"/>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('mulheres')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
-
-        <!-- 3ª IDADE - 4 columns -->
-        <div class="md:col-span-4 group bg-white border border-outline-variant/30 rounded-lg p-8 ministry-card flex flex-col justify-between">
-          <div>
-            <div class="mb-6">
-              <img alt="Logo AD" class="w-10 h-10" src="/logoicone.png"/>
-            </div>
-            <span class="font-label-caps text-label-caps text-brand-orange tracking-widest block mb-2 uppercase">TERCEIRA IDADE</span>
-            <h3 class="font-headline-md text-headline-md text-brand-navy mb-3">3ª Idade</h3>
-            <p class="font-body-md text-secondary mb-2">Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual e participação ativa.</p>
-            <p class="font-label-caps text-label-caps text-brand-orange/80 mb-6">Líder: Paulo Hernani</p>
+          <div class="flex-grow">
+            <h5 class="text-[14px] md:text-[16px] font-bold text-primary mb-1 leading-tight">3ª Idade</h5>
+            <p class="text-secondary text-[12px] md:text-[14px] mb-2 line-clamp-2">Valorizar e integrar os idosos à vida da igreja.</p>
+            <a class="text-[12px] md:text-[14px] font-bold flex items-center gap-1 group-hover:underline" style="color: #E67E22;">
+              Conheça
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            </a>
           </div>
-          <a class="inline-flex items-center gap-3 font-label-caps text-label-caps text-brand-navy group-hover:text-brand-orange transition-all duration-300 group/link cursor-pointer" onclick="openMinistryModal('3idade')">
-            Conheça o ministério
-            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">east</span>
-          </a>
-        </div>
+        </article>
       </div>
+    </section>
 
-      <!-- CTA Section -->
-      <div class="mt-section-gap py-16 bg-white border border-outline-variant/30 rounded-lg text-center px-margin-mobile reveal">
-        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-brand-navy mb-8">Ainda não sabe onde servir?</h3>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://wa.me/5538984379559?text=Gostaria%20de%20servir%20em%20um%20ministerio%20da%20igreja" target="_blank" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all shadow-md inline-flex justify-center items-center">
-            AGENDE UMA CONVERSA
-          </a>
-        </div>
+    <!-- CTA Section -->
+    <section class="bg-surface-container-high px-margin-mobile py-16 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-primary mb-8" style="font-family: Outfit, sans-serif;">Ainda não sabe onde servir?</h3>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://wa.me/5538984379559?text=Gostaria%20de%20servir%20em%20um%20ministerio%20da%20igreja" target="_blank" class="text-white px-8 py-4 rounded-lg font-bold text-label-sm active:scale-95 transition-transform inline-flex justify-center items-center shadow-md" style="background-color: #E67E22;">
+          AGENDE UMA CONVERSA
+        </a>
       </div>
-    </div>
+    </section>
   </section>
   <!-- TV AD PIRAPORA (Estética de Estúdio) -->
   <section id="cultos" class="section-studio">
