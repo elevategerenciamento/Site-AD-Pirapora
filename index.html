@@ -204,7 +204,7 @@
         <span></span><span></span><span></span>
       </div>
     </nav>
-  </header>
+  </div>
 
   <!-- TICKER (Seja Bem Vindo) -->
   <div class="ticker-wrap">
@@ -854,7 +854,7 @@
 <!-- Drawer Container (Bottom Sheet) -->
 <div id="ministry-drawer" class="fixed inset-0 z-[15000] flex items-end justify-center pointer-events-none" style="display: none;">
   <!-- Detail Sheet -->
-  <article id="drawer-sheet" class="relative w-full max-w-lg bg-surface rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto" style="transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); max-height: 92vh;">
+  <div id="drawer-sheet" class="relative w-full max-w-lg bg-surface rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto" style="transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); max-height: 92vh;">
     
     <!-- Visual Accent Bar -->
     <div class="h-1.5 w-12 bg-outline-variant/30 rounded-full mx-auto my-4 shrink-0"></div>
@@ -870,7 +870,7 @@
     <div id="drawer-content-scroll" class="px-margin-mobile pb-12 pt-4 overflow-y-auto custom-scrollbar">
       
       <!-- Brand Anchor (Icon & Identification) -->
-      <header class="flex flex-col items-center text-center mb-10">
+      <div class="flex flex-col items-center text-center mb-10">
         <div class="mb-6 p-4 rounded-xl bg-primary-container inline-flex items-center justify-center">
           <img alt="Ícone do Ministério" class="w-16 h-16 object-contain brightness-0 invert" src="/favicon-flame.png"/>
         </div>
@@ -878,13 +878,13 @@
         <h1 id="drawer-title" class="font-headline-lg-mobile text-[28px] leading-tight text-primary font-semibold tracking-tight"></h1>
         <!-- Divider Decoration -->
         <div class="mt-6 w-12 h-0.5 bg-brand-orange"></div>
-      </header>
+      </div>
       
       <!-- Editorial Layout Sections -->
       <div class="space-y-8">
         
         <!-- Leadership -->
-        <section class="border-l-2 border-primary-container pl-6 py-1">
+        <div class="border-l-2 border-primary-container pl-6 py-1">
           <h2 class="font-label-caps text-[12px] font-bold tracking-widest text-secondary mb-2 uppercase">Diretoria</h2>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
@@ -892,19 +892,19 @@
             </div>
             <p id="drawer-leader" class="font-body-lg text-[18px] text-on-background font-medium"></p>
           </div>
-        </section>
+        </div>
         
         <!-- About / Mission -->
-        <section class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
           <h2 class="font-label-caps text-[12px] font-bold tracking-widest text-brand-orange mb-4 flex items-center gap-2">
             <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
             SOBRE O MINISTÉRIO
           </h2>
           <p id="drawer-about" class="font-body-md text-[16px] text-on-surface-variant leading-relaxed text-justify"></p>
-        </section>
+        </div>
 
         <!-- Instagram Promo Block -->
-        <section id="drawer-instagram-container" style="display: none;" class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/50 relative overflow-hidden">
+        <div id="drawer-instagram-container" style="display: none;" class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/50 relative overflow-hidden">
           <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand-orange/10 rounded-full blur-2xl"></div>
           <div class="flex items-center gap-3 mb-3 relative z-10">
             <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-orange">
@@ -917,10 +917,10 @@
             <span id="drawer-instagram-handle">@instagram</span>
             <span class="material-symbols-outlined text-[18px]">open_in_new</span>
           </a>
-        </section>
+        </div>
 
         <!-- Details Grid (Bento Style Micro) -->
-        <section id="drawer-bento-grid" class="grid grid-cols-2 gap-4" style="display: none;">
+        <div id="drawer-bento-grid" class="grid grid-cols-2 gap-4" style="display: none;">
           <div class="bg-primary p-4 rounded-lg flex flex-col justify-between aspect-square">
             <span class="material-symbols-outlined text-white/70 text-[20px]">schedule</span>
             <div class="mt-auto">
@@ -935,7 +935,7 @@
               <p id="drawer-classes" class="text-on-secondary-fixed font-body-md font-bold"></p>
             </div>
           </div>
-        </section>
+        </div>
         
       </div>
       
@@ -951,7 +951,7 @@
       </div>
       
     </div>
-  </article>
+  </div>
 </div>
 
 <script>
