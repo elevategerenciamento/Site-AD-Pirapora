@@ -1273,68 +1273,7 @@ const ministriesData = {
   }
 };
 
-window.openMinistryModal = function(id) {
-  const data = ministriesData[id];
-  if (!data) return;
 
-  // Remover modal existente se houver
-  const existing = document.getElementById('modalMinistry');
-  if (existing) existing.remove();
-
-  const modal = document.createElement('div');
-  modal.id = 'modalMinistry';
-  modal.className = 'modal-overlay ministry-modal';
-  modal.innerHTML = `
-    <div class="modal-content" style="border-top: 5px solid ${data.cor}">
-      <button class="modal-close" onclick="closeMinistryModal()">
-        <i data-lucide="x"></i>
-      </button>
-      <div class="modal-header">
-        <div class="modal-icon-wrap" style="background: ${data.cor}20; color: ${data.cor}">
-          <i data-lucide="${data.icon}"></i>
-        </div>
-        <div class="modal-header-text">
-          ${data.sigla ? `<span class="modal-sigla" style="color: ${data.cor}">${data.sigla}</span>` : ''}
-          <h2>${data.nome}</h2>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-leadership">
-          <span class="label">Liderança</span>
-          <strong class="leader-name">${data.lider}</strong>
-        </div>
-        <div class="modal-description">
-          <p>${data.desc}</p>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-close-modal" onclick="closeMinistryModal()">Fechar</button>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-  document.body.style.overflow = 'hidden';
-  
-  requestAnimationFrame(() => {
-    modal.classList.add('active');
-  });
-
-  if (window.lucide) window.lucide.createIcons();
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeMinistryModal();
-  });
-};
-
-window.closeMinistryModal = function() {
-  const modal = document.getElementById('modalMinistry');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => modal.remove(), 300);
-  }
-};
 
 // Fechar com ESC também para o ministério
 document.addEventListener('keydown', (e) => {
