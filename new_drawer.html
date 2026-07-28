@@ -1,0 +1,232 @@
+﻿<!-- Backdrop Overlay -->
+<div id="drawer-backdrop" class="fixed inset-0 bg-primary/60 backdrop-blur-[2px] transition-opacity duration-300" style="opacity: 0; pointer-events: none; z-index: 14999;" onclick="closeDrawer()"></div>
+
+<!-- Drawer Container (Bottom Sheet) -->
+<div id="ministry-drawer" class="fixed inset-0 z-[15000] flex items-end justify-center pointer-events-none" style="display: none;">
+  <!-- Detail Sheet -->
+  <article id="drawer-sheet" class="relative w-full max-w-lg bg-surface rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto" style="transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); max-height: 92vh;">
+    
+    <!-- Visual Accent Bar -->
+    <div class="h-1.5 w-12 bg-outline-variant/30 rounded-full mx-auto my-4 shrink-0"></div>
+    
+    <!-- Header / Close Button -->
+    <div class="px-margin-mobile flex justify-end">
+      <button aria-label="Fechar" class="p-2 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-200 focus:outline-none" onclick="closeDrawer()">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+    
+    <!-- Content Area -->
+    <div id="drawer-content-scroll" class="px-margin-mobile pb-12 pt-4 overflow-y-auto custom-scrollbar">
+      
+      <!-- Brand Anchor (Icon & Identification) -->
+      <header class="flex flex-col items-center text-center mb-10">
+        <div class="mb-6 p-4 rounded-xl bg-primary-container inline-flex items-center justify-center">
+          <img alt="Ícone do Ministério" class="w-16 h-16 object-contain brightness-0 invert" src="/favicon-flame.png"/>
+        </div>
+        <span id="drawer-abbrev" class="font-label-caps text-label-caps text-on-tertiary-container mb-2 block tracking-[0.2em] bg-tertiary-fixed px-2 py-1 rounded inline-block"></span>
+        <h1 id="drawer-title" class="font-headline-lg-mobile text-[28px] leading-tight text-primary font-semibold tracking-tight"></h1>
+        <!-- Divider Decoration -->
+        <div class="mt-6 w-12 h-0.5 bg-brand-orange"></div>
+      </header>
+      
+      <!-- Editorial Layout Sections -->
+      <div class="space-y-8">
+        
+        <!-- Leadership -->
+        <section class="border-l-2 border-primary-container pl-6 py-1">
+          <h2 class="font-label-caps text-[12px] font-bold tracking-widest text-secondary mb-2 uppercase">Diretoria</h2>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+              <span class="material-symbols-outlined text-on-secondary-container">person</span>
+            </div>
+            <p id="drawer-leader" class="font-body-lg text-[18px] text-on-background font-medium"></p>
+          </div>
+        </section>
+        
+        <!-- About / Mission -->
+        <section class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30">
+          <h2 class="font-label-caps text-[12px] font-bold tracking-widest text-brand-orange mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+            SOBRE O MINISTÉRIO
+          </h2>
+          <p id="drawer-about" class="font-body-md text-[16px] text-on-surface-variant leading-relaxed text-justify"></p>
+        </section>
+
+        <!-- Instagram Promo Block -->
+        <section id="drawer-instagram-container" style="display: none;" class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/50 relative overflow-hidden">
+          <div class="absolute -right-4 -top-4 w-24 h-24 bg-brand-orange/10 rounded-full blur-2xl"></div>
+          <div class="flex items-center gap-3 mb-3 relative z-10">
+            <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-orange">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </div>
+            <h3 class="font-headline-md text-[20px] text-primary-container leading-tight font-semibold">Nosso Instagram</h3>
+          </div>
+          <p class="font-body-md text-secondary mb-5 relative z-10 leading-relaxed">Siga nossa página para acompanhar de perto os nossos eventos, cultos, e tudo o que acontece no ministério!</p>
+          <a id="drawer-instagram-btn" href="#" target="_blank" class="w-full bg-white border border-brand-orange text-brand-orange py-3 px-4 rounded-lg font-label-caps text-[12px] tracking-widest uppercase hover:bg-brand-orange hover:text-white transition-all shadow-sm flex items-center justify-center gap-2 relative z-10">
+            <span id="drawer-instagram-handle">@instagram</span>
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          </a>
+        </section>
+
+        <!-- Details Grid (Bento Style Micro) -->
+        <section id="drawer-bento-grid" class="grid grid-cols-2 gap-4" style="display: none;">
+          <div class="bg-primary p-4 rounded-lg flex flex-col justify-between aspect-square">
+            <span class="material-symbols-outlined text-white/70 text-[20px]">schedule</span>
+            <div class="mt-auto">
+              <p class="text-white/60 font-label-caps text-[10px] uppercase tracking-widest">HORÁRIO</p>
+              <p id="drawer-horario" class="text-white font-body-md font-bold"></p>
+            </div>
+          </div>
+          <div class="bg-secondary-fixed p-4 rounded-lg flex flex-col justify-between aspect-square border border-outline-variant">
+            <span class="material-symbols-outlined text-on-secondary-fixed-variant text-[20px]">groups</span>
+            <div class="mt-auto">
+              <p class="text-on-secondary-fixed-variant/70 font-label-caps text-[10px] uppercase tracking-widest">CLASSES</p>
+              <p id="drawer-classes" class="text-on-secondary-fixed font-body-md font-bold"></p>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+      
+      <!-- Footer Primary Action -->
+      <div class="mt-12">
+        <a id="drawer-link" href="#" target="_blank" class="w-full bg-primary py-5 rounded-lg text-white font-label-caps text-[12px] tracking-widest uppercase hover:bg-on-primary-fixed-variant transition-all active:scale-95 duration-200 flex items-center justify-center gap-3 shadow-lg shadow-primary/20">
+          Desejo fazer parte
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        <p id="drawer-local-container" class="text-center mt-6 font-label-sm text-[14px] text-secondary" style="display: none;">
+          Local: <span id="drawer-local"></span>
+        </p>
+      </div>
+      
+    </div>
+  </article>
+</div>
+
+<script>
+  const ministriesData = {
+    'missao': { abbrev: 'SEMADEP', title: 'Ministério de Missões', leader: 'Narciso Batista', about: 'Levar a mensagem do Evangelho a diferentes comunidades, apoiando ações evangelísticas, missionárias e sociais, promovendo o amor de Cristo e o cuidado com o próximo.' },
+    'jovens': { abbrev: 'UMADECAMP', title: 'Ministério de Jovens', leader: 'Fabiano Soares', about: 'Orientar e fortalecer os jovens em sua caminhada cristã, incentivando o crescimento espiritual, a comunhão, a liderança e a participação ativa.', instagram: 'https://www.instagram.com/umadecamp_piraporamg/', instaHandle: '@umadecamp_piraporamg' },
+    'ebd': { abbrev: 'EBD', title: 'Escola Bíblica Dominical', leader: 'Alan Soares', about: 'Ensinar a Palavra de Deus de forma sistemática, promovendo o conhecimento bíblico, o amadurecimento da fé e a aplicação dos ensinamentos cristãos no cotidiano da comunidade.', horario: 'Domingos, 09:00h', classes: 'Infantil a Adulto', local: 'Pavilhão Educativo AD Pirapora' },
+    'familia': { abbrev: 'MIN. FAMÍLIA', title: 'Família', leader: 'Pr. Ronivan Luiz', about: 'Fortalecer os lares por meio dos princípios bíblicos, promovendo relacionamentos saudáveis, união familiar, aconselhamento e desenvolvimento espiritual.' },
+    'homens': { abbrev: 'HOMENS', title: 'Ministério de Homens', leader: 'Joaquim Marques', about: 'Capacitar os homens para viverem de acordo com os valores cristãos, exercendo liderança responsável em seus lares, na igreja e na comunidade.' },
+    'criancas': { abbrev: 'MIN. INFANTIL', title: 'Ministério Infantil', leader: 'Sara Emanuelly', about: 'Ensinar às crianças os princípios da fé cristã de forma adequada à sua idade, contribuindo para seu desenvolvimento espiritual, moral e social.' },
+    'mulheres': { abbrev: 'UMADEP', title: 'Ministério de Mulheres', leader: 'Mecy Patrícia', about: 'Fortalecer a vida espiritual das mulheres, promovendo comunhão, serviço cristão e o exercício de seu papel como servas de Deus.' },
+    '3idade': { abbrev: 'TERCEIRA IDADE', title: '3ª Idade', leader: 'Paulo Hernani', about: 'Visa valorizar e integrar os idosos à vida da igreja, proporcionando momentos de comunhão, crescimento espiritual e participação ativa.' }
+  };
+
+  function openMinistryModal(id) {
+    const data = ministriesData[id];
+    if (data) {
+      document.getElementById('drawer-abbrev').innerText = data.abbrev;
+      document.getElementById('drawer-title').innerText = data.title;
+      document.getElementById('drawer-leader').innerText = data.leader;
+      document.getElementById('drawer-about').innerText = data.about;
+      
+      const drawer = document.getElementById('drawer-sheet');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const container = document.getElementById('ministry-drawer');
+      
+      container.style.display = 'flex'; // Ensure container is rendering
+      // Small timeout to allow display flex to apply before transforming
+      setTimeout(() => {
+          drawer.style.transform = 'translateY(0)';
+          backdrop.style.opacity = '1';
+          backdrop.style.pointerEvents = 'auto';
+      }, 10);
+      
+      const link = document.getElementById('drawer-link');
+      if(link) {
+          link.href = 'https://wa.me/5538984379559?text=' + encodeURIComponent('Gostaria de saber mais sobre o ' + data.title);
+      }
+      
+      const instaContainer = document.getElementById('drawer-instagram-container');
+      const instaBtn = document.getElementById('drawer-instagram-btn');
+      const instaHandle = document.getElementById('drawer-instagram-handle');
+      
+      if (data.instagram && instaContainer && instaBtn && instaHandle) {
+          instaBtn.href = data.instagram;
+          instaHandle.innerText = data.instaHandle || 'Seguir no Instagram';
+          instaContainer.style.display = 'block';
+      } else if (instaContainer) {
+          instaContainer.style.display = 'none';
+      }
+
+      // Handle Bento Grid
+      const bentoGrid = document.getElementById('drawer-bento-grid');
+      const textHorario = document.getElementById('drawer-horario');
+      const textClasses = document.getElementById('drawer-classes');
+      if (data.horario && data.classes && bentoGrid && textHorario && textClasses) {
+          textHorario.innerText = data.horario;
+          textClasses.innerText = data.classes;
+          bentoGrid.style.display = 'grid';
+      } else if (bentoGrid) {
+          bentoGrid.style.display = 'none';
+      }
+
+      // Handle Local
+      const localContainer = document.getElementById('drawer-local-container');
+      const textLocal = document.getElementById('drawer-local');
+      if (data.local && localContainer && textLocal) {
+          textLocal.innerText = data.local;
+          localContainer.style.display = 'block';
+      } else if (localContainer) {
+          localContainer.style.display = 'none';
+      }
+    }
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('drawer-sheet');
+    const backdrop = document.getElementById('drawer-backdrop');
+    if (drawer && backdrop) {
+      drawer.style.transform = 'translateY(100%)';
+      backdrop.style.opacity = '0';
+      backdrop.style.pointerEvents = 'none';
+      setTimeout(() => {
+          document.getElementById('ministry-drawer').style.display = 'none';
+      }, 400); // match transition duration
+    }
+  }
+
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  // Micro-interaction for the close button and sheet drag-down feeling
+  let startY = 0;
+  
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const sheet = document.getElementById('drawer-sheet');
+    const scrollArea = document.getElementById('drawer-content-scroll');
+    
+    if(sheet && scrollArea) {
+        sheet.addEventListener('touchstart', e => {
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+
+        sheet.addEventListener('touchmove', e => {
+            const currentY = e.touches[0].clientY;
+            const diff = currentY - startY;
+            if (diff > 0 && scrollArea.scrollTop <= 0) {
+                sheet.style.transform = `translateY(${diff}px)`;
+            }
+        }, { passive: true });
+
+        sheet.addEventListener('touchend', e => {
+            const currentY = e.changedTouches[0].clientY;
+            const diff = currentY - startY;
+            if (diff > 150 && scrollArea.scrollTop <= 0) {
+                closeDrawer();
+            } else {
+                sheet.style.transform = `translateY(0)`;
+                sheet.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+                setTimeout(() => sheet.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)', 300);
+            }
+        });
+    }
+  });
+</script>

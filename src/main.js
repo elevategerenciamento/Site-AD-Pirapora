@@ -1,4 +1,5 @@
 export const congregacoes = [
+  // ── PIRAPORA - CONGREGAÇÕES URBANAS ──
   {
     id: 1,
     nome: "Templo Sede — Pirapora",
@@ -9,7 +10,7 @@ export const congregacoes = [
     cultos: "Dom 18h30 · Ter 19h · Qui 19h  \n EBD Dom 8h30",
     destaque: true,
     lideres: [
-      { cargo: "1º Dirigente", nome: "Carlos Corrêa de Souza", telefone: "038 99817-9855" }
+      { cargo: "1º Dirigente Local", nome: "Pastor Carlos Corrêa de Souza", telefone: "038 99817-9855" }
     ]
   },
   {
@@ -21,8 +22,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Geremias Bispo Ramos", telefone: "38 99948-3323" },
-      { cargo: "2º Dirigente", nome: "Elton Pereira da Silva", telefone: "38 99147-4348" }
+      { cargo: "1º Dirigente Local", nome: "Pr. Geremias Bispo Ramos", telefone: "38 99948-3323" },
+      { cargo: "2º Dirigente Local", nome: "Pr. Elton Pereira da Silva", telefone: "38 99147-4348" }
     ]
   },
   {
@@ -34,8 +35,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Marcos Magalhães Leite", telefone: "38 99847-3308" },
-      { cargo: "2º Dirigente", nome: "Gilberto Ferreira Fagundes", telefone: "38 99975-3768" }
+      { cargo: "1º Dirigente Local", nome: "Pb. Marcos Magalhães Leite", telefone: "38 99847-3308" },
+      { cargo: "2º Dirigente Local", nome: "Pb. Gilberto Ferreira Fagundes", telefone: "38 99975-3768" }
     ]
   },
   {
@@ -47,8 +48,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Paulo Hernani de Andrade Júnior", telefone: "38 99234-2358" },
-      { cargo: "2º Dirigente", nome: "Cleidson Roberto de Souza Silva", telefone: "38 99160-3466" }
+      { cargo: "1º Dirigente Local", nome: "Ev. Paulo Hernani de Andrade Júnior", telefone: "38 99234-2358" },
+      { cargo: "2º Dirigente Local", nome: "Pb. Gleydson", telefone: "38 99160-3466" }
     ]
   },
   {
@@ -60,8 +61,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Narciso Pereira Batista", telefone: "38 99919-7450" },
-      { cargo: "2º Dirigente", nome: "Francisco Sidinei de Souza", telefone: "38 99880-9061" }
+      { cargo: "1º Dirigente Local", nome: "Pb. Narciso Pereira Batista", telefone: "38 99919-7450" },
+      { cargo: "2º Dirigente Local", nome: "Coop. Francisco Sidinei de Souza", telefone: "38 99880-9061" }
     ]
   },
   {
@@ -73,8 +74,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "José Rocha de Araújo", telefone: "38 99889-0055" },
-      { cargo: "2º Dirigente", nome: "André Baptista", telefone: "38 98845-0129" }
+      { cargo: "1º Dirigente Local", nome: "Pb. José Rocha de Araújo", telefone: "38 99889-0055" },
+      { cargo: "2º Dirigente Local", nome: "Ev. André Baptista", telefone: "38 98845-0129" }
     ]
   },
   {
@@ -86,8 +87,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Wenyson Alves Santos", telefone: "38 99972-5481" },
-      { cargo: "2º Dirigente", nome: "Marcos Antônio Almeida", telefone: "38 98826-5845" }
+      { cargo: "1º Dirigente Local", nome: "Ev. Wenyson Alves Santos", telefone: "38 99972-5481" },
+      { cargo: "2º Dirigente Local", nome: "Coop. Marcos Antônio Almeida", telefone: "38 98826-5845" }
     ]
   },
   {
@@ -99,8 +100,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Anderson Pereira da Silva", telefone: "38 98806-6601" },
-      { cargo: "2º Dirigente", nome: "Ernandes Batista", telefone: "38 98475-305" }
+      { cargo: "1º Dirigente Local", nome: "Pb. Anderson Pereira da Silva", telefone: "38 98806-6601" },
+      { cargo: "2º Dirigente Local", nome: "Coop. Ernandes Batista", telefone: "38 98475-305" }
     ]
   },
   {
@@ -112,8 +113,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Sebastião Moreira de Sena", telefone: "38 99154-3579" },
-      { cargo: "2º Dirigente", nome: "Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
+      { cargo: "1º Dirigente Local", nome: "Pr. Ronaldo Moreira", telefone: "38 99154-3579" },
+      { cargo: "2º Dirigente Local", nome: "Coop. Osmar Nunes de Azevedo", telefone: "31 97189-1356" }
     ]
   },
   {
@@ -125,8 +126,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "André Marques Vieira", telefone: "38 99823-8119" },
-      { cargo: "2º Dirigente", nome: "Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
+      { cargo: "1º Dirigente Local", nome: "Pr. André Marques Vieira", telefone: "38 99823-8119" },
+      { cargo: "2º Dirigente Local", nome: "Dc. Ezequiel Barbosa de Souza", telefone: "38 99836-6290" }
     ]
   },
   {
@@ -138,8 +139,8 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Gilson dos Santos Santana", telefone: "38 99844-5306" },
-      { cargo: "2º Dirigente", nome: "Jacó Ribeiro da Silva", telefone: "38 99902-0841" }
+      { cargo: "1º Dirigente Local", nome: "Pb. Gilson dos Santos Santana", telefone: "38 99844-5306" },
+      { cargo: "2º Dirigente Local", nome: "Pb. Jacó Ribeiro da Silva", telefone: "38 99902-0841" }
     ]
   },
   {
@@ -151,8 +152,7 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ademilson Cardoso da Silva", telefone: "38 98809-0621" },
-      { cargo: "2º Dirigente", nome: "Eric Túlio Barbosa Silva", telefone: "38 99734-4133" }
+      { cargo: "1º Dirigente Local", nome: "Pr. Ademilson Cardoso da Silva", telefone: "38 98809-0621" }
     ]
   },
   // ── REGIÃO DE GUAICUÍ — 1º Setor ──
@@ -165,8 +165,7 @@ export const congregacoes = [
     cidade: "Guaicuí - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Oziel Ferreira da Conceição", telefone: "38 99882-2164" },
-      { cargo: "2º Dirigente", nome: "Manoel Messias", telefone: "38 99854-6013" }
+      { cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }
     ]
   },
   {
@@ -178,8 +177,7 @@ export const congregacoes = [
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Oziel Ferreira", telefone: "38 99882-2164" },
-      { cargo: "2º Dirigente", nome: "Diogo dos Santos Botelho", telefone: "38 99940-3683" }
+      { cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }
     ]
   },
   // ── REGIÃO DE LAGOA DOS PATOS — 2º Setor ──
@@ -192,8 +190,8 @@ export const congregacoes = [
     cidade: "Lagoa dos Patos - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Milton Atanazio de Oliveira", telefone: "38 99918-6975" },
-      { cargo: "2º Dirigente", nome: "José Alves de Castro", telefone: "38 9830-7561" }
+      { cargo: "Pastor Regional", nome: "Pr. Milton Atanázio de Oliveira", telefone: "38 99918-6975" },
+      { cargo: "2º Dirigente Local", nome: "Ev. Edberclis Nobre", telefone: "" }
     ]
   },
   // ── REGIÃO DE IBIAÍ — 3º Setor ──
@@ -206,8 +204,7 @@ export const congregacoes = [
     cidade: "Ibiaí - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "João Batista dos Santos", telefone: "38 99845-0056" },
-      { cargo: "2º Dirigente", nome: "Ivaí Gabriel Pereira", telefone: "38 99735-7146" }
+      { cargo: "Pastor Regional", nome: "Pr. João Batista dos Santos", telefone: "38 99845-0056" }
     ]
   },
   {
@@ -219,8 +216,8 @@ export const congregacoes = [
     cidade: "Ponto Chique - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Valdir Soares da Silva", telefone: "38 99744-5455" },
-      { cargo: "2º Dirigente", nome: "Presbítero Edmilson Ramos Messias", telefone: "31 97572-2571" }
+      { cargo: "Pastor Regional", nome: "Pr. João Batista dos Santos", telefone: "38 99845-0056" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Valdecir Soares da Silva", telefone: "38 99744-5455" }
     ]
   },
   // ── REGIÃO DE BENTÓPOLIS DE MINAS — 4º Setor ──
@@ -233,7 +230,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -245,8 +242,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 9971-0987" },
-      { cargo: "2º Dirigente", nome: "Gedeon Roberto de Souza Papa", telefone: "31 99524-2165" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -258,8 +254,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira", telefone: "38 99971-0987" },
-      { cargo: "2º Dirigente", nome: "Ferreira dos Santos", telefone: "38 99747-8306" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -271,7 +266,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -283,7 +278,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -295,8 +290,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
-      { cargo: "2º Dirigente", nome: "Carlos Rodrigues Mourão", telefone: "38 99845-2415" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -308,8 +302,7 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
-      { cargo: "2º Dirigente", nome: "Joanir Ferreira de Souza", telefone: "38 99923-1141" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   {
@@ -321,22 +314,20 @@ export const congregacoes = [
     cidade: "Ubaí - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Ronaldo Moreira Costa", telefone: "38 99971-0987" },
-      { cargo: "2º Dirigente", nome: "Gilmar Rodrigues de Souza", telefone: "38 99918-0834" }
+      { cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }
     ]
   },
   // ── REGIÃO DA SUBSEDE SÃO ROMÃO — 5º Setor ──
   {
     id: 26,
-    nome: "Congregação Ubaí",
-    bairro: "Ubaí",
-    endereco: "Av. Tancredo Neves, nº 32 — Ubaí-MG",
-    maps: "https://www.google.com/maps/search/?api=1&query=Av+Tancredo+Neves+32+Ubai+MG",
-    cidade: "Ubaí - MG",
+    nome: "Congregação Bairro Raul Simões",
+    bairro: "Raul Simões",
+    endereco: "Bairro Raul Simões — São Romão-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Raul+Simoes+Sao+Romao+MG",
+    cidade: "São Romão - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
-      { cargo: "2º Dirigente", nome: "Everton Ritielle de Oliveira Queiroz", telefone: "38 99810-5155" }
+      { cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }
     ]
   },
   {
@@ -348,8 +339,7 @@ export const congregacoes = [
     cidade: "São Romão - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
-      { cargo: "2º Dirigente", nome: "Samuel Neves", telefone: "11 94299-7831" }
+      { cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }
     ]
   },
   {
@@ -361,8 +351,7 @@ export const congregacoes = [
     cidade: "São Romão - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
-      { cargo: "2º Dirigente", nome: "Josias Pereira", telefone: "38 99739-3283" }
+      { cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }
     ]
   },
   {
@@ -374,8 +363,7 @@ export const congregacoes = [
     cidade: "São Romão - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Augusto Junio Jesus Amaral", telefone: "38 99825-1663" },
-      { cargo: "2º Dirigente", nome: "Renato Gonçalves de Mendonça", telefone: "38 99868-8995" }
+      { cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }
     ]
   },
   {
@@ -387,11 +375,11 @@ export const congregacoes = [
     cidade: "Icaraí de Minas - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Augusto Junior Amaral", telefone: "38 99825-1663" },
-      { cargo: "2º Dirigente", nome: "Edinei Antonio Marques de Souza", telefone: "38 99889-5888" }
+      { cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" },
+      { cargo: "1º Dirigente Local", nome: "Ev. Edney Antônio Marques de Souza", telefone: "38 99889-5888" }
     ]
   },
-  // ── REGIONAL DE BURITIZEIRO — Cidade ──
+  // ── REGIONAL DE BURITIZEIRO ──
   {
     id: 31,
     nome: "Congregação Alto São Francisco",
@@ -401,8 +389,8 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Warley Almeida de Oliveira", telefone: "38 99993-0662" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Warley Almeida de Oliveira", telefone: "38 99993-0662" }
     ]
   },
   {
@@ -414,8 +402,8 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Cícero Pereira do Carmo", telefone: "38 99913-1072" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pr. Cícero Pereira do Carmo", telefone: "38 99913-1072" }
     ]
   },
   {
@@ -427,11 +415,11 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Altair Magalhães", telefone: "38 99812-7774" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Ev. Altair Magalhães", telefone: "38 99812-7774" }
     ]
   },
-  // ── 2º SETOR BURITIZEIRO — Chupé ──
+  // ── 2º SETOR BURITIZEIRO ──
   {
     id: 34,
     nome: "Congregação Chupé / Xupé",
@@ -441,8 +429,9 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Isaías Lourenço de Resende", telefone: "31 99771-1850" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Isaías Lourenço de Resende", telefone: "31 99771-1850" },
+      { cargo: "2º Dirigente Local", nome: "Pb. João Resende", telefone: "" }
     ]
   },
   {
@@ -454,8 +443,7 @@ export const congregacoes = [
     cidade: "Paredão de Minas - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Gileno da Silva Lemos", telefone: "34 99820-9044" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" }
     ]
   },
   {
@@ -467,8 +455,7 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "João Henrique", telefone: "38 99740-8018" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" }
     ]
   },
   {
@@ -480,8 +467,8 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Pb. Gerson Ferreira Oliveira", telefone: "39 99936-6812" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Gerson Ferreira Oliveira", telefone: "39 99936-6812" }
     ]
   },
   {
@@ -493,8 +480,7 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Antônio Marcos de Almeida", telefone: "38 99916-5559" },
-      { cargo: "2º Dirigente", nome: "Sidinei da Silva", telefone: "38 99728-4492" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" }
     ]
   },
   // ── 3º SETOR BURITIZEIRO — Cachoeira do Manteiga ──
@@ -507,8 +493,8 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Ter 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
-      { cargo: "2º Dirigente", nome: "Leonardo Cézar dos Santos Monteiro", telefone: "34 99828-9021" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Renato Barbosa", telefone: "38 99953-5133" }
     ]
   },
   {
@@ -520,8 +506,9 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
-      { cargo: "2º Dirigente", nome: "Pb. Gilberto Afonso Ferreira", telefone: "34 97283-528" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Renato Barbosa", telefone: "38 99953-5133" },
+      { cargo: "1º Dirigente Local", nome: "Coop. Maria Divina", telefone: "" }
     ]
   },
   {
@@ -533,8 +520,8 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" },
-      { cargo: "2º Dirigente", nome: "Manoel Raimundo Melo dos Santos", telefone: "38 99892-5186" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Renato Barbosa", telefone: "38 99953-5133" }
     ]
   },
   {
@@ -546,7 +533,109 @@ export const congregacoes = [
     cidade: "Buritizeiro - MG",
     cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
     lideres: [
-      { cargo: "1º Dirigente", nome: "Renato Barbosa", telefone: "38 99953-5133" }
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Renato Barbosa", telefone: "38 99953-5133" }
+    ]
+  },
+  // ── NOVAS CONGREGAÇÕES ──
+  {
+    id: 43,
+    nome: "Congregação Bairro Aparecida",
+    bairro: "Aparecida",
+    endereco: "Bairro Aparecida — Pirapora-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Bairro+Aparecida+Pirapora+MG",
+    cidade: "Pirapora - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Carlos Corrêa de Souza", telefone: "038 99817-9855" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Vitório Calans", telefone: "" },
+      { cargo: "2º Dirigente Local", nome: "Pr. Serafim", telefone: "" }
+    ]
+  },
+  {
+    id: 44,
+    nome: "Congregação Bairro Primavera",
+    bairro: "Primavera",
+    endereco: "Bairro Primavera — Pirapora-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Bairro+Primavera+Pirapora+MG",
+    cidade: "Pirapora - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Geremias Bispo Ramos", telefone: "38 99948-3323" },
+      { cargo: "1º Dirigente Local", nome: "Dc. Luciano Camilo", telefone: "" }
+    ]
+  },
+  { id: 45, nome: "Congregação Bandeirante — Guaicuí", bairro: "Bandeirante", endereco: "Comunidade Bandeirante — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Bandeirante+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 46, nome: "Congregação Porteira — Guaicuí", bairro: "Porteira", endereco: "Comunidade Porteira — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Porteira+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 47, nome: "Congregação Lagoa Grande — Guaicuí", bairro: "Lagoa Grande", endereco: "Comunidade Lagoa Grande — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Lagoa+Grande+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 48, nome: "Congregação Rompe Dias — Guaicuí", bairro: "Assentamento Rompe Dias", endereco: "Assentamento Rompe Dias — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Rompe+Dias+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 49, nome: "Congregação Mãe D'Água — Guaicuí", bairro: "Assentamento Mãe D'Água", endereco: "Assentamento Mãe D'Água — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Mae+Dagua+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 50, nome: "Congregação Riachinho — Guaicuí", bairro: "Riachinho", endereco: "Comunidade Riachinho — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Riachinho+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 51, nome: "Congregação Ilha do Boi — Guaicuí", bairro: "Ilha do Boi", endereco: "Ilha do Boi — Guaicuí", maps: "https://www.google.com/maps/search/?api=1&query=Ilha+do+Boi+Guaicui+MG", cidade: "Guaicuí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Oziel Ferreira da Conceição", telefone: "38 99882-2164" }] },
+  { id: 52, nome: "Congregação Tesoura — Lagoa dos Patos", bairro: "Tesoura", endereco: "Comunidade Tesoura — Lagoa dos Patos-MG", maps: "https://www.google.com/maps/search/?api=1&query=Tesoura+Lagoa+dos+Patos+MG", cidade: "Lagoa dos Patos - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Milton Atanázio de Oliveira", telefone: "38 99918-6975" }] },
+  { id: 53, nome: "Congregação Sucuriú — Lagoa dos Patos", bairro: "Sucuriú", endereco: "Comunidade Sucuriú — Lagoa dos Patos-MG", maps: "https://www.google.com/maps/search/?api=1&query=Sucuriu+Lagoa+dos+Patos+MG", cidade: "Lagoa dos Patos - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Milton Atanázio de Oliveira", telefone: "38 99918-6975" }] },
+  {
+    id: 54,
+    nome: "Congregação Bom Jardim — Ponto Chique",
+    bairro: "Bom Jardim",
+    endereco: "Comunidade Bom Jardim — Ponto Chique-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Bom+Jardim+Ponto+Chique+MG",
+    cidade: "Ponto Chique - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Pastor Regional", nome: "Pr. João Batista dos Santos", telefone: "38 99845-0056" },
+      { cargo: "Dirigente de Sub-Setor", nome: "Pr. Valdecir Soares da Silva", telefone: "38 99744-5455" }
+    ]
+  },
+  { id: 55, nome: "Congregação Morrinho — Bentópolis", bairro: "Morrinho", endereco: "Comunidade Morrinho — Ubaí-MG", maps: "https://www.google.com/maps/search/?api=1&query=Morrinho+Ubai+MG", cidade: "Ubaí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }] },
+  { id: 56, nome: "Congregação Gerais Velhos — Bentópolis", bairro: "Gerais Velhos", endereco: "Comunidade Gerais Velhos — Ubaí-MG", maps: "https://www.google.com/maps/search/?api=1&query=Gerais+Velhos+Ubai+MG", cidade: "Ubaí - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Ev. Ronaldo Moreira Costa", telefone: "38 99971-0987" }] },
+  { id: 57, nome: "Congregação São José", bairro: "São José", endereco: "Comunidade São José — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Sao+Jose+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 58, nome: "Congregação Vila Santos Reis", bairro: "Vila Santos Reis", endereco: "Vila Santos Reis — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Vila+Santos+Reis+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 59, nome: "Congregação Nova Aparecida", bairro: "Nova Aparecida", endereco: "Comunidade Nova Aparecida — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Nova+Aparecida+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 60, nome: "Congregação Paraterra", bairro: "Paraterra", endereco: "Comunidade Paraterra — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Paraterra+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 61, nome: "Congregação Lagoa Cumprida", bairro: "Lagoa Cumprida", endereco: "Comunidade Lagoa Cumprida — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Lagoa+Cumprida+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 62, nome: "Congregação Riacho do Mato", bairro: "Riacho do Mato", endereco: "Comunidade Riacho do Mato — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Riacho+do+Mato+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 63, nome: "Congregação Ribanceira", bairro: "Ribanceira", endereco: "Comunidade Ribanceira — São Romão-MG", maps: "https://www.google.com/maps/search/?api=1&query=Ribanceira+Sao+Romao+MG", cidade: "São Romão - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Augusto Júnior Jesus Amaral", telefone: "38 99825-1663" }] },
+  { id: 64, nome: "Congregação Lacha III — Buritizeiro", bairro: "Lacha III", endereco: "Comunidade Lacha III — Buritizeiro-MG", maps: "https://www.google.com/maps/search/?api=1&query=Lacha+III+Buritizeiro+MG", cidade: "Buritizeiro - MG", cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30", lideres: [{ cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" }] },
+  {
+    id: 65,
+    nome: "Congregação Jardim dos Buritiz",
+    bairro: "Jardim dos Buritiz",
+    endereco: "Jardim dos Buritiz — Buritizeiro-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Jardim+dos+Buritiz+Buritizeiro+MG",
+    cidade: "Buritizeiro - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Wanderson", telefone: "" }
+    ]
+  },
+  {
+    id: 66,
+    nome: "Congregação Vila Maria — Buritizeiro",
+    bairro: "Vila Maria — Buritizeiro",
+    endereco: "Bairro Vila Maria — Buritizeiro-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Vila+Maria+Buritizeiro+MG",
+    cidade: "Buritizeiro - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pb. Levi Gonçalves", telefone: "" },
+      { cargo: "2º Dirigente Local", nome: "Coop. Gilson", telefone: "" }
+    ]
+  },
+  {
+    id: 67,
+    nome: "Congregação Novo Buritizeiro",
+    bairro: "Novo Buritizeiro",
+    endereco: "Novo Buritizeiro — Buritizeiro-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Novo+Buritizeiro+MG",
+    cidade: "Buritizeiro - MG",
+    cultos: "Dom 19h · Qua 19h30  \n EBD Dom 8h30",
+    lideres: [
+      { cargo: "Pastor Regional", nome: "Pr. Antônio Marcos de Almeida", telefone: "38 99916-5559" },
+      { cargo: "1º Dirigente Local", nome: "Pr. Valentino Gomes de Alburquerque", telefone: "" },
+      { cargo: "2º Dirigente Local", nome: "Pb. José de Aleluia", telefone: "" }
     ]
   }
 ];
