@@ -79,8 +79,8 @@ const newArray = `export const congregacoes = [
     id: 6,
     nome: "Congregação Santos Dumont",
     bairro: "Santos Dumont",
-    endereco: "Rua Raimundo Nascimento, 80 — CEP 39276-034, Pirapora-MG",
-    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+80+Santos+Dumont+Pirapora+MG",
+    endereco: "Rua Raimundo Nascimento, 770 — CEP 39276-034, Pirapora-MG",
+    maps: "https://www.google.com/maps/search/?api=1&query=Rua+Raimundo+Nascimento+770+Santos+Dumont+Pirapora+MG",
     cidade: "Pirapora - MG",
     cultos: "Dom 19h · Qua 19h30  \\n EBD Dom 8h30",
     lideres: [
